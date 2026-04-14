@@ -1,0 +1,84 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "efecc57e12990a519e90",
+  "position": {
+    "x": 10,
+    "y": 0,
+    "z": 0,
+    "height": 280,
+    "width": 280,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "daysmart_contacts"
+                    }
+                  },
+                  "Property": "Full_Name"
+                }
+              },
+              "queryRef": "daysmart_contacts.Full_Name",
+              "nativeQueryRef": "Full_Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "daysmart_contacts"
+                    }
+                  },
+                  "Property": "Email_Opt_In"
+                }
+              },
+              "queryRef": "daysmart_contacts.Email_Opt_In",
+              "nativeQueryRef": "Email_Opt_In"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2999cea766bad859c188",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "daysmart_contacts"
+              }
+            },
+            "Property": "Full_Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "86ea4fa5670377eb207a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "daysmart_contacts"
+              }
+            },
+            "Property": "Email_Opt_In"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
