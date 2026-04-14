@@ -1,0 +1,26 @@
+relationship a446e6c3-a4e4-4727-8a68-6f9b4d0ddd11
+	joinOnDateBehavior: datePartOnly
+	fromColumn: daysmart_contacts.Next_Appointment_Date
+	toColumn: LocalDateTable_84ae36b1-b9dd-4088-9ea7-a18c8c160390.Date
+
+relationship 01d385ac-e7e5-4716-9ee4-202ba28b55b5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: zoho_crm_contacts.Last_Appointment_Date
+	toColumn: LocalDateTable_0cffac4d-3505-4a69-b609-2005febddc46.Date
+
+relationship 8cd8ee96-e142-47ae-a0a6-e2358adcbbf7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: zoho_crm_contacts.Last_Activity_Date
+	toColumn: LocalDateTable_f33afdf2-be6c-4242-bd6e-4d0b519e4868.Date
+
+relationship 1af4c7fe-2630-a367-626c-4ab952081ccf
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: daysmart_contacts.Customer_ID
+	toColumn: zoho_crm_contacts.Customer_ID
+
+relationship afddeb43-edf9-42dd-8a8c-546c2b3b780d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: daysmart_contacts.Last_Appointment_Date
+	toColumn: LocalDateTable_d0ea65f0-0f6f-4967-b43f-858e3f51e155.Date
+

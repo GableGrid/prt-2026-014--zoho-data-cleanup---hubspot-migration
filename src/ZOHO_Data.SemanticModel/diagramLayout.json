@@ -1,0 +1,48 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 1
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "daysmart_contacts",
+          "nodeLineageTag": "9e1dd659-85cf-4f06-a98f-65df13385bf3",
+          "size": {
+            "height": 453,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 375,
+            "y": 0
+          },
+          "nodeIndex": "zoho_crm_contacts",
+          "nodeLineageTag": "3ae81bb0-7141-4f16-9ff8-9ffd1a52daed",
+          "size": {
+            "height": 436,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

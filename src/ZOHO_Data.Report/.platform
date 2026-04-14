@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "ZOHO_Data"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "edb01a3b-795c-40e3-a6ea-5260a6b3a235"
+  }
+}
