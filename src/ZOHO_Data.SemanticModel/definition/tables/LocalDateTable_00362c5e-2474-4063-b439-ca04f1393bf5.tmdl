@@ -1,13 +1,13 @@
-table LocalDateTable_0cffac4d-3505-4a69-b609-2005febddc46
+table LocalDateTable_00362c5e-2474-4063-b439-ca04f1393bf5
 	isHidden
 	showAsVariationsOnly
-	lineageTag: aae0b44c-f1e2-494f-bcb6-897a38def367
+	lineageTag: 92e422ab-cf02-4224-9454-ece92dee39ba
 
 	column Date
 		dataType: dateTime
 		isHidden
 		formatString: General Date
-		lineageTag: 4c088e74-e2dd-4095-bd29-87bd24aa51e8
+		lineageTag: cdf74f79-c224-461e-b9be-743dc301d252
 		dataCategory: PaddedDateTableDates
 		summarizeBy: none
 		isNameInferred
@@ -19,7 +19,7 @@ table LocalDateTable_0cffac4d-3505-4a69-b609-2005febddc46
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: f989d3af-7cf0-4d25-a2d6-3dfb0cb3329c
+		lineageTag: ae88e163-5a04-4fd0-ba3d-f1b84faa6b61
 		dataCategory: Years
 		summarizeBy: none
 
@@ -31,7 +31,7 @@ table LocalDateTable_0cffac4d-3505-4a69-b609-2005febddc46
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: 1204036c-502e-4441-b560-fc8dae605d59
+		lineageTag: a4c73d86-2506-4695-b6cb-7cebcc659782
 		dataCategory: MonthOfYear
 		summarizeBy: none
 
@@ -42,7 +42,7 @@ table LocalDateTable_0cffac4d-3505-4a69-b609-2005febddc46
 	column Month = FORMAT([Date], "MMMM")
 		dataType: string
 		isHidden
-		lineageTag: 0d212592-4616-420a-9da8-578f2035c176
+		lineageTag: ae1b7927-2da5-4a64-8e1a-b17fb89c3d1f
 		dataCategory: Months
 		summarizeBy: none
 		sortByColumn: MonthNo
@@ -55,7 +55,7 @@ table LocalDateTable_0cffac4d-3505-4a69-b609-2005febddc46
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: a9d58770-c251-43c8-98c6-c1e42cdc7ae9
+		lineageTag: aa92e862-8ec3-4e2b-b950-8b86c53fc163
 		dataCategory: QuarterOfYear
 		summarizeBy: none
 
@@ -66,7 +66,7 @@ table LocalDateTable_0cffac4d-3505-4a69-b609-2005febddc46
 	column Quarter = "Qtr " & [QuarterNo]
 		dataType: string
 		isHidden
-		lineageTag: ac34d71c-7336-476e-9588-e36d5b42ef6c
+		lineageTag: babde17c-e594-4960-8896-8a61d97edb24
 		dataCategory: Quarters
 		summarizeBy: none
 		sortByColumn: QuarterNo
@@ -79,7 +79,7 @@ table LocalDateTable_0cffac4d-3505-4a69-b609-2005febddc46
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: ffb998ae-33bf-4c45-b658-c3adf62c2189
+		lineageTag: e296c96a-f727-46c9-ad94-05276e4adda1
 		dataCategory: DayOfMonth
 		summarizeBy: none
 
@@ -88,29 +88,29 @@ table LocalDateTable_0cffac4d-3505-4a69-b609-2005febddc46
 		annotation TemplateId = Day
 
 	hierarchy 'Date Hierarchy'
-		lineageTag: cda8dcb0-3534-45ea-8252-c992ac3a9094
+		lineageTag: 390c11dd-6312-4763-80ce-ec5ccba47863
 
 		level Year
-			lineageTag: dc7f2de7-67ad-4b9b-8bf9-892f3e72e1d1
+			lineageTag: 10befc01-bb8f-4e78-b537-bfca88e9b672
 			column: Year
 
 		level Quarter
-			lineageTag: 9ec71bd0-bd63-489d-9434-6dd01a2ba8d9
+			lineageTag: 8bb32627-c289-4ba9-8e85-ca8345197e9a
 			column: Quarter
 
 		level Month
-			lineageTag: 811a268b-f2e4-4ca8-b838-af51dad1cbaf
+			lineageTag: 3c691b73-88fa-4008-a440-0c1aa5dfa750
 			column: Month
 
 		level Day
-			lineageTag: bc8a2d01-ce97-4173-b4ab-2bcce64aa55b
+			lineageTag: db9f5a93-73fc-4872-a9ba-ee2c7f696065
 			column: Day
 
 		annotation TemplateId = DateHierarchy
 
-	partition LocalDateTable_0cffac4d-3505-4a69-b609-2005febddc46 = calculated
+	partition LocalDateTable_00362c5e-2474-4063-b439-ca04f1393bf5 = calculated
 		mode: import
-		source = Calendar(Date(Year(MIN('zoho_crm_contacts'[Last_Appointment_Date])), 1, 1), Date(Year(MAX('zoho_crm_contacts'[Last_Appointment_Date])), 12, 31))
+		source = Calendar(Date(Year(MIN('zoho_crm_contacts'[Last_Activity_Date])), 1, 1), Date(Year(MAX('zoho_crm_contacts'[Last_Activity_Date])), 12, 31))
 
 	annotation __PBI_LocalDateTable = true
 

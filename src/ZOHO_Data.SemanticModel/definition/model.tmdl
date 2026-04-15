@@ -8,17 +8,17 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["daysmart_contacts","zoho_crm_contacts"]
+annotation PBI_QueryOrder = ["daysmart_full_classified","zoho_crm_contacts"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
-ref table daysmart_contacts
 ref table DateTableTemplate_ee3da718-7d3b-4c62-9d70-b8c4e8f11a04
-ref table LocalDateTable_84ae36b1-b9dd-4088-9ea7-a18c8c160390
+ref table daysmart_full_classified
+ref table LocalDateTable_0c08158b-b8e1-4f87-9241-a87973e5e5dc
+ref table LocalDateTable_428a0590-d4fb-4c8a-94b7-aafd79621bbf
+ref table LocalDateTable_984af85e-2773-47ce-be5e-8e687bfc2eaf
 ref table zoho_crm_contacts
-ref table LocalDateTable_0cffac4d-3505-4a69-b609-2005febddc46
-ref table LocalDateTable_f33afdf2-be6c-4242-bd6e-4d0b519e4868
-ref table LocalDateTable_d0ea65f0-0f6f-4967-b43f-858e3f51e155
+ref table LocalDateTable_00362c5e-2474-4063-b439-ca04f1393bf5
 
 ref cultureInfo en-US
 

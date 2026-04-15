@@ -1,9 +1,9 @@
 table zoho_crm_contacts
-	lineageTag: 3ae81bb0-7141-4f16-9ff8-9ffd1a52daed
+	lineageTag: 2316ab7c-a459-4ebd-8eb9-9f7656adc345
 
 	column Customer_ID
 		dataType: string
-		lineageTag: 66433a0a-a8f5-42e7-a129-29b367e3ad98
+		lineageTag: aeaf00e2-7356-4702-85a8-d9e45bf1162a
 		summarizeBy: none
 		sourceColumn: Customer_ID
 
@@ -11,7 +11,7 @@ table zoho_crm_contacts
 
 	column Full_Name
 		dataType: string
-		lineageTag: 96df747a-6111-4b86-83f7-6aa64e3d3691
+		lineageTag: 16bda736-c0c5-49c2-bcd0-274b92264aad
 		summarizeBy: none
 		sourceColumn: Full_Name
 
@@ -19,7 +19,7 @@ table zoho_crm_contacts
 
 	column Email
 		dataType: string
-		lineageTag: 3ab4bee6-e845-4d2c-8d3d-fa1150ac0822
+		lineageTag: e379a796-3226-4729-8fd5-2dd82c6bf6f0
 		summarizeBy: none
 		sourceColumn: Email
 
@@ -27,7 +27,7 @@ table zoho_crm_contacts
 
 	column Phone
 		dataType: string
-		lineageTag: ac3132e4-ea5c-41d7-99e9-50039343c43f
+		lineageTag: 8edd5e0d-e0ff-4336-a0e7-168de569da7f
 		summarizeBy: none
 		sourceColumn: Phone
 
@@ -36,14 +36,9 @@ table zoho_crm_contacts
 	column Last_Appointment_Date
 		dataType: dateTime
 		formatString: Long Date
-		lineageTag: cbe3c245-82dd-4106-87e0-f14062abdd6f
+		lineageTag: 8df52d1d-fa36-496c-9f15-1ff90461c86a
 		summarizeBy: none
 		sourceColumn: Last_Appointment_Date
-
-		variation Variation
-			isDefault
-			relationship: 01d385ac-e7e5-4716-9ee4-202ba28b55b5
-			defaultHierarchy: LocalDateTable_0cffac4d-3505-4a69-b609-2005febddc46.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -51,7 +46,7 @@ table zoho_crm_contacts
 
 	column Lead_Status
 		dataType: string
-		lineageTag: b96764be-bdb0-4671-ae22-63101d294767
+		lineageTag: e44abf29-80ae-4a86-81de-37f748c0d2ec
 		summarizeBy: none
 		sourceColumn: Lead_Status
 
@@ -59,7 +54,7 @@ table zoho_crm_contacts
 
 	column Account_Name
 		dataType: string
-		lineageTag: 86529880-6611-4f27-9307-63bee0f3b5ad
+		lineageTag: 303aeccb-c27e-4235-b3de-231fb8e2ec04
 		summarizeBy: none
 		sourceColumn: Account_Name
 
@@ -67,7 +62,7 @@ table zoho_crm_contacts
 
 	column Record_Owner
 		dataType: string
-		lineageTag: 10abb8f6-af7c-4757-973a-a7070e5d2b32
+		lineageTag: 0b940aa5-30b1-48c4-bc2a-72e06c4c39ae
 		summarizeBy: none
 		sourceColumn: Record_Owner
 
@@ -76,7 +71,7 @@ table zoho_crm_contacts
 	column Email_Opens
 		dataType: int64
 		formatString: 0
-		lineageTag: 61c989a2-c677-417c-9c2a-1c469cc84c90
+		lineageTag: 5604724c-72e4-4303-bbad-5578ec9587e4
 		summarizeBy: sum
 		sourceColumn: Email_Opens
 
@@ -85,7 +80,7 @@ table zoho_crm_contacts
 	column Email_Clicks
 		dataType: int64
 		formatString: 0
-		lineageTag: 94d63609-b66b-472f-a8e5-90a72aa06ebd
+		lineageTag: ac674811-7bad-4c6d-9a1c-2e0c025e0fb3
 		summarizeBy: sum
 		sourceColumn: Email_Clicks
 
@@ -94,14 +89,14 @@ table zoho_crm_contacts
 	column Last_Activity_Date
 		dataType: dateTime
 		formatString: Long Date
-		lineageTag: dd3c24a6-2f68-4059-820d-41a2083eaa47
+		lineageTag: 036d6777-b2a9-4e4e-b13c-c4bc701204b4
 		summarizeBy: none
 		sourceColumn: Last_Activity_Date
 
 		variation Variation
 			isDefault
-			relationship: 8cd8ee96-e142-47ae-a0a6-e2358adcbbf7
-			defaultHierarchy: LocalDateTable_f33afdf2-be6c-4242-bd6e-4d0b519e4868.'Date Hierarchy'
+			relationship: 66c57bd4-d39a-4129-b43f-79e3733fed4f
+			defaultHierarchy: LocalDateTable_00362c5e-2474-4063-b439-ca04f1393bf5.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -109,7 +104,7 @@ table zoho_crm_contacts
 
 	column Deal_Stage
 		dataType: string
-		lineageTag: 9a57a3a6-1795-4220-9d64-0cd5984cd371
+		lineageTag: 8324ef8a-8d10-45e2-86ad-31d3c13ecf92
 		summarizeBy: none
 		sourceColumn: Deal_Stage
 
@@ -117,7 +112,7 @@ table zoho_crm_contacts
 
 	column Annual_Revenue
 		dataType: double
-		lineageTag: a6084c4a-547a-4f71-8aee-c13e7817f468
+		lineageTag: 841ad1be-7d78-4f45-9a16-0d58928235ff
 		summarizeBy: sum
 		sourceColumn: Annual_Revenue
 
@@ -127,7 +122,7 @@ table zoho_crm_contacts
 
 	column Tags
 		dataType: string
-		lineageTag: 85a56567-be4b-4e68-9091-f35a8dbe5003
+		lineageTag: f66408cd-7ea9-4489-b964-d1ed9bf8660b
 		summarizeBy: none
 		sourceColumn: Tags
 
@@ -135,7 +130,7 @@ table zoho_crm_contacts
 
 	column Source_System
 		dataType: string
-		lineageTag: 7dae00e6-76ab-498a-9b3a-ff96548b9527
+		lineageTag: d86b3716-c16c-4e42-888a-50ccb77155f3
 		summarizeBy: none
 		sourceColumn: Source_System
 
@@ -145,7 +140,7 @@ table zoho_crm_contacts
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\User\Downloads\zoho_crm_contacts (1).csv"),[Delimiter=",", Columns=15, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(File.Contents("C:\Users\User\Downloads\zoho_crm_contacts.csv"),[Delimiter=",", Columns=15, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Customer_ID", type text}, {"Full_Name", type text}, {"Email", type text}, {"Phone", type text}, {"Last_Appointment_Date", type date}, {"Lead_Status", type text}, {"Account_Name", type text}, {"Record_Owner", type text}, {"Email_Opens", Int64.Type}, {"Email_Clicks", Int64.Type}, {"Last_Activity_Date", type date}, {"Deal_Stage", type text}, {"Annual_Revenue", type number}, {"Tags", type text}, {"Source_System", type text}})
 				in

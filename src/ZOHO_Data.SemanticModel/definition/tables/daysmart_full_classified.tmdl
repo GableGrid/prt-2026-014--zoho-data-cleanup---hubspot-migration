@@ -1,0 +1,236 @@
+table daysmart_full_classified
+	lineageTag: d57cd8fa-dc80-4973-950b-1f79a8a646d0
+
+	measure 'Total Contacts' = DISTINCTCOUNT(daysmart_full_classified[Customer_ID])
+		formatString: 0
+		lineageTag: 7568e229-2be7-4620-8315-f5ba196de03b
+
+	measure 'LIVE Count' =
+			
+			CALCULATE(
+			    COUNTROWS(daysmart_full_classified),
+			    daysmart_full_classified[Status] = "LIVE"
+			)
+		formatString: 0
+		lineageTag: 49c0ec65-93be-4e4f-abe8-6a486318c15e
+
+	measure 'ARCHIVE Count' =
+			
+			CALCULATE(
+			    COUNTROWS(daysmart_full_classified),
+			    daysmart_full_classified[Status] = "ARCHIVE"
+			)
+		formatString: 0
+		lineageTag: 95339bae-c639-4b82-b3db-31038b94f73f
+
+	column Customer_ID
+		dataType: string
+		lineageTag: 03aa1213-fb08-482b-84bb-2810a73f49f4
+		summarizeBy: none
+		sourceColumn: Customer_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Full_Name
+		dataType: string
+		lineageTag: d29f3560-eaf2-48b6-b594-de20e8ef6ea1
+		summarizeBy: none
+		sourceColumn: Full_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 9371d8dd-6d46-4fe3-a943-ca0b80c23c2e
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: c7d1e49a-f638-47d1-917f-be88715df324
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column contact_last_appt
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: bc9d65cb-0d52-4834-9aad-8173e7843c24
+		summarizeBy: none
+		sourceColumn: contact_last_appt
+
+		variation Variation
+			isDefault
+			relationship: 3efc0719-c6ec-4ce3-8a34-b9769a5407d0
+			defaultHierarchy: LocalDateTable_0c08158b-b8e1-4f87-9241-a87973e5e5dc.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Primary_Service
+		dataType: string
+		lineageTag: 2ed19cda-afc2-4030-8736-ed8098b2ca02
+		summarizeBy: none
+		sourceColumn: Primary_Service
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total_Appointments
+		dataType: int64
+		formatString: 0
+		lineageTag: c8bd072d-4f8f-4c4e-b53d-b3e207cde5cd
+		summarizeBy: sum
+		sourceColumn: Total_Appointments
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total_Spent_USD
+		dataType: double
+		lineageTag: 7f8cc76d-0f63-4ff8-85bf-b133b3d37a28
+		summarizeBy: sum
+		sourceColumn: Total_Spent_USD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Loyalty_Points
+		dataType: int64
+		formatString: 0
+		lineageTag: 556ce49f-d618-4749-9a99-179a73583132
+		summarizeBy: sum
+		sourceColumn: Loyalty_Points
+
+		annotation SummarizationSetBy = Automatic
+
+	column SMS_Opt_In
+		dataType: string
+		lineageTag: 696402ee-6818-4919-a6ce-44e5504b17a4
+		summarizeBy: none
+		sourceColumn: SMS_Opt_In
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Opt_In
+		dataType: string
+		lineageTag: 54130413-525e-4359-8dab-b26519774f6d
+		summarizeBy: none
+		sourceColumn: Email_Opt_In
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source_System
+		dataType: string
+		lineageTag: 7f6060cc-662b-44e4-aba0-0bbc75c0ddac
+		summarizeBy: none
+		sourceColumn: Source_System
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_appt_date_from_history
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 452fab08-406e-4730-b894-67bcacad0760
+		summarizeBy: none
+		sourceColumn: max_appt_date_from_history
+
+		variation Variation
+			isDefault
+			relationship: a763b44c-8051-4094-88c3-653cfbea7cc4
+			defaultHierarchy: LocalDateTable_428a0590-d4fb-4c8a-94b7-aafd79621bbf.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column history_appt_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 13816d07-1455-4a28-9bd7-a50cacf3c51b
+		summarizeBy: sum
+		sourceColumn: history_appt_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column no_show_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 290e96c3-7e50-401a-a848-425408e15564
+		summarizeBy: sum
+		sourceColumn: no_show_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_revenue_from_history
+		dataType: double
+		lineageTag: 8e6fbbb6-a91d-4757-8f2c-e6c37d671cc7
+		summarizeBy: sum
+		sourceColumn: total_revenue_from_history
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column resolved_last_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ca646685-7cb7-45ad-afe1-9e946073bfcb
+		summarizeBy: none
+		sourceColumn: resolved_last_date
+
+		variation Variation
+			isDefault
+			relationship: 4200cf2d-1156-47ab-ab37-a9ae34147a27
+			defaultHierarchy: LocalDateTable_984af85e-2773-47ce-be5e-8e687bfc2eaf.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column data_status
+		dataType: string
+		lineageTag: e5831cc4-4fb6-4d83-a2e2-28b776615a29
+		summarizeBy: none
+		sourceColumn: data_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_appt_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 52a8efe4-192c-4f9d-88c0-fae66cc91c34
+		summarizeBy: sum
+		sourceColumn: last_appt_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status =
+			
+			IF(
+			    daysmart_full_classified[last_appt_year] >= 2019,
+			    "LIVE",
+			    "ARCHIVE"
+			)
+		lineageTag: 72c321cb-d343-48ab-b2df-6a8ab4242737
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition daysmart_full_classified = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\User\Downloads\daysmart_full_classified.csv"),[Delimiter=",", Columns=19, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Customer_ID", type text}, {"Full_Name", type text}, {"Email", type text}, {"Phone", type text}, {"contact_last_appt", type date}, {"Primary_Service", type text}, {"Total_Appointments", Int64.Type}, {"Total_Spent_USD", type number}, {"Loyalty_Points", Int64.Type}, {"SMS_Opt_In", type text}, {"Email_Opt_In", type text}, {"Source_System", type text}, {"max_appt_date_from_history", type date}, {"history_appt_count", Int64.Type}, {"no_show_count", Int64.Type}, {"total_revenue_from_history", type number}, {"resolved_last_date", type date}, {"data_status", type text}, {"last_appt_year", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
