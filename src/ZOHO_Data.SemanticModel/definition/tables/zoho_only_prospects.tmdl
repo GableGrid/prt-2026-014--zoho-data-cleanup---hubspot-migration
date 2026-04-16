@@ -1,0 +1,181 @@
+table zoho_only_prospects
+	lineageTag: 3260bb96-8c92-46f1-8080-e736ea50ba18
+
+	column Customer_ID
+		dataType: string
+		lineageTag: bd7338d7-42e9-4475-86f9-d4f1ea70b612
+		summarizeBy: none
+		sourceColumn: Customer_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Full_Name
+		dataType: string
+		lineageTag: e4d83fa7-e045-47e2-8089-2fac3961537b
+		summarizeBy: none
+		sourceColumn: Full_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 53f8cbe9-a889-426f-aa22-cf2ceb42b3d9
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: 55137b26-a996-4810-89fd-a89b876155d4
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_Appointment_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 56b9d6ae-c298-40d9-8dda-cb5eb3477dbc
+		summarizeBy: none
+		sourceColumn: Last_Appointment_Date
+
+		variation Variation
+			isDefault
+			relationship: 3d0602fb-1b8c-4248-a12e-86f8b43a47d5
+			defaultHierarchy: LocalDateTable_5946a6c6-a777-469c-8d50-a966e62c320c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Lead_Status
+		dataType: string
+		lineageTag: 5e151564-cba2-4112-a8ad-722cc57af71e
+		summarizeBy: none
+		sourceColumn: Lead_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Account_Name
+		dataType: string
+		lineageTag: 0528af27-af6f-4f6a-8a8d-deca84658f2e
+		summarizeBy: none
+		sourceColumn: Account_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Record_Owner
+		dataType: string
+		lineageTag: c1d333ee-04d9-4cd0-8147-6e7af96342aa
+		summarizeBy: none
+		sourceColumn: Record_Owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Opens
+		dataType: int64
+		formatString: 0
+		lineageTag: c63e4b8c-a444-494b-a39f-dd499804fcb2
+		summarizeBy: sum
+		sourceColumn: Email_Opens
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Clicks
+		dataType: int64
+		formatString: 0
+		lineageTag: 3acee829-9832-45cb-8118-05e9cfe613d3
+		summarizeBy: sum
+		sourceColumn: Email_Clicks
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_Activity_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e2039e8c-18f0-4d5e-b058-03eb8c44db76
+		summarizeBy: none
+		sourceColumn: Last_Activity_Date
+
+		variation Variation
+			isDefault
+			relationship: cb12af9a-aa1f-4c34-936f-dc610909b0a1
+			defaultHierarchy: LocalDateTable_28bf8850-b067-41e8-b735-4dd77663405c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Deal_Stage
+		dataType: string
+		lineageTag: ca09d351-f1ad-42f1-97e5-9a1369849992
+		summarizeBy: none
+		sourceColumn: Deal_Stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column Annual_Revenue
+		dataType: double
+		lineageTag: ddd3c9c2-7e4f-4efe-b7ac-d5a976118b3f
+		summarizeBy: sum
+		sourceColumn: Annual_Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Tags
+		dataType: string
+		lineageTag: fc0aad30-637b-406f-a8ff-b44a41905850
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source_System
+		dataType: string
+		lineageTag: d0dba95f-095f-4299-b2da-e7e2ab3211cc
+		summarizeBy: none
+		sourceColumn: Source_System
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Status
+		dataType: string
+		lineageTag: 6065e6da-28d8-43ef-8abd-5c71726bec75
+		summarizeBy: none
+		sourceColumn: Email_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_lower
+		dataType: string
+		lineageTag: 5f5f9455-694a-47fe-9f9d-7d3955f1dbb5
+		summarizeBy: none
+		sourceColumn: Email_lower
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name_lower
+		dataType: string
+		lineageTag: 99054ca1-3974-4818-ac00-cac3e05ea927
+		summarizeBy: none
+		sourceColumn: Name_lower
+
+		annotation SummarizationSetBy = Automatic
+
+	partition zoho_only_prospects = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\User\Downloads\zoho_only_prospects.csv"),[Delimiter=",", Columns=18, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Customer_ID", type text}, {"Full_Name", type text}, {"Email", type text}, {"Phone", type text}, {"Last_Appointment_Date", type date}, {"Lead_Status", type text}, {"Account_Name", type text}, {"Record_Owner", type text}, {"Email_Opens", Int64.Type}, {"Email_Clicks", Int64.Type}, {"Last_Activity_Date", type date}, {"Deal_Stage", type text}, {"Annual_Revenue", type number}, {"Tags", type text}, {"Source_System", type text}, {"Email_Status", type text}, {"Email_lower", type text}, {"Name_lower", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -22,3 +22,35 @@ relationship 144a8904-2216-9c54-62e6-6082097dff93
 	fromColumn: zoho_crm_contacts.Last_Appointment_Date
 	toColumn: daysmart_full_classified.Customer_ID
 
+relationship 3d0602fb-1b8c-4248-a12e-86f8b43a47d5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: zoho_only_prospects.Last_Appointment_Date
+	toColumn: LocalDateTable_5946a6c6-a777-469c-8d50-a966e62c320c.Date
+
+relationship cb12af9a-aa1f-4c34-936f-dc610909b0a1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: zoho_only_prospects.Last_Activity_Date
+	toColumn: LocalDateTable_28bf8850-b067-41e8-b735-4dd77663405c.Date
+
+relationship AutoDetected_a1b835bb-28d7-42d7-9635-3c4ead8672dc
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: zoho_only_prospects.Customer_ID
+	toColumn: zoho_crm_contacts.Customer_ID
+
+relationship e48e2de9-49f3-4ec7-8a38-42e9d1c36968
+	joinOnDateBehavior: datePartOnly
+	fromColumn: master_contact_list.Last_Appointment
+	toColumn: LocalDateTable_e2b95c70-4222-4eb5-ac09-4832340940c6.Date
+
+relationship AutoDetected_0939bd88-23be-4143-ae61-e5fa444a25b9
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: zoho_only_prospects.Email
+	toColumn: master_contact_list.Email
+
+relationship e0fc96de-ef1a-4754-8add-1e660ec0ee69
+	joinOnDateBehavior: datePartOnly
+	fromColumn: rescued_contacts.ds_last_appt
+	toColumn: LocalDateTable_01206717-08ae-40dc-b134-a91c850935e4.Date
+

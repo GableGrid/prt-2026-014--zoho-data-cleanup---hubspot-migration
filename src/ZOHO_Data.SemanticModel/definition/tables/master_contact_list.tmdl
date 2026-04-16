@@ -1,0 +1,167 @@
+table master_contact_list
+	lineageTag: 1786041d-c729-46fc-9b80-340bcff41224
+
+	column Master_ID
+		dataType: string
+		lineageTag: c778d643-4c5e-4b53-9916-ecf6c386586c
+		summarizeBy: none
+		sourceColumn: Master_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zoho_ID
+		dataType: string
+		lineageTag: 93f7b7f0-d4e6-4b9e-9d35-640f76347f77
+		summarizeBy: none
+		sourceColumn: Zoho_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DaySmart_ID
+		dataType: string
+		lineageTag: 8bf06c96-2496-4610-99ab-6cf71ed50cc3
+		summarizeBy: none
+		sourceColumn: DaySmart_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Full_Name
+		dataType: string
+		lineageTag: 05311ade-fcc5-41c3-993c-24ea606e4134
+		summarizeBy: none
+		sourceColumn: Full_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 40ab74a7-1626-428e-9ab7-c324b42a08bd
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Status
+		dataType: string
+		lineageTag: 52ba92d2-817a-43f9-8159-fdbe1c7b849c
+		summarizeBy: none
+		sourceColumn: Email_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_Appointment
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4a26890b-44c6-4b74-89b7-6b0ecb413c46
+		summarizeBy: none
+		sourceColumn: Last_Appointment
+
+		variation Variation
+			isDefault
+			relationship: e48e2de9-49f3-4ec7-8a38-42e9d1c36968
+			defaultHierarchy: LocalDateTable_e2b95c70-4222-4eb5-ac09-4832340940c6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DaySmart_Status
+		dataType: string
+		lineageTag: f4ce3555-56f5-4d08-8f22-4d1d64dd5b55
+		summarizeBy: none
+		sourceColumn: DaySmart_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_Revenue
+		dataType: double
+		lineageTag: 43fea24a-8975-4874-bee5-09915b480076
+		summarizeBy: sum
+		sourceColumn: DS_Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DS_Visits
+		dataType: int64
+		formatString: 0
+		lineageTag: 3512eb90-758d-4b63-bc63-d9722fcaea7a
+		summarizeBy: sum
+		sourceColumn: DS_Visits
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_Service
+		dataType: string
+		lineageTag: 11fa6805-c25e-472a-a346-4c700f10d32a
+		summarizeBy: none
+		sourceColumn: DS_Service
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_Loyalty
+		dataType: int64
+		formatString: 0
+		lineageTag: fe734972-6f56-4ac3-91a3-9ad86c09d4f2
+		summarizeBy: sum
+		sourceColumn: DS_Loyalty
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zoho_Lead_Status
+		dataType: string
+		lineageTag: 8ac1ca18-72a1-42bd-ac44-74db9119021c
+		summarizeBy: none
+		sourceColumn: Zoho_Lead_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Opens
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c7fca90-e2fc-4638-ad4e-1bce22e7edae
+		summarizeBy: sum
+		sourceColumn: Email_Opens
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Clicks
+		dataType: int64
+		formatString: 0
+		lineageTag: 361e3303-e802-4035-a99f-88b23cecdb48
+		summarizeBy: sum
+		sourceColumn: Email_Clicks
+
+		annotation SummarizationSetBy = Automatic
+
+	column Record_Type
+		dataType: string
+		lineageTag: f7a0d628-aa2f-4f7e-b529-d644c271b5c6
+		summarizeBy: none
+		sourceColumn: Record_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source_of_Truth
+		dataType: string
+		lineageTag: ecb68fa6-9c43-439b-9412-bd770ee6ee31
+		summarizeBy: none
+		sourceColumn: Source_of_Truth
+
+		annotation SummarizationSetBy = Automatic
+
+	partition master_contact_list = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\User\Downloads\master_contact_list.csv"),[Delimiter=",", Columns=17, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Master_ID", type text}, {"Zoho_ID", type text}, {"DaySmart_ID", type text}, {"Full_Name", type text}, {"Email", type text}, {"Email_Status", type text}, {"Last_Appointment", type date}, {"DaySmart_Status", type text}, {"DS_Revenue", type number}, {"DS_Visits", Int64.Type}, {"DS_Service", type text}, {"DS_Loyalty", Int64.Type}, {"Zoho_Lead_Status", type text}, {"Email_Opens", Int64.Type}, {"Email_Clicks", Int64.Type}, {"Record_Type", type text}, {"Source_of_Truth", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

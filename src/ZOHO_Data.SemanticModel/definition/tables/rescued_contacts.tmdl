@@ -1,0 +1,141 @@
+table rescued_contacts
+	lineageTag: 188905d5-7905-44b0-b2f6-d7c8b4d013f4
+
+	column zoho_id
+		dataType: string
+		lineageTag: e154fa4d-bb1a-4124-8b59-48d7daa1460c
+		summarizeBy: none
+		sourceColumn: zoho_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column zoho_name
+		dataType: string
+		lineageTag: cef0f760-30f8-42ad-b117-f6b087f9d075
+		summarizeBy: none
+		sourceColumn: zoho_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column zoho_bad_email
+		dataType: string
+		lineageTag: 24806d8b-ca2c-44a3-843d-bc425aacecdd
+		summarizeBy: none
+		sourceColumn: zoho_bad_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column zoho_lead_status
+		dataType: string
+		lineageTag: 5d766f48-bf11-4030-9004-cea478847ccc
+		summarizeBy: none
+		sourceColumn: zoho_lead_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Opens
+		dataType: int64
+		formatString: 0
+		lineageTag: 81a800a9-b447-4f7e-ad8e-08bd8c018dee
+		summarizeBy: sum
+		sourceColumn: Email_Opens
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Clicks
+		dataType: int64
+		formatString: 0
+		lineageTag: 469fe0ff-4941-457c-a95a-146e5570c8d1
+		summarizeBy: sum
+		sourceColumn: Email_Clicks
+
+		annotation SummarizationSetBy = Automatic
+
+	column ds_id
+		dataType: string
+		lineageTag: a4d4003a-8cce-4641-821c-8e1303be6a4d
+		summarizeBy: none
+		sourceColumn: ds_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ds_name
+		dataType: string
+		lineageTag: 3a5275c8-22ab-4765-893c-780c9bfe41de
+		summarizeBy: none
+		sourceColumn: ds_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ds_rescued_email
+		dataType: string
+		lineageTag: c8e25429-f172-4505-a515-ccd6903c9e4a
+		summarizeBy: none
+		sourceColumn: ds_rescued_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column ds_phone
+		dataType: string
+		lineageTag: db54c7d2-663b-4f20-b127-4ac510737546
+		summarizeBy: none
+		sourceColumn: ds_phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column ds_last_appt
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 82e954bc-1ca1-4c5e-a0ec-8e1dd77ddc4d
+		summarizeBy: none
+		sourceColumn: ds_last_appt
+
+		variation Variation
+			isDefault
+			relationship: e0fc96de-ef1a-4754-8add-1e660ec0ee69
+			defaultHierarchy: LocalDateTable_01206717-08ae-40dc-b134-a91c850935e4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ds_status
+		dataType: string
+		lineageTag: f0b353ad-ed32-425b-b401-625c7c33281d
+		summarizeBy: none
+		sourceColumn: ds_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column ds_revenue
+		dataType: double
+		lineageTag: 95e48a5e-a931-4f1b-86ab-68393563f840
+		summarizeBy: sum
+		sourceColumn: ds_revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rescue_status
+		dataType: string
+		lineageTag: d7f24b03-6a71-424d-9d11-723140ccf2de
+		summarizeBy: none
+		sourceColumn: rescue_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rescued_contacts = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\User\Downloads\rescued_contacts.csv"),[Delimiter=",", Columns=14, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"zoho_id", type text}, {"zoho_name", type text}, {"zoho_bad_email", type text}, {"zoho_lead_status", type text}, {"Email_Opens", Int64.Type}, {"Email_Clicks", Int64.Type}, {"ds_id", type text}, {"ds_name", type text}, {"ds_rescued_email", type text}, {"ds_phone", type text}, {"ds_last_appt", type date}, {"ds_status", type text}, {"ds_revenue", type number}, {"rescue_status", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

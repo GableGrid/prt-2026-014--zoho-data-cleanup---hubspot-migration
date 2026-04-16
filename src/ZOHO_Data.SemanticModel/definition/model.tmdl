@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["daysmart_full_classified","zoho_crm_contacts"]
+annotation PBI_QueryOrder = ["daysmart_full_classified","zoho_crm_contacts","zoho_only_prospects","master_contact_list","rescued_contacts"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -19,6 +19,13 @@ ref table LocalDateTable_428a0590-d4fb-4c8a-94b7-aafd79621bbf
 ref table LocalDateTable_984af85e-2773-47ce-be5e-8e687bfc2eaf
 ref table zoho_crm_contacts
 ref table LocalDateTable_00362c5e-2474-4063-b439-ca04f1393bf5
+ref table zoho_only_prospects
+ref table LocalDateTable_5946a6c6-a777-469c-8d50-a966e62c320c
+ref table LocalDateTable_28bf8850-b067-41e8-b735-4dd77663405c
+ref table master_contact_list
+ref table LocalDateTable_e2b95c70-4222-4eb5-ac09-4832340940c6
+ref table rescued_contacts
+ref table LocalDateTable_01206717-08ae-40dc-b134-a91c850935e4
 
 ref cultureInfo en-US
 
