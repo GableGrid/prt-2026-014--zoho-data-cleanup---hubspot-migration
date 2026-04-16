@@ -33,6 +33,81 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 640.90503372878516,
+            "y": 189.93971026100223
+          },
+          "nodeIndex": "zoho_only_prospects",
+          "nodeLineageTag": "3260bb96-8c92-46f1-8080-e736ea50ba18",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 924.90503372878516,
+            "y": 189.93971026100223
+          },
+          "nodeIndex": "master_contact_list",
+          "nodeLineageTag": "1786041d-c729-46fc-9b80-340bcff41224",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1208.9050337287852,
+            "y": 189.93971026100223
+          },
+          "nodeIndex": "rescued_contacts",
+          "nodeLineageTag": "188905d5-7905-44b0-b2f6-d7c8b4d013f4",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1492.9050337287852,
+            "y": 189.93971026100223
+          },
+          "nodeIndex": "Matched — Both Systems",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1776.9050337287852,
+            "y": 189.93971026100223
+          },
+          "nodeIndex": "Master Deduped List",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2060.9050337287854,
+            "y": 203.93971026100223
+          },
+          "nodeIndex": "Rescued Contacts",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",

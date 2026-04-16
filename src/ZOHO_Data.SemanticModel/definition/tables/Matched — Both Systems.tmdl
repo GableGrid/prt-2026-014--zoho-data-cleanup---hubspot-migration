@@ -1,0 +1,129 @@
+table 'Matched — Both Systems'
+	lineageTag: f573f1c2-6cfc-4767-87ad-6a2e6e94f53a
+
+	column 'Zoho ID'
+		dataType: string
+		lineageTag: 90c3a4d3-3d64-4a6a-a447-888c353d8e77
+		summarizeBy: none
+		sourceColumn: Zoho ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DS ID'
+		dataType: string
+		lineageTag: f3c41e7a-a0b3-47b9-a39e-7947a7af10d0
+		summarizeBy: none
+		sourceColumn: DS ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: b6f3e247-d5de-469f-a5e2-64674d0e19d6
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 7648cfb7-0411-47e2-83d8-9cede0a849ef
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Email Status'
+		dataType: string
+		lineageTag: de731ca2-7492-459a-b4e9-90c291872a37
+		summarizeBy: none
+		sourceColumn: Email Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lead Status'
+		dataType: string
+		lineageTag: c5333cc2-bb02-41dc-b0ec-c37f5a6168d9
+		summarizeBy: none
+		sourceColumn: Lead Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DS Last Appt'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b2e1a657-d50b-42e7-998f-57c9be89c3b7
+		summarizeBy: none
+		sourceColumn: DS Last Appt
+
+		variation Variation
+			isDefault
+			relationship: b3a94143-a0a8-462c-8f34-55499ed1aa43
+			defaultHierarchy: LocalDateTable_765aabb3-4565-4581-9d10-a643f4d32ce3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'DS Status'
+		dataType: string
+		lineageTag: 399fb419-3c4c-436f-9b20-d6b67d6f43a0
+		summarizeBy: none
+		sourceColumn: DS Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DS Revenue'
+		dataType: double
+		lineageTag: c0ff0a6c-3aa2-4a4f-9c6f-f4655c18402c
+		summarizeBy: sum
+		sourceColumn: DS Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'DS Visits'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b9e5738-9142-4170-bc71-e0aa3eed435b
+		summarizeBy: sum
+		sourceColumn: DS Visits
+
+		annotation SummarizationSetBy = Automatic
+
+	column Opens
+		dataType: int64
+		formatString: 0
+		lineageTag: a44d8ccf-ba5f-40a0-b263-e6fc701d0917
+		summarizeBy: sum
+		sourceColumn: Opens
+
+		annotation SummarizationSetBy = Automatic
+
+	column Clicks
+		dataType: int64
+		formatString: 0
+		lineageTag: fafacf2c-ef55-4e46-b319-379adae0b06e
+		summarizeBy: sum
+		sourceColumn: Clicks
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Matched — Both Systems' = m
+		mode: import
+		source =
+				let
+				    Source = GoogleSheets.Contents("https://docs.google.com/spreadsheets/d/1kWYf-O_ngzJb8RKn5kpSzzUfD_Lih-CRzl2n4BEdScE/edit?gid=868917557#gid=868917557"),
+				    #"✅ Matched — Both Systems_Table" = Source{[name="✅ Matched — Both Systems",ItemKind="Table"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"✅ Matched — Both Systems_Table", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"EMAIL-MATCHED CONTACTS — Present in Both Systems  (1,193 records)", type text}, {"", type text}, {"_1", type text}, {"_2", type text}, {"_3", type text}, {"_4", type text}, {"_5", type text}, {"_6", type text}, {"_7", type any}, {"_8", type any}, {"_9", type any}, {"_10", type any}}),
+				    #"Promoted Headers1" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers1",{{"Zoho ID", type text}, {"DS ID", type text}, {"Name", type text}, {"Email", type text}, {"Email Status", type text}, {"Lead Status", type text}, {"DS Last Appt", type date}, {"DS Status", type text}, {"DS Revenue", type number}, {"DS Visits", Int64.Type}, {"Opens", Int64.Type}, {"Clicks", Int64.Type}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

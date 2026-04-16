@@ -1,0 +1,94 @@
+table 'Rescued Contacts'
+	lineageTag: 66352f57-6f69-48e8-8d28-2639258ed3dd
+
+	column 'Zoho ID'
+		dataType: string
+		lineageTag: da3b54d0-23a1-4c57-b1d3-306eef797fe0
+		summarizeBy: none
+		sourceColumn: Zoho ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: df98fc2a-6733-4276-b548-595548f34ccb
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column '❌ Old (Bounced) Email'
+		dataType: string
+		lineageTag: dbc433d1-757f-4c0c-a4d7-77021836602c
+		summarizeBy: none
+		sourceColumn: ❌ Old (Bounced) Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column '✅ Rescued Email (DaySmart)'
+		dataType: string
+		lineageTag: 4d2de632-686b-4c13-be25-a313cb5f62f3
+		summarizeBy: none
+		sourceColumn: ✅ Rescued Email (DaySmart)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DS Last Appt'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ddd3e342-e3cf-40a9-bdb9-b835a8d978f4
+		summarizeBy: none
+		sourceColumn: DS Last Appt
+
+		variation Variation
+			isDefault
+			relationship: dfb2fced-061a-4e59-a4a2-13238774c0b0
+			defaultHierarchy: LocalDateTable_474bd2b1-dd25-40a3-912c-0bca632009fb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'DS Status'
+		dataType: string
+		lineageTag: e403bb99-efc0-453e-8983-044f187f1992
+		summarizeBy: none
+		sourceColumn: DS Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DS Revenue ($)'
+		dataType: double
+		lineageTag: 5d2d5fc9-1ea4-4d3b-a54e-d1eb91ebec8f
+		summarizeBy: sum
+		sourceColumn: DS Revenue ($)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Rescue Status'
+		dataType: string
+		lineageTag: 2c762aee-4cfb-48f0-97f1-b31e87a76c15
+		summarizeBy: none
+		sourceColumn: Rescue Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Rescued Contacts' = m
+		mode: import
+		source =
+				let
+				    Source = GoogleSheets.Contents("https://docs.google.com/spreadsheets/d/1kWYf-O_ngzJb8RKn5kpSzzUfD_Lih-CRzl2n4BEdScE/edit?gid=868917557#gid=868917557"),
+				    #"🔄 Rescued Contacts_Table" = Source{[name="🔄 Rescued Contacts",ItemKind="Table"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"🔄 Rescued Contacts_Table", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"RESCUED CONTACTS — Bounced Zoho Email → Valid DaySmart Email  (373 records)", type text}, {"", type text}, {"_1", type text}, {"_2", type text}, {"_3", type text}, {"_4", type text}, {"_5", type any}, {"_6", type text}}),
+				    #"Promoted Headers1" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers1",{{"Zoho ID", type text}, {"Name", type text}, {"❌ Old (Bounced) Email", type text}, {"✅ Rescued Email (DaySmart)", type text}, {"DS Last Appt", type date}, {"DS Status", type text}, {"DS Revenue ($)", type number}, {"Rescue Status", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

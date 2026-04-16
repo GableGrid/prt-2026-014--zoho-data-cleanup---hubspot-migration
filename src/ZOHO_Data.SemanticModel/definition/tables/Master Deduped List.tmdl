@@ -1,0 +1,153 @@
+table 'Master Deduped List'
+	lineageTag: 051fed61-26e8-42c5-8168-9d39ad3d7bb3
+
+	column 'MASTER ID'
+		dataType: string
+		lineageTag: 33e09ce6-ec03-41d8-854f-41d7f65ff446
+		summarizeBy: none
+		sourceColumn: MASTER ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ZOHO ID'
+		dataType: string
+		lineageTag: 40e07674-ce5a-48d0-9cfa-b8922a7cb32a
+		summarizeBy: none
+		sourceColumn: ZOHO ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DAYSMART ID'
+		dataType: string
+		lineageTag: 6f938ffd-bdda-4142-80c1-50faf29d6b42
+		summarizeBy: none
+		sourceColumn: DAYSMART ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FULL NAME'
+		dataType: string
+		lineageTag: 01ea6446-a61c-4e5c-9065-ccbde9e472b6
+		summarizeBy: none
+		sourceColumn: FULL NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column EMAIL
+		dataType: string
+		lineageTag: 25d76c2e-e7e8-4620-b1e3-a09f3d4052ac
+		summarizeBy: none
+		sourceColumn: EMAIL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'EMAIL STATUS'
+		dataType: string
+		lineageTag: 3602de7a-25c4-414b-81e1-564f3d6e34ca
+		summarizeBy: none
+		sourceColumn: EMAIL STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LAST APPOINTMENT'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 16deb37e-c2f1-4e1e-80db-83192170e0e2
+		summarizeBy: none
+		sourceColumn: LAST APPOINTMENT
+
+		variation Variation
+			isDefault
+			relationship: 85513b15-07bd-441d-bce8-75c719409682
+			defaultHierarchy: LocalDateTable_c1de9bd0-5020-49d6-84b4-0472fc6409d5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'DAYSMART STATUS'
+		dataType: string
+		lineageTag: 46af5635-093f-4586-9fb0-d00022be1ddf
+		summarizeBy: none
+		sourceColumn: DAYSMART STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DS REVENUE'
+		dataType: double
+		lineageTag: a869fd70-1055-445a-9f95-a41b12ac6eb1
+		summarizeBy: sum
+		sourceColumn: DS REVENUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'DS VISITS'
+		dataType: int64
+		formatString: 0
+		lineageTag: 16f1f13f-4f4b-4d0f-8dbc-cf24e8b2b9a2
+		summarizeBy: sum
+		sourceColumn: DS VISITS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ZOHO LEAD STATUS'
+		dataType: string
+		lineageTag: 2fa7b92d-7352-4e55-a134-5cbe9ebf672a
+		summarizeBy: none
+		sourceColumn: ZOHO LEAD STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'EMAIL OPENS'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e306740-1cdf-4f3d-8199-860a4a05cdbb
+		summarizeBy: sum
+		sourceColumn: EMAIL OPENS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'EMAIL CLICKS'
+		dataType: int64
+		formatString: 0
+		lineageTag: de96cdec-4a7f-4494-8dca-96caa3625376
+		summarizeBy: sum
+		sourceColumn: EMAIL CLICKS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RECORD TYPE'
+		dataType: string
+		lineageTag: 6faf2055-dfa8-4a3f-aa65-15540cbe6d39
+		summarizeBy: none
+		sourceColumn: RECORD TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SOURCE OF TRUTH'
+		dataType: string
+		lineageTag: 50e34020-77ad-4911-8c94-bc78d7cd94d3
+		summarizeBy: none
+		sourceColumn: SOURCE OF TRUTH
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Master Deduped List' = m
+		mode: import
+		source =
+				let
+				    Source = GoogleSheets.Contents("https://docs.google.com/spreadsheets/d/1kWYf-O_ngzJb8RKn5kpSzzUfD_Lih-CRzl2n4BEdScE/edit?gid=868917557#gid=868917557"),
+				    #"🏆 Master Deduped List_Table" = Source{[name="🏆 Master Deduped List",ItemKind="Table"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"🏆 Master Deduped List_Table", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"MASTER CONTACT LIST — Deduplicated  (18,866 unique records)  |  DaySmart = Source of Truth", type text}, {"", type text}, {"_1", type text}, {"_2", type text}, {"_3", type text}, {"_4", type text}, {"_5", type text}, {"_6", type text}, {"_7", type any}, {"_8", type any}, {"_9", type text}, {"_10", type any}, {"_11", type any}, {"_12", type text}, {"_13", type text}}),
+				    #"Promoted Headers1" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers1",{{"MASTER ID", type text}, {"ZOHO ID", type text}, {"DAYSMART ID", type text}, {"FULL NAME", type text}, {"EMAIL", type text}, {"EMAIL STATUS", type text}, {"LAST APPOINTMENT", type date}, {"DAYSMART STATUS", type text}, {"DS REVENUE", type number}, {"DS VISITS", Int64.Type}, {"ZOHO LEAD STATUS", type text}, {"EMAIL OPENS", Int64.Type}, {"EMAIL CLICKS", Int64.Type}, {"RECORD TYPE", type text}, {"SOURCE OF TRUTH", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

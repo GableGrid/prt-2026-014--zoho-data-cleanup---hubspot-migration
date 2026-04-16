@@ -54,3 +54,37 @@ relationship e0fc96de-ef1a-4754-8add-1e660ec0ee69
 	fromColumn: rescued_contacts.ds_last_appt
 	toColumn: LocalDateTable_01206717-08ae-40dc-b134-a91c850935e4.Date
 
+relationship b3a94143-a0a8-462c-8f34-55499ed1aa43
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Matched — Both Systems'.'DS Last Appt'
+	toColumn: LocalDateTable_765aabb3-4565-4581-9d10-a643f4d32ce3.Date
+
+relationship 85513b15-07bd-441d-bce8-75c719409682
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Master Deduped List'.'LAST APPOINTMENT'
+	toColumn: LocalDateTable_c1de9bd0-5020-49d6-84b4-0472fc6409d5.Date
+
+relationship dfb2fced-061a-4e59-a4a2-13238774c0b0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Rescued Contacts'.'DS Last Appt'
+	toColumn: LocalDateTable_474bd2b1-dd25-40a3-912c-0bca632009fb.Date
+
+relationship AutoDetected_cffec5f2-4f30-48a1-995f-5aefb31e3a37
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Matched — Both Systems'.Email
+	toColumn: master_contact_list.Email
+
+relationship AutoDetected_232677e3-2a5a-4236-b7a0-b5a16a7692d2
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Master Deduped List'.EMAIL
+	toColumn: master_contact_list.Email
+
+relationship AutoDetected_a0705812-94b6-46cb-a966-fea9e41848dd
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Matched — Both Systems'.Email
+	toColumn: zoho_crm_contacts.Email
+
