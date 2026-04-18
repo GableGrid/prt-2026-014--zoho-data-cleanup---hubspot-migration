@@ -1,0 +1,111 @@
+table 'ZeroBounce Results'
+	lineageTag: 9e64af1c-bd6d-4462-b7a4-fce1dd10b79a
+
+	column 'MASTER ID'
+		dataType: string
+		lineageTag: 9fabd7a3-5b41-486e-bbc6-9a70ded70431
+		summarizeBy: none
+		sourceColumn: MASTER ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FULL NAME'
+		dataType: string
+		lineageTag: 4a19d019-b0fb-4216-9a01-c1db8ef6682a
+		summarizeBy: none
+		sourceColumn: FULL NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column EMAIL
+		dataType: string
+		lineageTag: 43bdaca2-32a6-4e3b-90f8-e57565b379fe
+		summarizeBy: none
+		sourceColumn: EMAIL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ZB STATUS'
+		dataType: string
+		lineageTag: 78446390-8514-45cd-80f8-e891eab25431
+		summarizeBy: none
+		sourceColumn: ZB STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ZB SCORE'
+		dataType: int64
+		formatString: 0
+		lineageTag: 55304f6a-63e5-409e-baf1-2066af463795
+		summarizeBy: sum
+		sourceColumn: ZB SCORE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ZB SUB STATUS'
+		dataType: string
+		lineageTag: 2ed11631-2656-45d3-842e-3b9e6fe83d7f
+		summarizeBy: none
+		sourceColumn: ZB SUB STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RULE APPLIED'
+		dataType: string
+		lineageTag: 6cd6a615-2c5a-4a63-a993-532225b96c47
+		summarizeBy: none
+		sourceColumn: RULE APPLIED
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACTION
+		dataType: string
+		lineageTag: 05f173e9-8b2e-4a2a-a8df-c59713c02c9e
+		summarizeBy: none
+		sourceColumn: ACTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNSUBSCRIBED
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b33984d9-430f-454d-a744-38356a1be0c3
+		summarizeBy: none
+		sourceColumn: UNSUBSCRIBED
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SMS OPTED OUT'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f61a8628-4d27-43de-8494-49feb0dfea22
+		summarizeBy: none
+		sourceColumn: SMS OPTED OUT
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RECORD TYPE'
+		dataType: string
+		lineageTag: a8bfe75c-1094-48a5-b0f9-c3e5d36ef55c
+		summarizeBy: none
+		sourceColumn: RECORD TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'ZeroBounce Results' = m
+		mode: import
+		source =
+				let
+				    Source = GoogleSheets.Contents("https://docs.google.com/spreadsheets/d/10Vj2InxTmIu--gNSuP_fEFZrWL0uOR0POMacjrYRIas/edit?gid=1048615404#gid=1048615404"),
+				    #"🔍 ZeroBounce Results_Table" = Source{[name="🔍 ZeroBounce Results",ItemKind="Table"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"🔍 ZeroBounce Results_Table", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ZEROBOUNCE VERIFICATION — All 18,866 Records", type text}, {"", type text}, {"_1", type text}, {"_2", type text}, {"_3", type any}, {"_4", type text}, {"_5", type text}, {"_6", type text}, {"_7", type any}, {"_8", type any}, {"_9", type text}}),
+				    #"Promoted Headers1" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers1",{{"MASTER ID", type text}, {"FULL NAME", type text}, {"EMAIL", type text}, {"ZB STATUS", type text}, {"ZB SCORE", Int64.Type}, {"ZB SUB STATUS", type text}, {"RULE APPLIED", type text}, {"ACTION", type text}, {"UNSUBSCRIBED", type logical}, {"SMS OPTED OUT", type logical}, {"RECORD TYPE", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

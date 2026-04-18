@@ -1,0 +1,110 @@
+table 'Deleted Prospects'
+	lineageTag: bbb5af8b-0cd3-4cb4-b2f2-9184f6c02617
+
+	column 'MASTER ID'
+		dataType: string
+		lineageTag: 62adddc0-25e9-405f-9e8e-d0dba9c83f4b
+		summarizeBy: none
+		sourceColumn: MASTER ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FULL NAME'
+		dataType: string
+		lineageTag: b8dc4026-95ea-4247-9612-617d8aaf8c4c
+		summarizeBy: none
+		sourceColumn: FULL NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column EMAIL
+		dataType: string
+		lineageTag: 4b6a6c35-554f-4356-a8ea-55b4ac488e1c
+		summarizeBy: none
+		sourceColumn: EMAIL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ZB STATUS'
+		dataType: string
+		lineageTag: 91f112a8-5ef9-47ca-aeb2-03c7df695dfc
+		summarizeBy: none
+		sourceColumn: ZB STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ZB SUB STATUS'
+		dataType: string
+		lineageTag: 2cfbee2a-411b-4316-9887-47bf416a84ac
+		summarizeBy: none
+		sourceColumn: ZB SUB STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ZOHO LEAD STATUS'
+		dataType: string
+		lineageTag: f9b3f636-049c-4b5e-9d9d-ee86d1c69123
+		summarizeBy: none
+		sourceColumn: ZOHO LEAD STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'EMAIL OPENS'
+		dataType: int64
+		formatString: 0
+		lineageTag: 046b3fc5-d5b9-49ac-935e-e4f3f68b5d57
+		summarizeBy: sum
+		sourceColumn: EMAIL OPENS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'EMAIL CLICKS'
+		dataType: int64
+		formatString: 0
+		lineageTag: 360f01fe-65df-4cb8-b037-0757dcad50ae
+		summarizeBy: sum
+		sourceColumn: EMAIL CLICKS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LAST APPOINTMENT'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 75b573dc-d9da-4cdf-8ef8-18a9954b9cd8
+		summarizeBy: none
+		sourceColumn: LAST APPOINTMENT
+
+		variation Variation
+			isDefault
+			relationship: d72e4163-ec18-492c-ab5c-a080936fe2d2
+			defaultHierarchy: LocalDateTable_2a70b14a-d7cc-4b02-a39e-0068f38e9ca5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ACTION
+		dataType: string
+		lineageTag: 368d78f2-35ac-4aa4-b857-f8f8e132b1de
+		summarizeBy: none
+		sourceColumn: ACTION
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Deleted Prospects' = m
+		mode: import
+		source =
+				let
+				    Source = GoogleSheets.Contents("https://docs.google.com/spreadsheets/d/10Vj2InxTmIu--gNSuP_fEFZrWL0uOR0POMacjrYRIas/edit?gid=1048615404#gid=1048615404"),
+				    #"🗑️ Deleted Prospects_Table" = Source{[name="🗑️ Deleted Prospects",ItemKind="Table"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"🗑️ Deleted Prospects_Table", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"DELETED PROSPECTS — 1,792 Records · Invalid Email · No DaySmart Booking", type text}, {"", type text}, {"_1", type text}, {"_2", type text}, {"_3", type text}, {"_4", type text}, {"_5", type any}, {"_6", type any}, {"_7", type text}, {"_8", type text}}),
+				    #"Promoted Headers1" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers1",{{"MASTER ID", type text}, {"FULL NAME", type text}, {"EMAIL", type text}, {"ZB STATUS", type text}, {"ZB SUB STATUS", type text}, {"ZOHO LEAD STATUS", type text}, {"EMAIL OPENS", Int64.Type}, {"EMAIL CLICKS", Int64.Type}, {"LAST APPOINTMENT", type date}, {"ACTION", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

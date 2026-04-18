@@ -1,0 +1,366 @@
+table top1000_marketing_contacts
+	lineageTag: f35182e1-8195-4b7e-b734-c53e4ed3c2b8
+
+	column Master_ID
+		dataType: string
+		lineageTag: 6332b72c-6551-4d8c-8ddf-c3c37424e653
+		summarizeBy: none
+		sourceColumn: Master_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zoho_ID
+		dataType: string
+		lineageTag: c2d78b03-747b-41c9-80e3-a426576a11e0
+		summarizeBy: none
+		sourceColumn: Zoho_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DaySmart_ID
+		dataType: string
+		lineageTag: 96743b10-b3a0-4cde-8495-ec4a04d52f37
+		summarizeBy: none
+		sourceColumn: DaySmart_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Full_Name
+		dataType: string
+		lineageTag: 84b73914-e1fb-4cb4-a8ab-e0c9e1a055f0
+		summarizeBy: none
+		sourceColumn: Full_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 876771fc-fdff-4c2c-8946-0fbd95425b94
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Status
+		dataType: string
+		lineageTag: 1215c6ea-2730-4acc-bcc5-377f8ae6afe6
+		summarizeBy: none
+		sourceColumn: Email_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_Appointment
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f6cbb944-84cb-4d63-b403-904691648915
+		summarizeBy: none
+		sourceColumn: Last_Appointment
+
+		variation Variation
+			isDefault
+			relationship: 3e47545f-ca78-44dc-8ff4-16752908fda8
+			defaultHierarchy: LocalDateTable_9295d176-2160-4984-8625-bf1b66cbad58.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DaySmart_Status
+		dataType: string
+		lineageTag: cbb8d370-c9a6-4cba-9b25-f41862d52054
+		summarizeBy: none
+		sourceColumn: DaySmart_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_Revenue
+		dataType: double
+		lineageTag: 3777c928-8f38-4f0b-a6d8-71172933c604
+		summarizeBy: sum
+		sourceColumn: DS_Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DS_Visits
+		dataType: int64
+		formatString: 0
+		lineageTag: 33dd0f26-d27d-4a0c-94ce-9b1ef5843079
+		summarizeBy: sum
+		sourceColumn: DS_Visits
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_Service
+		dataType: string
+		lineageTag: fca3ce82-80a2-4f1d-a30a-7e88049bc65a
+		summarizeBy: none
+		sourceColumn: DS_Service
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_Loyalty
+		dataType: int64
+		formatString: 0
+		lineageTag: 4eef69f1-1d81-4ba9-8ce6-a923601a0cf2
+		summarizeBy: sum
+		sourceColumn: DS_Loyalty
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zoho_Lead_Status
+		dataType: string
+		lineageTag: 3f192fdb-6a1f-421e-ba18-416a16fd724f
+		summarizeBy: none
+		sourceColumn: Zoho_Lead_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Opens
+		dataType: int64
+		formatString: 0
+		lineageTag: 85d432a3-f3ad-4bc4-9d76-f1e8e2645761
+		summarizeBy: sum
+		sourceColumn: Email_Opens
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Clicks
+		dataType: int64
+		formatString: 0
+		lineageTag: 90a422c8-cafa-4af1-8e46-b0ed7ac81fb4
+		summarizeBy: sum
+		sourceColumn: Email_Clicks
+
+		annotation SummarizationSetBy = Automatic
+
+	column Record_Type
+		dataType: string
+		lineageTag: 3f1cfaf9-6618-4a73-9769-72465414fcbb
+		summarizeBy: none
+		sourceColumn: Record_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source_of_Truth
+		dataType: string
+		lineageTag: 102e4d0d-3aad-4ff5-9b33-bf561afbe5db
+		summarizeBy: none
+		sourceColumn: Source_of_Truth
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZB_Status
+		dataType: string
+		lineageTag: 7b19f584-4241-47cc-8c7f-5a249597765d
+		summarizeBy: none
+		sourceColumn: ZB_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZB_Score
+		dataType: int64
+		formatString: 0
+		lineageTag: 43deba38-7ba3-4197-82f2-2444cbceea28
+		summarizeBy: sum
+		sourceColumn: ZB_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZB_Sub_Status
+		dataType: string
+		lineageTag: 7676192e-5865-474e-92ad-1e4bd62427c5
+		summarizeBy: none
+		sourceColumn: ZB_Sub_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unsubscribed
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4edeaedf-0385-476a-ab89-cb4c0af9e804
+		summarizeBy: none
+		sourceColumn: Unsubscribed
+
+		annotation SummarizationSetBy = Automatic
+
+	column SMS_Opted_Out
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d52eb27d-fa4a-46fe-a701-364c5dd5e9cf
+		summarizeBy: none
+		sourceColumn: SMS_Opted_Out
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_invalid_email
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ed5723cd-0a53-474e-9cee-b44c6ef5a9f4
+		summarizeBy: none
+		sourceColumn: is_invalid_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_active_client
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: cff15eaf-1467-4620-ab95-4817e989fc3e
+		summarizeBy: none
+		sourceColumn: is_active_client
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_prospect
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 22364111-6146-4b2d-a61b-3014c96a1e9f
+		summarizeBy: none
+		sourceColumn: is_prospect
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_matched_ds
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 518aa9ae-1b4a-4e0c-a556-f4daaf8f5d30
+		summarizeBy: none
+		sourceColumn: is_matched_ds
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rule_Applied
+		dataType: string
+		lineageTag: bbb0716a-7de5-4a36-a76b-f8990cf17db8
+		summarizeBy: none
+		sourceColumn: Rule_Applied
+
+		annotation SummarizationSetBy = Automatic
+
+	column Action
+		dataType: string
+		lineageTag: 7fa30ab4-1232-43c8-81e4-7ac26bc1f0b1
+		summarizeBy: none
+		sourceColumn: Action
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Final
+		dataType: string
+		lineageTag: 2fdd509f-cde6-4d7a-a4eb-3fed70531fe8
+		summarizeBy: none
+		sourceColumn: Email_Final
+
+		annotation SummarizationSetBy = Automatic
+
+	column Suppress_Email
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b7afcf30-e178-4525-bb18-46e1787c4f5a
+		summarizeBy: none
+		sourceColumn: Suppress_Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_since_appt
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f0ffc26-da96-4a52-9b5b-66dbb1f0a338
+		summarizeBy: sum
+		sourceColumn: days_since_appt
+
+		annotation SummarizationSetBy = Automatic
+
+	column Score_ZB
+		dataType: int64
+		formatString: 0
+		lineageTag: ff6bd646-de57-49b8-9359-321d2bbaa4ba
+		summarizeBy: sum
+		sourceColumn: Score_ZB
+
+		annotation SummarizationSetBy = Automatic
+
+	column Score_Opens
+		dataType: double
+		lineageTag: f85f3f9f-d2c0-40d3-be55-cf01d5083d6f
+		summarizeBy: sum
+		sourceColumn: Score_Opens
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Score_Clicks
+		dataType: double
+		lineageTag: 79557208-67de-4a35-a871-af90f8c03325
+		summarizeBy: sum
+		sourceColumn: Score_Clicks
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Score_Recency
+		dataType: double
+		lineageTag: 9b8f4da3-f996-45a3-a064-a104b8b257a8
+		summarizeBy: sum
+		sourceColumn: Score_Recency
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Score_Revenue
+		dataType: double
+		lineageTag: 8c2f9bd0-3ba9-429c-8d6e-77c15a067245
+		summarizeBy: sum
+		sourceColumn: Score_Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Score_Visits
+		dataType: double
+		lineageTag: 919dc55a-06b4-42e8-bedb-fb2aeac0d4dd
+		summarizeBy: sum
+		sourceColumn: Score_Visits
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Marketing_Score
+		dataType: double
+		lineageTag: c3f7d292-e300-4995-a6d9-2a0b14663a77
+		summarizeBy: sum
+		sourceColumn: Marketing_Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Marketing_Rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 5cffad07-7d97-44c5-92b2-7b600fd26c13
+		summarizeBy: sum
+		sourceColumn: Marketing_Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	partition top1000_marketing_contacts = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\User\Downloads\top1000_marketing_contacts.csv"),[Delimiter=",", Columns=39, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Master_ID", type text}, {"Zoho_ID", type text}, {"DaySmart_ID", type text}, {"Full_Name", type text}, {"Email", type text}, {"Email_Status", type text}, {"Last_Appointment", type date}, {"DaySmart_Status", type text}, {"DS_Revenue", type number}, {"DS_Visits", Int64.Type}, {"DS_Service", type text}, {"DS_Loyalty", Int64.Type}, {"Zoho_Lead_Status", type text}, {"Email_Opens", Int64.Type}, {"Email_Clicks", Int64.Type}, {"Record_Type", type text}, {"Source_of_Truth", type text}, {"ZB_Status", type text}, {"ZB_Score", Int64.Type}, {"ZB_Sub_Status", type text}, {"Unsubscribed", type logical}, {"SMS_Opted_Out", type logical}, {"is_invalid_email", type logical}, {"is_active_client", type logical}, {"is_prospect", type logical}, {"is_matched_ds", type logical}, {"Rule_Applied", type text}, {"Action", type text}, {"Email_Final", type text}, {"Suppress_Email", type logical}, {"days_since_appt", Int64.Type}, {"Score_ZB", Int64.Type}, {"Score_Opens", type number}, {"Score_Clicks", type number}, {"Score_Recency", type number}, {"Score_Revenue", type number}, {"Score_Visits", type number}, {"Marketing_Score", type number}, {"Marketing_Rank", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

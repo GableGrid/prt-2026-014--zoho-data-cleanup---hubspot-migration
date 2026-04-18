@@ -88,3 +88,117 @@ relationship AutoDetected_a0705812-94b6-46cb-a966-fea9e41848dd
 	fromColumn: 'Matched — Both Systems'.Email
 	toColumn: zoho_crm_contacts.Email
 
+relationship 7ced26e7-7c0c-4309-b088-036c49c2f953
+	joinOnDateBehavior: datePartOnly
+	fromColumn: master_rules_applied.Last_Appointment
+	toColumn: LocalDateTable_8ff40ca7-9626-48d8-814f-0e7c55b20b05.Date
+
+relationship AutoDetected_4e536fff-0314-41c7-b301-c3189a5ed5d9
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: master_rules_applied.Email
+	toColumn: master_contact_list.Email
+
+relationship AutoDetected_18e7c60b-5e32-412a-9c75-88d7ffdde5ca
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: master_rules_applied.Email
+	toColumn: zoho_crm_contacts.Email
+
+relationship AutoDetected_33478e6c-6599-4e77-b9c0-4daf5cbb048c
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Master Deduped List'.'MASTER ID'
+	toColumn: master_rules_applied.Master_ID
+
+relationship 3e47545f-ca78-44dc-8ff4-16752908fda8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: top1000_marketing_contacts.Last_Appointment
+	toColumn: LocalDateTable_9295d176-2160-4984-8625-bf1b66cbad58.Date
+
+relationship AutoDetected_7b1cce71-dde1-4495-9302-9c9e8954cbfa
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: top1000_marketing_contacts.Email
+	toColumn: master_contact_list.Email
+
+relationship AutoDetected_a4ee74d8-f7e9-4f1b-93f1-69da1ebcdf07
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: top1000_marketing_contacts.Email
+	toColumn: master_rules_applied.Email
+
+relationship AutoDetected_11fa280b-735e-4e59-9712-87bf4eac5b50
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: top1000_marketing_contacts.Email
+	toColumn: zoho_crm_contacts.Email
+
+relationship d72e4163-ec18-492c-ab5c-a080936fe2d2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Deleted Prospects'.'LAST APPOINTMENT'
+	toColumn: LocalDateTable_2a70b14a-d7cc-4b02-a39e-0068f38e9ca5.Date
+
+relationship 90b6cd45-57ff-44f3-b006-83d16ac6aee0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Clinical Exceptions'.'LAST APPOINTMENT'
+	toColumn: LocalDateTable_5424a663-d346-476d-8e32-ead79275df80.Date
+
+relationship AutoDetected_6bed4068-26d9-4100-bfc0-9ed77c115884
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'ZeroBounce Results'.EMAIL
+	toColumn: master_contact_list.Email
+
+relationship AutoDetected_f780f05d-4215-4f93-ad3d-8331e9c8ba99
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Deleted Prospects'.EMAIL
+	toColumn: master_contact_list.Email
+
+relationship AutoDetected_d4435479-a8d4-47fb-bcec-e0b047e7fed8
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'ZeroBounce Results'.EMAIL
+	toColumn: master_rules_applied.Email
+
+relationship AutoDetected_4c31ea94-7e0b-418d-a14e-383e3f475a91
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Deleted Prospects'.EMAIL
+	toColumn: master_rules_applied.Email
+
+relationship AutoDetected_998e10e0-12ab-46c9-8ba6-4bbafe91314a
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Deleted Prospects'.EMAIL
+	toColumn: zoho_crm_contacts.Email
+
+relationship AutoDetected_54ff9876-2117-44ba-9390-9ee8ed5522e0
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Master Deduped List'.'MASTER ID'
+	toColumn: 'ZeroBounce Results'.'MASTER ID'
+
+relationship AutoDetected_7197d86e-2e3f-4329-96e7-d7222a095344
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: top1000_marketing_contacts.Master_ID
+	toColumn: 'ZeroBounce Results'.'MASTER ID'
+
+relationship AutoDetected_4248d572-ee67-49d2-b2e8-b3e3fbc2cb39
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Deleted Prospects'.'MASTER ID'
+	toColumn: 'ZeroBounce Results'.'MASTER ID'
+

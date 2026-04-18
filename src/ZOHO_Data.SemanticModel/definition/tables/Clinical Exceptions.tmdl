@@ -1,0 +1,111 @@
+table 'Clinical Exceptions'
+	lineageTag: 48ce63a0-4360-4f9a-b7f2-9abaf234e08f
+
+	column 'MASTER ID'
+		dataType: string
+		lineageTag: 3d5b67cd-2832-47bc-bc49-122c8424446c
+		summarizeBy: none
+		sourceColumn: MASTER ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FULL NAME'
+		dataType: string
+		lineageTag: 29824952-3c35-49f5-a730-d9b30f9a2bae
+		summarizeBy: none
+		sourceColumn: FULL NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column EMAIL
+		dataType: string
+		lineageTag: 2d308c29-2ac2-48b6-872c-593363af3485
+		summarizeBy: none
+		sourceColumn: EMAIL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ZB STATUS'
+		dataType: string
+		lineageTag: 2ee9a29c-4930-45eb-9779-cdb6a3517790
+		summarizeBy: none
+		sourceColumn: ZB STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ZB SUB STATUS'
+		dataType: string
+		lineageTag: 786c9ef0-011a-417d-9d8f-575bfa870c3d
+		summarizeBy: none
+		sourceColumn: ZB SUB STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DS VISITS'
+		dataType: int64
+		formatString: 0
+		lineageTag: bb93672f-98f5-4171-82a4-777aca236266
+		summarizeBy: sum
+		sourceColumn: DS VISITS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DS REVENUE'
+		dataType: double
+		lineageTag: 83809128-1428-4dd6-83a7-140d0e4f4d5f
+		summarizeBy: sum
+		sourceColumn: DS REVENUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'LAST APPOINTMENT'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 94a6f786-3a5f-4867-81a2-8bdb36e3ef8d
+		summarizeBy: none
+		sourceColumn: LAST APPOINTMENT
+
+		variation Variation
+			isDefault
+			relationship: 90b6cd45-57ff-44f3-b006-83d16ac6aee0
+			defaultHierarchy: LocalDateTable_5424a663-d346-476d-8e32-ead79275df80.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'DAYSMART STATUS'
+		dataType: string
+		lineageTag: 02e18858-5d50-41ef-bce8-42aac86847d3
+		summarizeBy: none
+		sourceColumn: DAYSMART STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACTION
+		dataType: string
+		lineageTag: 94a3e801-5be7-4f2f-9187-20c6582c31f4
+		summarizeBy: none
+		sourceColumn: ACTION
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Clinical Exceptions' = m
+		mode: import
+		source =
+				let
+				    Source = GoogleSheets.Contents("https://docs.google.com/spreadsheets/d/10Vj2InxTmIu--gNSuP_fEFZrWL0uOR0POMacjrYRIas/edit?gid=1048615404#gid=1048615404"),
+				    #"🧬 Clinical Exceptions_Table" = Source{[name="🧬 Clinical Exceptions",ItemKind="Table"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"🧬 Clinical Exceptions_Table", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"CLINICAL EXCEPTIONS — 9 Active Clients · Email Nulled · Name+Phone Retained", type text}, {"", type text}, {"_1", type text}, {"_2", type text}, {"_3", type text}, {"_4", type any}, {"_5", type any}, {"_6", type text}, {"_7", type text}, {"_8", type text}}),
+				    #"Promoted Headers1" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers1",{{"MASTER ID", type text}, {"FULL NAME", type text}, {"EMAIL", type text}, {"ZB STATUS", type text}, {"ZB SUB STATUS", type text}, {"DS VISITS", Int64.Type}, {"DS REVENUE", type number}, {"LAST APPOINTMENT", type date}, {"DAYSMART STATUS", type text}, {"ACTION", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

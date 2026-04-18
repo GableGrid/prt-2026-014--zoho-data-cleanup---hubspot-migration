@@ -1,0 +1,279 @@
+table master_rules_applied
+	lineageTag: 7af68066-c565-4e78-801c-a05bce6e8dcb
+
+	column Master_ID
+		dataType: string
+		lineageTag: a612faa6-0427-45bf-a82d-3bb050df85ff
+		summarizeBy: none
+		sourceColumn: Master_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zoho_ID
+		dataType: string
+		lineageTag: 2d6ee7b2-5124-4614-9308-100b890b70a3
+		summarizeBy: none
+		sourceColumn: Zoho_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DaySmart_ID
+		dataType: string
+		lineageTag: 2bf7fce9-7a95-4a7b-9087-e3aa7900d7cc
+		summarizeBy: none
+		sourceColumn: DaySmart_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Full_Name
+		dataType: string
+		lineageTag: ae32eda1-b3b9-4b6d-b894-90585c1a038c
+		summarizeBy: none
+		sourceColumn: Full_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 9b9456ad-901b-4fef-844e-94add4ac89df
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Status
+		dataType: string
+		lineageTag: 21fcde4e-cbac-497b-bae6-f3750133ba44
+		summarizeBy: none
+		sourceColumn: Email_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_Appointment
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c1362e82-140d-4777-8686-6703bde8f570
+		summarizeBy: none
+		sourceColumn: Last_Appointment
+
+		variation Variation
+			isDefault
+			relationship: 7ced26e7-7c0c-4309-b088-036c49c2f953
+			defaultHierarchy: LocalDateTable_8ff40ca7-9626-48d8-814f-0e7c55b20b05.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DaySmart_Status
+		dataType: string
+		lineageTag: 61233cb0-045a-4df6-abcc-7d5ab9b80aa1
+		summarizeBy: none
+		sourceColumn: DaySmart_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_Revenue
+		dataType: double
+		lineageTag: 8c3f74a7-728f-4836-bba6-d2b83f49a47f
+		summarizeBy: sum
+		sourceColumn: DS_Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DS_Visits
+		dataType: int64
+		formatString: 0
+		lineageTag: 69c1a111-5663-417d-88bc-1a19d28687b2
+		summarizeBy: sum
+		sourceColumn: DS_Visits
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_Service
+		dataType: string
+		lineageTag: 4b10fbff-c682-48a7-90f9-079a6c4a523c
+		summarizeBy: none
+		sourceColumn: DS_Service
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_Loyalty
+		dataType: int64
+		formatString: 0
+		lineageTag: ce022415-c33f-4e61-9d97-dfed6cc547db
+		summarizeBy: sum
+		sourceColumn: DS_Loyalty
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zoho_Lead_Status
+		dataType: string
+		lineageTag: 0eba9dc5-8c3e-4b71-8a34-3f68aa6fe7c8
+		summarizeBy: none
+		sourceColumn: Zoho_Lead_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Opens
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b5e2554-c5ef-45e3-b317-353afa656c99
+		summarizeBy: sum
+		sourceColumn: Email_Opens
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Clicks
+		dataType: int64
+		formatString: 0
+		lineageTag: e15aea26-1ca8-427c-987f-536b78f45732
+		summarizeBy: sum
+		sourceColumn: Email_Clicks
+
+		annotation SummarizationSetBy = Automatic
+
+	column Record_Type
+		dataType: string
+		lineageTag: c7e47491-6bb1-4713-acad-921dcf5fbeec
+		summarizeBy: none
+		sourceColumn: Record_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source_of_Truth
+		dataType: string
+		lineageTag: dafc5e95-f3a1-4027-bf49-573cacee5835
+		summarizeBy: none
+		sourceColumn: Source_of_Truth
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZB_Status
+		dataType: string
+		lineageTag: 7991300a-7c5a-4f56-9516-9130529efebb
+		summarizeBy: none
+		sourceColumn: ZB_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZB_Score
+		dataType: int64
+		formatString: 0
+		lineageTag: 346fdceb-7571-4d39-a0fb-c66f42e642ac
+		summarizeBy: sum
+		sourceColumn: ZB_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZB_Sub_Status
+		dataType: string
+		lineageTag: 5f62172f-670b-4561-8a52-3c63ec96765e
+		summarizeBy: none
+		sourceColumn: ZB_Sub_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unsubscribed
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: dbd8b117-91db-4ab6-ad74-0c44e50e2a11
+		summarizeBy: none
+		sourceColumn: Unsubscribed
+
+		annotation SummarizationSetBy = Automatic
+
+	column SMS_Opted_Out
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 374b7ddd-556f-4974-86fb-37cd66e4d942
+		summarizeBy: none
+		sourceColumn: SMS_Opted_Out
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_invalid_email
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 50050fd9-7362-4137-bfab-c91cdd965ced
+		summarizeBy: none
+		sourceColumn: is_invalid_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_active_client
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 406cd2bb-7623-44bf-a73c-1dbc6dc4061e
+		summarizeBy: none
+		sourceColumn: is_active_client
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_prospect
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c2900a69-2249-45cd-b647-df2c8eecde15
+		summarizeBy: none
+		sourceColumn: is_prospect
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_matched_ds
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 059172f1-8882-4b31-81f6-3a514f91c2cd
+		summarizeBy: none
+		sourceColumn: is_matched_ds
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rule_Applied
+		dataType: string
+		lineageTag: 2a6dafc4-dcc8-4e20-9495-8de3494a7fc9
+		summarizeBy: none
+		sourceColumn: Rule_Applied
+
+		annotation SummarizationSetBy = Automatic
+
+	column Action
+		dataType: string
+		lineageTag: 229238ba-d704-466d-944c-79d80a2bd4a7
+		summarizeBy: none
+		sourceColumn: Action
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email_Final
+		dataType: string
+		lineageTag: bbd61922-d963-4003-9363-ec964b22d88a
+		summarizeBy: none
+		sourceColumn: Email_Final
+
+		annotation SummarizationSetBy = Automatic
+
+	column Suppress_Email
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 42d30e95-9029-42b9-93b4-2f557ecdb020
+		summarizeBy: none
+		sourceColumn: Suppress_Email
+
+		annotation SummarizationSetBy = Automatic
+
+	partition master_rules_applied = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\User\Downloads\master_rules_applied.csv"),[Delimiter=",", Columns=30, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Master_ID", type text}, {"Zoho_ID", type text}, {"DaySmart_ID", type text}, {"Full_Name", type text}, {"Email", type text}, {"Email_Status", type text}, {"Last_Appointment", type date}, {"DaySmart_Status", type text}, {"DS_Revenue", type number}, {"DS_Visits", Int64.Type}, {"DS_Service", type text}, {"DS_Loyalty", Int64.Type}, {"Zoho_Lead_Status", type text}, {"Email_Opens", Int64.Type}, {"Email_Clicks", Int64.Type}, {"Record_Type", type text}, {"Source_of_Truth", type text}, {"ZB_Status", type text}, {"ZB_Score", Int64.Type}, {"ZB_Sub_Status", type text}, {"Unsubscribed", type logical}, {"SMS_Opted_Out", type logical}, {"is_invalid_email", type logical}, {"is_active_client", type logical}, {"is_prospect", type logical}, {"is_matched_ds", type logical}, {"Rule_Applied", type text}, {"Action", type text}, {"Email_Final", type text}, {"Suppress_Email", type logical}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

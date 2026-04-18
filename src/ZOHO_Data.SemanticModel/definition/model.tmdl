@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["daysmart_full_classified","zoho_crm_contacts","zoho_only_prospects","master_contact_list","rescued_contacts","Matched — Both Systems","Master Deduped List","Rescued Contacts"]
+annotation PBI_QueryOrder = ["daysmart_full_classified","zoho_crm_contacts","zoho_only_prospects","master_contact_list","rescued_contacts","Matched — Both Systems","Master Deduped List","Rescued Contacts","master_rules_applied","top1000_marketing_contacts","ZeroBounce Results","Deleted Prospects","Clinical Exceptions"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -32,6 +32,15 @@ ref table 'Master Deduped List'
 ref table LocalDateTable_c1de9bd0-5020-49d6-84b4-0472fc6409d5
 ref table 'Rescued Contacts'
 ref table LocalDateTable_474bd2b1-dd25-40a3-912c-0bca632009fb
+ref table master_rules_applied
+ref table LocalDateTable_8ff40ca7-9626-48d8-814f-0e7c55b20b05
+ref table top1000_marketing_contacts
+ref table LocalDateTable_9295d176-2160-4984-8625-bf1b66cbad58
+ref table 'ZeroBounce Results'
+ref table 'Deleted Prospects'
+ref table LocalDateTable_2a70b14a-d7cc-4b02-a39e-0068f38e9ca5
+ref table 'Clinical Exceptions'
+ref table LocalDateTable_5424a663-d346-476d-8e32-ead79275df80
 
 ref cultureInfo en-US
 
