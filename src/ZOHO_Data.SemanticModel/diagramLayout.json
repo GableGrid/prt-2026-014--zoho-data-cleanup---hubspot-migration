@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
+        "x": 147.75137189031838,
         "y": 0
       },
       "nodes": [
         {
           "location": {
-            "x": 356.90503372878521,
-            "y": 106.86576038915148
+            "x": 272.475678362889,
+            "y": 50.7669091543608
           },
           "nodeIndex": "zoho_crm_contacts",
           "nodeLineageTag": "2316ab7c-a459-4ebd-8eb9-9f7656adc345",
@@ -19,12 +19,12 @@
             "height": 555.85273150433386,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
             "x": 0,
-            "y": 0
+            "y": 12.5
           },
           "nodeIndex": "daysmart_full_classified",
           "nodeLineageTag": "d57cd8fa-dc80-4973-950b-1f79a8a646d0",
@@ -32,12 +32,12 @@
             "height": 679.87942052200447,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
         },
         {
           "location": {
             "x": 640.90503372878516,
-            "y": 189.93971026100223
+            "y": 202.43971026100223
           },
           "nodeIndex": "zoho_only_prospects",
           "nodeLineageTag": "3260bb96-8c92-46f1-8080-e736ea50ba18",
@@ -45,12 +45,12 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 3
         },
         {
           "location": {
-            "x": 924.90503372878516,
-            "y": 189.93971026100223
+            "x": 898.52086017694251,
+            "y": 606.11756560419349
           },
           "nodeIndex": "master_contact_list",
           "nodeLineageTag": "1786041d-c729-46fc-9b80-340bcff41224",
@@ -58,12 +58,12 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 4
         },
         {
           "location": {
-            "x": 1208.9050337287852,
-            "y": 189.93971026100223
+            "x": 1164.0519386906528,
+            "y": 157.58661522286988
           },
           "nodeIndex": "rescued_contacts",
           "nodeLineageTag": "188905d5-7905-44b0-b2f6-d7c8b4d013f4",
@@ -71,47 +71,115 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 5
         },
         {
           "location": {
-            "x": 1492.9050337287852,
-            "y": 189.93971026100223
+            "x": 1429.5830172043629,
+            "y": 392.40575983426874
           },
           "nodeIndex": "Matched — Both Systems",
+          "nodeLineageTag": "f573f1c2-6cfc-4767-87ad-6a2e6e94f53a",
           "size": {
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 6
         },
         {
           "location": {
-            "x": 1776.9050337287852,
-            "y": 189.93971026100223
+            "x": 1676.6451742317836,
+            "y": 110.09510282955326
           },
           "nodeIndex": "Master Deduped List",
+          "nodeLineageTag": "051fed61-26e8-42c5-8168-9d39ad3d7bb3",
           "size": {
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 7
         },
         {
           "location": {
-            "x": 2060.9050337287854,
-            "y": 203.93971026100223
+            "x": 2052.9897816632324,
+            "y": 401.12892512390022
           },
           "nodeIndex": "Rescued Contacts",
+          "nodeLineageTag": "66352f57-6f69-48e8-8d28-2639258ed3dd",
           "size": {
             "height": 272,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 2329.07452959768,
+            "y": 96.903016053631973
+          },
+          "nodeIndex": "master_rules_applied",
+          "nodeLineageTag": "7af68066-c565-4e78-801c-a05bce6e8dcb",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 2634.1818684391537,
+            "y": 471.5582804897964
+          },
+          "nodeIndex": "top1000_marketing_contacts",
+          "nodeLineageTag": "f35182e1-8195-4b7e-b734-c53e4ed3c2b8",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 3222.3401329207286,
+            "y": 532.24187965903434
+          },
+          "nodeIndex": "Clinical Exceptions",
+          "nodeLineageTag": "48ce63a0-4360-4f9a-b7f2-9abaf234e08f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 13
+        },
+        {
+          "location": {
+            "x": 3326.0575543843129,
+            "y": 0
+          },
+          "nodeIndex": "Deleted Prospects",
+          "nodeLineageTag": "bbb5af8b-0cd3-4cb4-b2f2-9184f6c02617",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 2759.7468973795976,
+            "y": 23.157259856973667
+          },
+          "nodeIndex": "ZeroBounce Results",
+          "nodeLineageTag": "9e64af1c-bd6d-4462-b7a4-fce1dd10b79a",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 12
         }
       ],
       "name": "All tables",
-      "zoomValue": 59.888218421825769,
+      "zoomValue": 37.901509328502883,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
