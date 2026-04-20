@@ -286,3 +286,19 @@ relationship AutoDetected_c0667947-532a-4abf-a50d-c672ea5a3083
 	fromColumn: FileD_Archive.master_id
 	toColumn: 'ZeroBounce Results'.'MASTER ID'
 
+relationship 9074109f-ac34-69e9-768a-bea6395cb895
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: FileB_Scheduler_Contacts_LIVE.email
+	toColumn: FileA_HubSpot_Import.email
+
+relationship 0a9ba8f0-0e28-89af-dda1-8b6670731b95
+	isActive: false
+	fromColumn: FileA_HubSpot_Import.email
+	toColumn: zoho_crm_contacts.Email
+
+relationship 744ca264-2d76-a84d-dc3b-acf70a45e331
+	isActive: false
+	fromColumn: FileA_HubSpot_Import.email
+	toColumn: master_rules_applied.Email
+
