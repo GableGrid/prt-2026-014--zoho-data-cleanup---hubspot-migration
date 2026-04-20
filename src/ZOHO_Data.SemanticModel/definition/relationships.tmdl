@@ -202,3 +202,87 @@ relationship AutoDetected_4248d572-ee67-49d2-b2e8-b3e3fbc2cb39
 	fromColumn: 'Deleted Prospects'.'MASTER ID'
 	toColumn: 'ZeroBounce Results'.'MASTER ID'
 
+relationship a6d30def-5df0-446e-9da6-cf52307ce8f2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FileA_HubSpot_Import.hs_analytics_last_visit_timestamp
+	toColumn: LocalDateTable_1a839ff1-26db-414e-90e6-2389555b2552.Date
+
+relationship 0a963801-bf13-4f18-9667-0c9fb1b891d6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FileA_HubSpot_Import.zoho_last_open_date
+	toColumn: LocalDateTable_9d33f517-5836-4136-b547-c2ba8af62e78.Date
+
+relationship 3c541b6f-82b2-439b-9f95-3adbee5dd605
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FileA_HubSpot_Import.last_appointment_date
+	toColumn: LocalDateTable_c94bf562-f18c-4ef2-ace1-aa0e0c9dff0f.Date
+
+relationship 4feb42a5-eaab-4d8a-a5b3-84637b3619ca
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FileA_HubSpot_Import.import_date
+	toColumn: LocalDateTable_6f68d7c4-8481-427b-a2da-13aff6a0904e.Date
+
+relationship AutoDetected_e75aa803-818d-482a-8f2c-88f623b65621
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: top1000_marketing_contacts.Master_ID
+	toColumn: FileA_HubSpot_Import.master_id
+
+relationship AutoDetected_ae837bdd-1df4-4bc1-a3cb-a0d1dcc21e40
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Clinical Exceptions'.'MASTER ID'
+	toColumn: FileA_HubSpot_Import.master_id
+
+relationship b7626c97-afc1-4221-b154-3f10a169fba9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FileB_Scheduler_Contacts_LIVE.last_appointment_date
+	toColumn: LocalDateTable_46c7e4ef-05b5-470f-bbc9-be94f13cfcf9.Date
+
+relationship e08c54ff-f7a4-4535-8d41-a2301dec32d0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FileB_Scheduler_Contacts_LIVE.import_date
+	toColumn: LocalDateTable_4f9f8207-059c-4c84-a93e-49318c62f4bb.Date
+
+relationship a656d706-f3a0-4b65-8a80-f283ab59a435
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FileC_Scheduler_ApptHistory_LIVE.appointment_date
+	toColumn: LocalDateTable_c0e705b6-6462-4129-a7fc-f86f6de993bc.Date
+
+relationship af232bd6-3c16-4769-8748-3ebf14684ebd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FileC_Scheduler_ApptHistory_LIVE.import_date
+	toColumn: LocalDateTable_04c4e4b5-bfa1-41b6-bbb7-4577f8cb429f.Date
+
+relationship AutoDetected_ee84f6eb-d183-48ea-94fe-629c80ed437c
+	fromColumn: FileC_Scheduler_ApptHistory_LIVE.contact_id
+	toColumn: FileB_Scheduler_Contacts_LIVE.contact_id
+
+relationship 3653054c-2ad1-4b62-9cbf-bb40b18656d1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FileD_Archive.last_known_appointment
+	toColumn: LocalDateTable_f9774d14-3c33-4fc5-b039-3dec49959b5a.Date
+
+relationship 9370817a-d405-47c1-b650-ed47f5bb97c8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FileD_Archive.archive_last_appt
+	toColumn: LocalDateTable_5febb286-6fc5-4b4d-9608-b5be1852675c.Date
+
+relationship dfb0f5e3-305d-4657-92cb-b260c8f54c7e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FileD_Archive.archived_date
+	toColumn: LocalDateTable_f9e052d9-5f57-41df-910e-438745ed5f24.Date
+
+relationship AutoDetected_71a2c23a-b4b5-4b2f-bfe8-84bbefb9d938
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: FileD_Archive.master_id
+	toColumn: FileA_HubSpot_Import.master_id
+
+relationship AutoDetected_c0667947-532a-4abf-a50d-c672ea5a3083
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: FileD_Archive.master_id
+	toColumn: 'ZeroBounce Results'.'MASTER ID'
+

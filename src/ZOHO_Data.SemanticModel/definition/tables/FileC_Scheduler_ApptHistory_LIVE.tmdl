@@ -1,0 +1,130 @@
+table FileC_Scheduler_ApptHistory_LIVE
+	lineageTag: 9a3a7039-b9b7-433c-8955-c53d3cc0db66
+
+	column appointment_id
+		dataType: string
+		lineageTag: 6b49fa8d-58f2-4bfc-b4ae-fa1de1b577b2
+		summarizeBy: none
+		sourceColumn: appointment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column contact_id
+		dataType: string
+		lineageTag: 55f63248-5138-48e3-b53b-777e17c47b93
+		summarizeBy: none
+		sourceColumn: contact_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column daysmart_contact_id
+		dataType: string
+		lineageTag: a5732862-5e36-49a4-9e6c-304551e54d1c
+		summarizeBy: none
+		sourceColumn: daysmart_contact_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column appointment_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cdedaa95-121d-4659-bca8-9ed8d0ae3543
+		summarizeBy: none
+		sourceColumn: appointment_date
+
+		variation Variation
+			isDefault
+			relationship: a656d706-f3a0-4b65-8a80-f283ab59a435
+			defaultHierarchy: LocalDateTable_c0e705b6-6462-4129-a7fc-f86f6de993bc.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column service
+		dataType: string
+		lineageTag: 93101f3d-69a7-439c-9f5b-98d6bf26a8e3
+		summarizeBy: none
+		sourceColumn: service
+
+		annotation SummarizationSetBy = Automatic
+
+	column staff_member
+		dataType: string
+		lineageTag: 36717231-39dd-4be7-86e8-761a811499f6
+		summarizeBy: none
+		sourceColumn: staff_member
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration_minutes
+		dataType: int64
+		formatString: 0
+		lineageTag: 34096d77-6f29-4417-8975-4ebeac269b69
+		summarizeBy: sum
+		sourceColumn: duration_minutes
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount_usd
+		dataType: double
+		lineageTag: f28e26be-b6dd-4e56-bd5d-4e9028cd2a9e
+		summarizeBy: sum
+		sourceColumn: amount_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column status
+		dataType: string
+		lineageTag: 9f7ec37f-ff26-49e8-9c3a-ae6217360e0e
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column location
+		dataType: string
+		lineageTag: 8e48c284-8ef8-4052-be58-097245d29140
+		summarizeBy: none
+		sourceColumn: location
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_status
+		dataType: string
+		lineageTag: 008b9236-4853-4889-8d57-ff4770c4ca2f
+		summarizeBy: none
+		sourceColumn: data_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column import_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8de424dd-5949-4ddd-b180-ba2ac262ed9e
+		summarizeBy: none
+		sourceColumn: import_date
+
+		variation Variation
+			isDefault
+			relationship: af232bd6-3c16-4769-8748-3ebf14684ebd
+			defaultHierarchy: LocalDateTable_04c4e4b5-bfa1-41b6-bbb7-4577f8cb429f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition FileC_Scheduler_ApptHistory_LIVE = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\User\Downloads\files\FileC_Scheduler_ApptHistory_LIVE.csv"),[Delimiter=",", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"appointment_id", type text}, {"contact_id", type text}, {"daysmart_contact_id", type text}, {"appointment_date", type date}, {"service", type text}, {"staff_member", type text}, {"duration_minutes", Int64.Type}, {"amount_usd", type number}, {"status", type text}, {"location", type text}, {"data_status", type text}, {"import_date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

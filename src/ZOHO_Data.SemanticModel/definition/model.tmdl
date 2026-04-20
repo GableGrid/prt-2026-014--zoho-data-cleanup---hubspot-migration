@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["daysmart_full_classified","zoho_crm_contacts","zoho_only_prospects","master_contact_list","rescued_contacts","Matched — Both Systems","Master Deduped List","Rescued Contacts","master_rules_applied","top1000_marketing_contacts","ZeroBounce Results","Deleted Prospects","Clinical Exceptions"]
+annotation PBI_QueryOrder = ["daysmart_full_classified","zoho_crm_contacts","zoho_only_prospects","master_contact_list","rescued_contacts","Matched — Both Systems","Master Deduped List","Rescued Contacts","master_rules_applied","top1000_marketing_contacts","ZeroBounce Results","Deleted Prospects","Clinical Exceptions","FileA_HubSpot_Import","FileB_Scheduler_Contacts_LIVE","FileC_Scheduler_ApptHistory_LIVE","FileD_Archive"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -41,6 +41,21 @@ ref table 'Deleted Prospects'
 ref table LocalDateTable_2a70b14a-d7cc-4b02-a39e-0068f38e9ca5
 ref table 'Clinical Exceptions'
 ref table LocalDateTable_5424a663-d346-476d-8e32-ead79275df80
+ref table FileA_HubSpot_Import
+ref table LocalDateTable_1a839ff1-26db-414e-90e6-2389555b2552
+ref table LocalDateTable_9d33f517-5836-4136-b547-c2ba8af62e78
+ref table LocalDateTable_c94bf562-f18c-4ef2-ace1-aa0e0c9dff0f
+ref table LocalDateTable_6f68d7c4-8481-427b-a2da-13aff6a0904e
+ref table FileB_Scheduler_Contacts_LIVE
+ref table LocalDateTable_46c7e4ef-05b5-470f-bbc9-be94f13cfcf9
+ref table LocalDateTable_4f9f8207-059c-4c84-a93e-49318c62f4bb
+ref table FileC_Scheduler_ApptHistory_LIVE
+ref table LocalDateTable_c0e705b6-6462-4129-a7fc-f86f6de993bc
+ref table LocalDateTable_04c4e4b5-bfa1-41b6-bbb7-4577f8cb429f
+ref table FileD_Archive
+ref table LocalDateTable_f9774d14-3c33-4fc5-b039-3dec49959b5a
+ref table LocalDateTable_5febb286-6fc5-4b4d-9608-b5be1852675c
+ref table LocalDateTable_f9e052d9-5f57-41df-910e-438745ed5f24
 
 ref cultureInfo en-US
 

@@ -1,0 +1,220 @@
+table FileD_Archive
+	lineageTag: 1f07d7dc-d720-4d74-865e-2cb9f242ae56
+
+	column master_id
+		dataType: string
+		lineageTag: eb5f5b90-1345-4eec-9c2d-afb806dfca55
+		summarizeBy: none
+		sourceColumn: master_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column zoho_id
+		dataType: string
+		lineageTag: 7f96554d-3f9a-43bb-948f-a9a910240183
+		summarizeBy: none
+		sourceColumn: zoho_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column daysmart_id
+		dataType: string
+		lineageTag: 1ae1eaa0-fb22-43a4-9088-c03e64fc4b17
+		summarizeBy: none
+		sourceColumn: daysmart_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_name
+		dataType: string
+		lineageTag: eb6005fd-4689-42db-82e5-8c1a1330e3d3
+		summarizeBy: none
+		sourceColumn: first_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_name
+		dataType: string
+		lineageTag: dffdd981-4b11-47db-ad34-776dfe9fd037
+		summarizeBy: none
+		sourceColumn: last_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column email
+		dataType: string
+		lineageTag: 2237374a-f4bc-473e-aac4-c163e6c77e5a
+		summarizeBy: none
+		sourceColumn: email
+
+		annotation SummarizationSetBy = Automatic
+
+	column phone
+		dataType: string
+		lineageTag: ec12439d-0560-4240-999f-89b73988825a
+		summarizeBy: none
+		sourceColumn: phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_known_appointment
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3554a34e-b547-47d9-a817-7de4bc57449e
+		summarizeBy: none
+		sourceColumn: last_known_appointment
+
+		variation Variation
+			isDefault
+			relationship: 3653054c-2ad1-4b62-9cbf-bb40b18656d1
+			defaultHierarchy: LocalDateTable_f9774d14-3c33-4fc5-b039-3dec49959b5a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column archive_last_appt
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5f48aab8-3ded-4b18-9b91-37cddfa12f9a
+		summarizeBy: none
+		sourceColumn: archive_last_appt
+
+		variation Variation
+			isDefault
+			relationship: 9370817a-d405-47c1-b650-ed47f5bb97c8
+			defaultHierarchy: LocalDateTable_5febb286-6fc5-4b4d-9608-b5be1852675c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column archive_appt_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 317b4039-3904-4dff-acf5-2227a61e3ade
+		summarizeBy: sum
+		sourceColumn: archive_appt_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column archive_total_spent
+		dataType: double
+		lineageTag: 83778fe4-275f-4c12-b584-e16a7a52fbfa
+		summarizeBy: sum
+		sourceColumn: archive_total_spent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column archive_last_service
+		dataType: string
+		lineageTag: 0d535012-c3c4-402e-92f3-e65401a61ac4
+		summarizeBy: none
+		sourceColumn: archive_last_service
+
+		annotation SummarizationSetBy = Automatic
+
+	column daysmart_status
+		dataType: string
+		lineageTag: e70d88a0-3940-40f4-b846-78177c8515fc
+		summarizeBy: none
+		sourceColumn: daysmart_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column zoho_lead_status
+		dataType: string
+		lineageTag: 14b70b6c-5ac0-4ee1-a2d0-30e947b1397e
+		summarizeBy: none
+		sourceColumn: zoho_lead_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column zerobounce_status
+		dataType: string
+		lineageTag: 89e1a5eb-4901-4f2a-8240-27087fa79bc2
+		summarizeBy: none
+		sourceColumn: zerobounce_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column rule_applied
+		dataType: string
+		lineageTag: 9dca8cc9-90e5-4738-954e-64886735fb0b
+		summarizeBy: none
+		sourceColumn: rule_applied
+
+		annotation SummarizationSetBy = Automatic
+
+	column reason_archived
+		dataType: string
+		lineageTag: 6724f085-d33f-4267-ab1f-30ba1ad077da
+		summarizeBy: none
+		sourceColumn: reason_archived
+
+		annotation SummarizationSetBy = Automatic
+
+	column email_opens
+		dataType: int64
+		formatString: 0
+		lineageTag: 9d64ff3d-146b-48fe-99bf-acc9bb8d0b32
+		summarizeBy: sum
+		sourceColumn: email_opens
+
+		annotation SummarizationSetBy = Automatic
+
+	column email_clicks
+		dataType: int64
+		formatString: 0
+		lineageTag: 87922462-5c45-4367-bd08-e6ff194ed4e7
+		summarizeBy: sum
+		sourceColumn: email_clicks
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_system
+		dataType: string
+		lineageTag: 7cf127dd-b68a-48d9-b881-60837be769a4
+		summarizeBy: none
+		sourceColumn: source_system
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_type
+		dataType: string
+		lineageTag: 129b0d26-6dc9-484e-ad41-0e196b345098
+		summarizeBy: none
+		sourceColumn: record_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column archived_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2cbf080d-c809-45f8-adc9-12a72e15713a
+		summarizeBy: none
+		sourceColumn: archived_date
+
+		variation Variation
+			isDefault
+			relationship: dfb0f5e3-305d-4657-92cb-b260c8f54c7e
+			defaultHierarchy: LocalDateTable_f9e052d9-5f57-41df-910e-438745ed5f24.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition FileD_Archive = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\User\Downloads\files\FileD_Archive.csv"),[Delimiter=",", Columns=22, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"master_id", type text}, {"zoho_id", type text}, {"daysmart_id", type text}, {"first_name", type text}, {"last_name", type text}, {"email", type text}, {"phone", type text}, {"last_known_appointment", type date}, {"archive_last_appt", type date}, {"archive_appt_count", Int64.Type}, {"archive_total_spent", type number}, {"archive_last_service", type text}, {"daysmart_status", type text}, {"zoho_lead_status", type text}, {"zerobounce_status", type text}, {"rule_applied", type text}, {"reason_archived", type text}, {"email_opens", Int64.Type}, {"email_clicks", Int64.Type}, {"source_system", type text}, {"record_type", type text}, {"archived_date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

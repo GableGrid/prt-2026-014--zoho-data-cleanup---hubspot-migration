@@ -1,0 +1,171 @@
+table FileB_Scheduler_Contacts_LIVE
+	lineageTag: d47b8bb8-3490-4acc-b9a5-420c0649f4aa
+
+	column contact_id
+		dataType: string
+		lineageTag: fe60f8cf-3c88-4f01-995d-4baa585cfc8a
+		summarizeBy: none
+		sourceColumn: contact_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column daysmart_id
+		dataType: string
+		lineageTag: 3b640ee6-fce5-4496-88e6-c599a0217a74
+		summarizeBy: none
+		sourceColumn: daysmart_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_name
+		dataType: string
+		lineageTag: f0a509c2-76ab-4c2a-93fb-353632a3f930
+		summarizeBy: none
+		sourceColumn: first_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_name
+		dataType: string
+		lineageTag: 7d5725ac-7203-4cfc-9af2-0a63226d2a4c
+		summarizeBy: none
+		sourceColumn: last_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column email
+		dataType: string
+		lineageTag: f183cf39-596a-4e86-8dce-25ab607a94be
+		summarizeBy: none
+		sourceColumn: email
+
+		annotation SummarizationSetBy = Automatic
+
+	column phone
+		dataType: string
+		lineageTag: 78a997f6-c3c4-4bfb-9f5c-532c735043d6
+		summarizeBy: none
+		sourceColumn: phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_appointment_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f7513f2b-ee89-4b6e-8e9d-6b6745a4b6fc
+		summarizeBy: none
+		sourceColumn: last_appointment_date
+
+		variation Variation
+			isDefault
+			relationship: b7626c97-afc1-4221-b154-3f10a169fba9
+			defaultHierarchy: LocalDateTable_46c7e4ef-05b5-470f-bbc9-be94f13cfcf9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column primary_service
+		dataType: string
+		lineageTag: 8febd4c0-9aeb-42b3-b357-f983f5b0e47d
+		summarizeBy: none
+		sourceColumn: primary_service
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_appointments
+		dataType: int64
+		formatString: 0
+		lineageTag: d02c1c38-207c-4912-89d8-53a0cb2c945c
+		summarizeBy: sum
+		sourceColumn: total_appointments
+
+		annotation SummarizationSetBy = Automatic
+
+	column lifetime_spend
+		dataType: double
+		lineageTag: 84d5190c-4844-4fb8-9051-02580f64d662
+		summarizeBy: sum
+		sourceColumn: lifetime_spend
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column loyalty_points
+		dataType: int64
+		formatString: 0
+		lineageTag: 37572119-9a49-4f39-8559-2f194bd264a8
+		summarizeBy: sum
+		sourceColumn: loyalty_points
+
+		annotation SummarizationSetBy = Automatic
+
+	column sms_opt_in
+		dataType: string
+		lineageTag: 36b47960-bf2c-4f43-89bd-f9b88143d609
+		summarizeBy: none
+		sourceColumn: sms_opt_in
+
+		annotation SummarizationSetBy = Automatic
+
+	column email_opt_in
+		dataType: string
+		lineageTag: 611d3811-6bab-454b-bda2-2fc0f569a007
+		summarizeBy: none
+		sourceColumn: email_opt_in
+
+		annotation SummarizationSetBy = Automatic
+
+	column notes
+		dataType: string
+		lineageTag: 9bbfb546-8562-4250-97c0-5f31fdc87485
+		summarizeBy: none
+		sourceColumn: notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column zerobounce_status
+		dataType: string
+		lineageTag: 1792dec9-6b20-4526-836a-dc2412dc7a69
+		summarizeBy: none
+		sourceColumn: zerobounce_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_status
+		dataType: string
+		lineageTag: 9c64f9c3-0835-4d28-9990-f02a1dede1bf
+		summarizeBy: none
+		sourceColumn: data_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column import_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5ab49042-fc6c-4ec6-a7fe-4cbbe47fa8a6
+		summarizeBy: none
+		sourceColumn: import_date
+
+		variation Variation
+			isDefault
+			relationship: e08c54ff-f7a4-4535-8d41-a2301dec32d0
+			defaultHierarchy: LocalDateTable_4f9f8207-059c-4c84-a93e-49318c62f4bb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition FileB_Scheduler_Contacts_LIVE = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\User\Downloads\files\FileB_Scheduler_Contacts_LIVE.csv"),[Delimiter=",", Columns=17, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"contact_id", type text}, {"daysmart_id", type text}, {"first_name", type text}, {"last_name", type text}, {"email", type text}, {"phone", type text}, {"last_appointment_date", type date}, {"primary_service", type text}, {"total_appointments", Int64.Type}, {"lifetime_spend", type number}, {"loyalty_points", Int64.Type}, {"sms_opt_in", type text}, {"email_opt_in", type text}, {"notes", type text}, {"zerobounce_status", type text}, {"data_status", type text}, {"import_date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

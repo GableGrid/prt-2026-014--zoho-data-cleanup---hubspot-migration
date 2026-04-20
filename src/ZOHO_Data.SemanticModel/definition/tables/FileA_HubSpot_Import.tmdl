@@ -1,0 +1,297 @@
+table FileA_HubSpot_Import
+	lineageTag: c0880c00-b00b-436f-898d-b2ed859482d8
+
+	column firstname
+		dataType: string
+		lineageTag: 32ff53b1-6abc-487e-8811-e4f74a08e6e9
+		summarizeBy: none
+		sourceColumn: firstname
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastname
+		dataType: string
+		lineageTag: 82392518-a69a-4552-844a-ae3176b2a1d2
+		summarizeBy: none
+		sourceColumn: lastname
+
+		annotation SummarizationSetBy = Automatic
+
+	column email
+		dataType: string
+		lineageTag: a74becfa-26d3-4f89-9159-28600f33d83c
+		summarizeBy: none
+		sourceColumn: email
+
+		annotation SummarizationSetBy = Automatic
+
+	column phone
+		dataType: string
+		lineageTag: 94bb16e4-4f89-47af-85ee-13d9e60fee93
+		summarizeBy: none
+		sourceColumn: phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column lifecyclestage
+		dataType: string
+		lineageTag: 4c7bcb3c-b922-455b-b355-a93fcf988857
+		summarizeBy: none
+		sourceColumn: lifecyclestage
+
+		annotation SummarizationSetBy = Automatic
+
+	column hs_lead_status
+		dataType: string
+		lineageTag: 5726dfe6-43bd-4aa1-95f3-08b5c3c26a4c
+		summarizeBy: none
+		sourceColumn: hs_lead_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column deal_stage
+		dataType: string
+		lineageTag: f2409fbe-00e7-49e5-abda-4aed1bc39065
+		summarizeBy: none
+		sourceColumn: deal_stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column unsubscribed_from_all_email
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f1115c38-b688-4469-919e-cf9f706b8bfc
+		summarizeBy: none
+		sourceColumn: unsubscribed_from_all_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column hs_email_open
+		dataType: int64
+		formatString: 0
+		lineageTag: a25a9b52-31f9-4709-92b8-c988b157ed01
+		summarizeBy: sum
+		sourceColumn: hs_email_open
+
+		annotation SummarizationSetBy = Automatic
+
+	column hs_email_click
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e9c671d-84b5-4794-8c21-80dfa0d3d720
+		summarizeBy: sum
+		sourceColumn: hs_email_click
+
+		annotation SummarizationSetBy = Automatic
+
+	column hs_analytics_last_visit_timestamp
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 96ffcc61-8c5d-4b5f-9717-6416d417c1eb
+		summarizeBy: none
+		sourceColumn: hs_analytics_last_visit_timestamp
+
+		variation Variation
+			isDefault
+			relationship: a6d30def-5df0-446e-9da6-cf52307ce8f2
+			defaultHierarchy: LocalDateTable_1a839ff1-26db-414e-90e6-2389555b2552.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column zoho_last_open_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 78a080cd-fd48-4938-941d-07a1c0664505
+		summarizeBy: none
+		sourceColumn: zoho_last_open_date
+
+		variation Variation
+			isDefault
+			relationship: 0a963801-bf13-4f18-9667-0c9fb1b891d6
+			defaultHierarchy: LocalDateTable_9d33f517-5836-4136-b547-c2ba8af62e78.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column zoho_lead_status
+		dataType: string
+		lineageTag: 6f22b037-16b5-4eda-a7e7-b2a59f10bfba
+		summarizeBy: none
+		sourceColumn: zoho_lead_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column zoho_id
+		dataType: string
+		lineageTag: 653bfecc-a821-40ad-8f24-502bfd16dea4
+		summarizeBy: none
+		sourceColumn: zoho_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column daysmart_id
+		dataType: string
+		lineageTag: 2c743e2c-74e8-4ff8-80d6-030ad5f14e30
+		summarizeBy: none
+		sourceColumn: daysmart_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column master_id
+		dataType: string
+		lineageTag: b79af8cf-098e-4df0-8aee-ef9a31096a00
+		summarizeBy: none
+		sourceColumn: master_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_appointment_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 86d573e3-75f5-48af-ba2a-84917afce8de
+		summarizeBy: none
+		sourceColumn: last_appointment_date
+
+		variation Variation
+			isDefault
+			relationship: 3c541b6f-82b2-439b-9f95-3adbee5dd605
+			defaultHierarchy: LocalDateTable_c94bf562-f18c-4ef2-ace1-aa0e0c9dff0f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column daysmart_status
+		dataType: string
+		lineageTag: 295b78f3-28f2-4d14-bcc6-6a28c94b24f5
+		summarizeBy: none
+		sourceColumn: daysmart_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column lifetime_value
+		dataType: double
+		lineageTag: bc22a8bb-a22e-41fd-a20f-a4b3c1977640
+		summarizeBy: sum
+		sourceColumn: lifetime_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_appointments
+		dataType: int64
+		formatString: 0
+		lineageTag: a998af24-7652-42b3-abd8-872b3984a37e
+		summarizeBy: sum
+		sourceColumn: total_appointments
+
+		annotation SummarizationSetBy = Automatic
+
+	column loyalty_points
+		dataType: int64
+		formatString: 0
+		lineageTag: b1f9fb49-7a0d-4d93-b31c-13de74a182c6
+		summarizeBy: sum
+		sourceColumn: loyalty_points
+
+		annotation SummarizationSetBy = Automatic
+
+	column primary_service
+		dataType: string
+		lineageTag: b29fe7d6-7c56-4225-a3f6-a2ad519d6789
+		summarizeBy: none
+		sourceColumn: primary_service
+
+		annotation SummarizationSetBy = Automatic
+
+	column zerobounce_status
+		dataType: string
+		lineageTag: 5eef0747-85af-47ec-98c4-cbf15ec93320
+		summarizeBy: none
+		sourceColumn: zerobounce_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column zerobounce_score
+		dataType: int64
+		formatString: 0
+		lineageTag: c34e5de8-c87e-4d63-982c-be7777e1f433
+		summarizeBy: sum
+		sourceColumn: zerobounce_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column email_verification_status
+		dataType: string
+		lineageTag: 9469f8bb-7409-4dc8-90f5-56bee868ed20
+		summarizeBy: none
+		sourceColumn: email_verification_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_interests
+		dataType: string
+		lineageTag: ded03c53-29cc-4b0c-ba5d-0ffcd7ec2766
+		summarizeBy: none
+		sourceColumn: service_interests
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_rule_applied
+		dataType: string
+		lineageTag: 9d23ab79-b1e7-4798-8ffe-68dd6eadfee0
+		summarizeBy: none
+		sourceColumn: data_rule_applied
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_system
+		dataType: string
+		lineageTag: 87acf853-cf51-4e5d-b20f-d0385c10765e
+		summarizeBy: none
+		sourceColumn: source_system
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_type
+		dataType: string
+		lineageTag: 8127392f-3763-4025-a487-769a56cc2ecb
+		summarizeBy: none
+		sourceColumn: record_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column import_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9f4303aa-ef06-4fff-b88d-f09acbf5225e
+		summarizeBy: none
+		sourceColumn: import_date
+
+		variation Variation
+			isDefault
+			relationship: 4feb42a5-eaab-4d8a-a5b3-84637b3619ca
+			defaultHierarchy: LocalDateTable_6f68d7c4-8481-427b-a2da-13aff6a0904e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition FileA_HubSpot_Import = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\User\Downloads\files\FileA_HubSpot_Import.csv"),[Delimiter=",", Columns=30, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"firstname", type text}, {"lastname", type text}, {"email", type text}, {"phone", type text}, {"lifecyclestage", type text}, {"hs_lead_status", type text}, {"deal_stage", type text}, {"unsubscribed_from_all_email", type logical}, {"hs_email_open", Int64.Type}, {"hs_email_click", Int64.Type}, {"hs_analytics_last_visit_timestamp", type date}, {"zoho_last_open_date", type date}, {"zoho_lead_status", type text}, {"zoho_id", type text}, {"daysmart_id", type text}, {"master_id", type text}, {"last_appointment_date", type date}, {"daysmart_status", type text}, {"lifetime_value", type number}, {"total_appointments", Int64.Type}, {"loyalty_points", Int64.Type}, {"primary_service", type text}, {"zerobounce_status", type text}, {"zerobounce_score", Int64.Type}, {"email_verification_status", type text}, {"service_interests", type text}, {"data_rule_applied", type text}, {"source_system", type text}, {"record_type", type text}, {"import_date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
