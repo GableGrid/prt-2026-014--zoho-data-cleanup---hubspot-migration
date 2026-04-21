@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "8abb7df7e89b0ada3769",
   "position": {
-    "x": 79.332538736591175,
-    "y": 164.76758045292013,
+    "x": 78.583234946871315,
+    "y": 164.72255017709563,
     "z": 0,
-    "height": 285.29201430274134,
-    "width": 399.71394517282476,
+    "height": 234.23848878394332,
+    "width": 713.29397874852418,
     "tabOrder": 0
   },
   "visual": {
@@ -23,11 +23,39 @@
                       "Entity": "NEW"
                     }
                   },
+                  "Property": "Total Contacts"
+                }
+              },
+              "queryRef": "NEW.Total Contacts",
+              "nativeQueryRef": "Total Contacts"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NEW"
+                    }
+                  },
                   "Property": "LIVE Contacts"
                 }
               },
               "queryRef": "NEW.LIVE Contacts",
               "nativeQueryRef": "LIVE Contacts"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NEW"
+                    }
+                  },
+                  "Property": "LIVE %"
+                }
+              },
+              "queryRef": "NEW.LIVE %",
+              "nativeQueryRef": "LIVE %"
             },
             {
               "field": {
@@ -51,34 +79,37 @@
                       "Entity": "NEW"
                     }
                   },
-                  "Property": "Total Contacts"
+                  "Property": "Contacts by Year"
                 }
               },
-              "queryRef": "NEW.Total Contacts",
-              "nativeQueryRef": "Total Contacts"
+              "queryRef": "NEW.Contacts by Year",
+              "nativeQueryRef": "Contacts by Year"
             }
           ]
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "NEW"
-                  }
-                },
-                "Property": "LIVE Contacts"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
         "isDefaultSort": true
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9d9985879bbce1bcaa4c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NEW"
+              }
+            },
+            "Property": "Total Contacts"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

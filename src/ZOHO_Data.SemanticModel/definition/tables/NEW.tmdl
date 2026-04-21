@@ -1,27 +1,40 @@
 table NEW
 	lineageTag: d2b6f310-936c-42e4-8a4b-334f183f23b5
 
-	measure 'Total Contacts' = COUNTROWS(master_rules_applied)
+	measure 'Total Contacts' = COUNTROWS(FileB_Scheduler_Contacts) + COUNTROWS(FileD_Archive)
 		formatString: 0
 		lineageTag: 6ced636e-4b95-4182-a5d6-eb045a420d82
 
 	measure 'LIVE Contacts' =
 			
 			CALCULATE(
-			    COUNTROWS(master_rules_applied),
-			    master_rules_applied[DaySmart_Status] = "LIVE"
+			    COUNTROWS(FileB_Scheduler_Contacts),
+			    FileB_Scheduler_Contacts[data_status] = "LIVE"
 			)
 		formatString: 0
 		lineageTag: c95700e2-7f60-4f93-a3f4-278abb1a761e
 
-	measure 'ARCHIVE Contacts' = ```
-			
-			    CALCULATE(COUNTROWS(master_rules_applied),
-			   master_rules_applied[DaySmart_Status]="ARCHIVE"
-			   )
-			```
+	measure 'ARCHIVE Contacts' = COUNTROWS(FileD_Archive)
 		formatString: 0
-		lineageTag: 51616326-9a13-4291-a57f-5c624499325d
+		lineageTag: 5c599d4a-9f3d-408f-aaee-5433ce195544
+
+	measure 'LIVE %' = DIVIDE([LIVE Contacts],[Total Contacts],0)
+		lineageTag: 8a1a8384-6b82-4afa-aec7-83c516c58e7c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Contacts by Year' =
+			
+			CALCULATE(
+			    COUNTROWS(FileB_Scheduler_Contacts) +
+			    COUNTROWS(FileD_Archive),
+			    USERELATIONSHIP(
+			        FileB_Scheduler_Contacts[last_appointment_date],
+			        DimDate[Date]
+			    )
+			)
+		formatString: 0
+		lineageTag: f62b765a-9870-4003-bd70-17b2f82d0f80
 
 	column ACTION
 		lineageTag: ccf16e8c-9717-48ac-9f4f-29e6261fff9c

@@ -296,13 +296,13 @@ relationship a80ebd2f-d3c1-d363-7514-40396ea0e866
 	fromColumn: FileC_Scheduler_ApptHistory.appointment_date
 	toColumn: DimDate.Date
 
-relationship 47553388-e96a-07ad-08a8-1803aabd7aee
-	isActive: false
-	fromColumn: FileB_Scheduler_Contacts.last_appointment_date
-	toColumn: DimDate.Date
-
 relationship 6e2444bb-691a-25d3-0909-1812dc090703
 	isActive: false
 	fromColumn: FileD_Archive.archived_date
+	toColumn: DimDate.Date
+
+relationship 2afc62da-6883-646d-7d42-dff28deba02b
+	isActive: false
+	fromColumn: FileB_Scheduler_Contacts.last_appointment_date
 	toColumn: DimDate.Date
 
