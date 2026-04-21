@@ -197,11 +197,6 @@ table FileD_Archive
 		summarizeBy: none
 		sourceColumn: archived_date
 
-		variation Variation
-			isDefault
-			relationship: dfb0f5e3-305d-4657-92cb-b260c8f54c7e
-			defaultHierarchy: LocalDateTable_f9e052d9-5f57-41df-910e-438745ed5f24.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date

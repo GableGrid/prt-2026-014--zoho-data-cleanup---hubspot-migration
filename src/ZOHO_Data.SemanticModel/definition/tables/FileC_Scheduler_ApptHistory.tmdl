@@ -1,4 +1,4 @@
-table FileC_Scheduler_ApptHistory_LIVE
+table FileC_Scheduler_ApptHistory
 	lineageTag: 9a3a7039-b9b7-433c-8955-c53d3cc0db66
 
 	column appointment_id
@@ -31,11 +31,6 @@ table FileC_Scheduler_ApptHistory_LIVE
 		lineageTag: cdedaa95-121d-4659-bca8-9ed8d0ae3543
 		summarizeBy: none
 		sourceColumn: appointment_date
-
-		variation Variation
-			isDefault
-			relationship: a656d706-f3a0-4b65-8a80-f283ab59a435
-			defaultHierarchy: LocalDateTable_c0e705b6-6462-4129-a7fc-f86f6de993bc.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -116,7 +111,7 @@ table FileC_Scheduler_ApptHistory_LIVE
 
 		annotation UnderlyingDateTimeDataType = Date
 
-	partition FileC_Scheduler_ApptHistory_LIVE = m
+	partition FileC_Scheduler_ApptHistory = m
 		mode: import
 		source =
 				let
@@ -125,6 +120,8 @@ table FileC_Scheduler_ApptHistory_LIVE
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"appointment_id", type text}, {"contact_id", type text}, {"daysmart_contact_id", type text}, {"appointment_date", type date}, {"service", type text}, {"staff_member", type text}, {"duration_minutes", Int64.Type}, {"amount_usd", type number}, {"status", type text}, {"location", type text}, {"data_status", type text}, {"import_date", type date}})
 				in
 				    #"Changed Type"
+
+	changedProperty = Name
 
 	annotation PBI_ResultType = Table
 

@@ -110,7 +110,7 @@ table LocalDateTable_4f9f8207-059c-4c84-a93e-49318c62f4bb
 
 	partition LocalDateTable_4f9f8207-059c-4c84-a93e-49318c62f4bb = calculated
 		mode: import
-		source = Calendar(Date(Year(MIN('FileB_Scheduler_Contacts_LIVE'[import_date])), 1, 1), Date(Year(MAX('FileB_Scheduler_Contacts_LIVE'[import_date])), 12, 31))
+		source = Calendar(Date(Year(MIN('FileB_Scheduler_Contacts'[import_date])), 1, 1), Date(Year(MAX('FileB_Scheduler_Contacts'[import_date])), 12, 31))
 
 	annotation __PBI_LocalDateTable = true
 

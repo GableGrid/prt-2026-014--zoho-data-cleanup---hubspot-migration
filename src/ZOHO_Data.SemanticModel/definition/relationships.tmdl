@@ -212,11 +212,6 @@ relationship 0a963801-bf13-4f18-9667-0c9fb1b891d6
 	fromColumn: FileA_HubSpot_Import.zoho_last_open_date
 	toColumn: LocalDateTable_9d33f517-5836-4136-b547-c2ba8af62e78.Date
 
-relationship 3c541b6f-82b2-439b-9f95-3adbee5dd605
-	joinOnDateBehavior: datePartOnly
-	fromColumn: FileA_HubSpot_Import.last_appointment_date
-	toColumn: LocalDateTable_c94bf562-f18c-4ef2-ace1-aa0e0c9dff0f.Date
-
 relationship 4feb42a5-eaab-4d8a-a5b3-84637b3619ca
 	joinOnDateBehavior: datePartOnly
 	fromColumn: FileA_HubSpot_Import.import_date
@@ -234,29 +229,19 @@ relationship AutoDetected_ae837bdd-1df4-4bc1-a3cb-a0d1dcc21e40
 	fromColumn: 'Clinical Exceptions'.'MASTER ID'
 	toColumn: FileA_HubSpot_Import.master_id
 
-relationship b7626c97-afc1-4221-b154-3f10a169fba9
-	joinOnDateBehavior: datePartOnly
-	fromColumn: FileB_Scheduler_Contacts_LIVE.last_appointment_date
-	toColumn: LocalDateTable_46c7e4ef-05b5-470f-bbc9-be94f13cfcf9.Date
-
 relationship e08c54ff-f7a4-4535-8d41-a2301dec32d0
 	joinOnDateBehavior: datePartOnly
-	fromColumn: FileB_Scheduler_Contacts_LIVE.import_date
+	fromColumn: FileB_Scheduler_Contacts.import_date
 	toColumn: LocalDateTable_4f9f8207-059c-4c84-a93e-49318c62f4bb.Date
-
-relationship a656d706-f3a0-4b65-8a80-f283ab59a435
-	joinOnDateBehavior: datePartOnly
-	fromColumn: FileC_Scheduler_ApptHistory_LIVE.appointment_date
-	toColumn: LocalDateTable_c0e705b6-6462-4129-a7fc-f86f6de993bc.Date
 
 relationship af232bd6-3c16-4769-8748-3ebf14684ebd
 	joinOnDateBehavior: datePartOnly
-	fromColumn: FileC_Scheduler_ApptHistory_LIVE.import_date
+	fromColumn: FileC_Scheduler_ApptHistory.import_date
 	toColumn: LocalDateTable_04c4e4b5-bfa1-41b6-bbb7-4577f8cb429f.Date
 
 relationship AutoDetected_ee84f6eb-d183-48ea-94fe-629c80ed437c
-	fromColumn: FileC_Scheduler_ApptHistory_LIVE.contact_id
-	toColumn: FileB_Scheduler_Contacts_LIVE.contact_id
+	fromColumn: FileC_Scheduler_ApptHistory.contact_id
+	toColumn: FileB_Scheduler_Contacts.contact_id
 
 relationship 3653054c-2ad1-4b62-9cbf-bb40b18656d1
 	joinOnDateBehavior: datePartOnly
@@ -267,11 +252,6 @@ relationship 9370817a-d405-47c1-b650-ed47f5bb97c8
 	joinOnDateBehavior: datePartOnly
 	fromColumn: FileD_Archive.archive_last_appt
 	toColumn: LocalDateTable_5febb286-6fc5-4b4d-9608-b5be1852675c.Date
-
-relationship dfb0f5e3-305d-4657-92cb-b260c8f54c7e
-	joinOnDateBehavior: datePartOnly
-	fromColumn: FileD_Archive.archived_date
-	toColumn: LocalDateTable_f9e052d9-5f57-41df-910e-438745ed5f24.Date
 
 relationship AutoDetected_71a2c23a-b4b5-4b2f-bfe8-84bbefb9d938
 	crossFilteringBehavior: bothDirections
@@ -289,7 +269,7 @@ relationship AutoDetected_c0667947-532a-4abf-a50d-c672ea5a3083
 relationship 9074109f-ac34-69e9-768a-bea6395cb895
 	crossFilteringBehavior: bothDirections
 	toCardinality: many
-	fromColumn: FileB_Scheduler_Contacts_LIVE.email
+	fromColumn: FileB_Scheduler_Contacts.email
 	toColumn: FileA_HubSpot_Import.email
 
 relationship 0a9ba8f0-0e28-89af-dda1-8b6670731b95
@@ -301,4 +281,28 @@ relationship 744ca264-2d76-a84d-dc3b-acf70a45e331
 	isActive: false
 	fromColumn: FileA_HubSpot_Import.email
 	toColumn: master_rules_applied.Email
+
+relationship 815de403-2a3c-4637-a700-ed80a9253895
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimDate.Date
+	toColumn: LocalDateTable_6b20dae4-1338-45ab-abdb-3da35c337b27.Date
+
+relationship fb1a4f5e-56f3-955b-0399-29ecee9062e7
+	fromColumn: FileA_HubSpot_Import.last_appointment_date
+	toColumn: DimDate.Date
+
+relationship a80ebd2f-d3c1-d363-7514-40396ea0e866
+	isActive: false
+	fromColumn: FileC_Scheduler_ApptHistory.appointment_date
+	toColumn: DimDate.Date
+
+relationship 47553388-e96a-07ad-08a8-1803aabd7aee
+	isActive: false
+	fromColumn: FileB_Scheduler_Contacts.last_appointment_date
+	toColumn: DimDate.Date
+
+relationship 6e2444bb-691a-25d3-0909-1812dc090703
+	isActive: false
+	fromColumn: FileD_Archive.archived_date
+	toColumn: DimDate.Date
 

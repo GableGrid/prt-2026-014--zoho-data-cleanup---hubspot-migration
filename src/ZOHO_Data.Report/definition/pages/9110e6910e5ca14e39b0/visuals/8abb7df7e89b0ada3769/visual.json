@@ -1,0 +1,84 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "8abb7df7e89b0ada3769",
+  "position": {
+    "x": 79.332538736591175,
+    "y": 164.76758045292013,
+    "z": 0,
+    "height": 285.29201430274134,
+    "width": 399.71394517282476,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NEW"
+                    }
+                  },
+                  "Property": "LIVE Contacts"
+                }
+              },
+              "queryRef": "NEW.LIVE Contacts",
+              "nativeQueryRef": "LIVE Contacts"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NEW"
+                    }
+                  },
+                  "Property": "ARCHIVE Contacts"
+                }
+              },
+              "queryRef": "NEW.ARCHIVE Contacts",
+              "nativeQueryRef": "ARCHIVE Contacts"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NEW"
+                    }
+                  },
+                  "Property": "Total Contacts"
+                }
+              },
+              "queryRef": "NEW.Total Contacts",
+              "nativeQueryRef": "Total Contacts"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "NEW"
+                  }
+                },
+                "Property": "LIVE Contacts"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

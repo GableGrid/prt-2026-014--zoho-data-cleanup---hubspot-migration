@@ -1,4 +1,4 @@
-table FileB_Scheduler_Contacts_LIVE
+table FileB_Scheduler_Contacts
 	lineageTag: d47b8bb8-3490-4acc-b9a5-420c0649f4aa
 
 	column contact_id
@@ -55,11 +55,6 @@ table FileB_Scheduler_Contacts_LIVE
 		lineageTag: f7513f2b-ee89-4b6e-8e9d-6b6745a4b6fc
 		summarizeBy: none
 		sourceColumn: last_appointment_date
-
-		variation Variation
-			isDefault
-			relationship: b7626c97-afc1-4221-b154-3f10a169fba9
-			defaultHierarchy: LocalDateTable_46c7e4ef-05b5-470f-bbc9-be94f13cfcf9.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -157,7 +152,7 @@ table FileB_Scheduler_Contacts_LIVE
 
 		annotation UnderlyingDateTimeDataType = Date
 
-	partition FileB_Scheduler_Contacts_LIVE = m
+	partition FileB_Scheduler_Contacts = m
 		mode: import
 		source =
 				let
@@ -166,6 +161,8 @@ table FileB_Scheduler_Contacts_LIVE
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"contact_id", type text}, {"daysmart_id", type text}, {"first_name", type text}, {"last_name", type text}, {"email", type text}, {"phone", type text}, {"last_appointment_date", type date}, {"primary_service", type text}, {"total_appointments", Int64.Type}, {"lifetime_spend", type number}, {"loyalty_points", Int64.Type}, {"sms_opt_in", type text}, {"email_opt_in", type text}, {"notes", type text}, {"zerobounce_status", type text}, {"data_status", type text}, {"import_date", type date}})
 				in
 				    #"Changed Type"
+
+	changedProperty = Name
 
 	annotation PBI_ResultType = Table
 

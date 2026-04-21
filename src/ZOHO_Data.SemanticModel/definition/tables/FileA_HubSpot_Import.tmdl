@@ -155,11 +155,6 @@ table FileA_HubSpot_Import
 		summarizeBy: none
 		sourceColumn: last_appointment_date
 
-		variation Variation
-			isDefault
-			relationship: 3c541b6f-82b2-439b-9f95-3adbee5dd605
-			defaultHierarchy: LocalDateTable_c94bf562-f18c-4ef2-ace1-aa0e0c9dff0f.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date

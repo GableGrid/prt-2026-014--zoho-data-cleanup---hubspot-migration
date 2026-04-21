@@ -1,0 +1,65 @@
+table DimDate
+	lineageTag: e94982c9-0136-4f46-a09a-bface9219a45
+
+	column Date
+		formatString: General Date
+		lineageTag: 2075f857-2086-46e5-902c-7b5edaf052c0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: 815de403-2a3c-4637-a700-ed80a9253895
+			defaultHierarchy: LocalDateTable_6b20dae4-1338-45ab-abdb-3da35c337b27.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: d426d268-7290-4388-a858-8a81d5284988
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNum
+		formatString: 0
+		lineageTag: 167fb887-7df7-4a16-baba-bc40cc561545
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [MonthNum]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		lineageTag: eca2760d-63d9-4fa2-9a38-ddeec1e59526
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthName]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		lineageTag: 22c5a25a-36c9-4388-b513-1e94add5ea5b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimDate = calculated
+		mode: import
+		source =
+				
+				ADDCOLUMNS (
+				    CALENDAR ( DATE(2019,1,1), DATE(2026,12,31) ),
+				    "Year", YEAR([Date]),
+				    "MonthNum", MONTH([Date]),
+				    "MonthName", FORMAT([Date], "MMM YYYY"),
+				    "Quarter", "Q" & QUARTER([Date])
+				)
+
+	annotation PBI_Id = c659bd511df44057b4e85bc36b824fea
+

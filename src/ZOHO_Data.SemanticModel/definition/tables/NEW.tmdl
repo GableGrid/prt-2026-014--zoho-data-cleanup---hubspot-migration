@@ -1,0 +1,39 @@
+table NEW
+	lineageTag: d2b6f310-936c-42e4-8a4b-334f183f23b5
+
+	measure 'Total Contacts' = COUNTROWS(master_rules_applied)
+		formatString: 0
+		lineageTag: 6ced636e-4b95-4182-a5d6-eb045a420d82
+
+	measure 'LIVE Contacts' =
+			
+			CALCULATE(
+			    COUNTROWS(master_rules_applied),
+			    master_rules_applied[DaySmart_Status] = "LIVE"
+			)
+		formatString: 0
+		lineageTag: c95700e2-7f60-4f93-a3f4-278abb1a761e
+
+	measure 'ARCHIVE Contacts' = ```
+			
+			    CALCULATE(COUNTROWS(master_rules_applied),
+			   master_rules_applied[DaySmart_Status]="ARCHIVE"
+			   )
+			```
+		formatString: 0
+		lineageTag: 51616326-9a13-4291-a57f-5c624499325d
+
+	column ACTION
+		lineageTag: ccf16e8c-9717-48ac-9f4f-29e6261fff9c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Clinical Exceptions[ACTION]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition NEW = calculated
+		mode: import
+		source = CALCULATETABLE(ALL('Clinical Exceptions'[ACTION]))
+
+	annotation PBI_Id = f08228ae20b8445c94fbf8f68583ea92
+

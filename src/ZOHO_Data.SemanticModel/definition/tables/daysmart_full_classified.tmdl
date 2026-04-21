@@ -1,10 +1,6 @@
 table daysmart_full_classified
 	lineageTag: d57cd8fa-dc80-4973-950b-1f79a8a646d0
 
-	measure 'Total Contacts' = DISTINCTCOUNT(daysmart_full_classified[Customer_ID])
-		formatString: 0
-		lineageTag: 7568e229-2be7-4620-8315-f5ba196de03b
-
 	measure 'LIVE Count' =
 			
 			CALCULATE(
