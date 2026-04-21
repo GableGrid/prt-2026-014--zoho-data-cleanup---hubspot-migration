@@ -36,6 +36,37 @@ table NEW
 		formatString: 0
 		lineageTag: f62b765a-9870-4003-bd70-17b2f82d0f80
 
+	measure 'Total Revenue' = SUM(FileB_Scheduler_Contacts[lifetime_spend])
+		lineageTag: 378184a4-2838-4203-b69d-6bd0f4ce93ac
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Revenue' =
+			DIVIDE(SUM(FileB_Scheduler_Contacts[lifetime_spend]),
+			    COUNTROWS(FileB_Scheduler_Contacts), 0)
+		lineageTag: c7fada12-4a4a-45b2-a365-c3c4beb7f65f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Rev LIVE' = ```
+			CALCULATE(SUM(FileB_Scheduler_Contacts[lifetime_spend]),
+			    FileB_Scheduler_Contacts[data_status]="LIVE")
+			
+			```
+		lineageTag: 2761597f-459a-4928-a92e-571eaf128467
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Rev ARCHIVE' =
+			
+			CALCULATE(
+			    SUM(FileD_Archive[archive_total_spent]),
+			    FileD_Archive[daysmart_status] = "ARCHIVE"
+			)
+		lineageTag: 85046bf6-7c06-4fc4-9af6-46dbe5c28622
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column ACTION
 		lineageTag: ccf16e8c-9717-48ac-9f4f-29e6261fff9c
 		summarizeBy: none
