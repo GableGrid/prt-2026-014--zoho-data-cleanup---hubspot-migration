@@ -109,6 +109,171 @@ table NEW
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Avg Appts' = DIVIDE([Total Appts],[Total Contacts],0)
+		lineageTag: 0a24a23e-d3c1-46af-9d16-22838534a43e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Appts by Month' =
+			CALCULATE(COUNTROWS(FileC_Scheduler_ApptHistory),
+			  DATESMTD(FileC_Scheduler_ApptHistory[appointment_date]))
+		formatString: 0
+		lineageTag: 7e63fa75-e695-4b48-9b61-67a930281731
+
+	measure Deliverability =
+			DIVIDE(
+			  CALCULATE(COUNTROWS(FileA_HubSpot_Import),
+			  FileA_HubSpot_Import[zerobounce_status]="valid"),
+			  COUNTROWS(FileA_HubSpot_Import), 0)
+		lineageTag: a76469eb-c023-475c-b29b-4bc6ff6634c7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Opens' = SUM(FileA_HubSpot_Import[hs_email_open])
+		formatString: 0
+		lineageTag: 29a704d9-8a51-4a63-8df6-5da292a3db81
+
+	measure 'Avg Opens' =
+			DIVIDE(SUM(FileA_HubSpot_Import[hs_email_open]),
+			    COUNTROWS(FileA_HubSpot_Import), 0)
+		lineageTag: 1aa1a78d-f706-4bd3-871f-6c4dc241d4ad
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CTOR = ```
+			DIVIDE(SUM(FileA_HubSpot_Import[hs_email_click]), 
+			    SUM(FileA_HubSpot_Import[hs_email_open]), 0)
+			```
+		lineageTag: 580d2392-14f2-4476-a484-6e760165a55c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Unsub Rate' =
+			DIVIDE(
+			     CALCULATE(COUNTROWS(FileA_HubSpot_Import),
+			    FileA_HubSpot_Import[unsubscribed_from_all_email]=TRUE),
+			  COUNTROWS(FileA_HubSpot_Import), 0)
+		lineageTag: 95c0f3b7-d6d5-419e-bc79-0d6586379125
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'ZB Valid' =
+			
+			CALCULATE(
+			    COUNTROWS(FileA_HubSpot_Import),
+			    FileA_HubSpot_Import[zerobounce_status] = "valid"
+			)
+		formatString: 0
+		lineageTag: 87c2ffe0-111a-4d26-b77d-2dbc029f8fff
+
+	measure 'ZB Unknown' =
+			
+			CALCULATE(
+			    COUNTROWS(FileA_HubSpot_Import),
+			    FileA_HubSpot_Import[zerobounce_status] = "unknown"
+			)
+		formatString: 0
+		lineageTag: 098fe170-dde3-47a3-ab4c-32820f20ceb3
+
+	measure 'ZB Do Not Mail' =
+			
+			CALCULATE(
+			    COUNTROWS(FileA_HubSpot_Import),
+			    FileA_HubSpot_Import[zerobounce_status] = "do_not_mail"
+			)
+		formatString: 0
+		lineageTag: 18d69d00-0a97-4215-aa08-73dc14610134
+
+	measure 'ZB Catch-All' =
+			
+			CALCULATE(
+			    COUNTROWS(FileA_HubSpot_Import),
+			    FileA_HubSpot_Import[zerobounce_status] = "catch-all"
+			)
+		formatString: 0
+		lineageTag: 4327f7d4-3a0b-4e7e-8338-63a1b4689c50
+
+	measure Clinical = ```
+			
+			    CALCULATE(COUNTROWS(FileA_HubSpot_Import),
+			    FileA_HubSpot_Import[data_rule_applied]="Clinical Exception")
+			```
+		formatString: 0
+		lineageTag: 2afcb1e9-180b-424a-9a40-8b34df6195ad
+
+	measure Deleted =
+			CALCULATE(COUNTROWS(FileA_HubSpot_Import),
+			    FileA_HubSpot_Import[data_rule_applied]="Do Not Mail")
+		formatString: 0
+		lineageTag: b3d9c84b-527f-44c5-81da-0113972e6aff
+
+	measure Completeness =
+			DIVIDE(
+			  CALCULATE(COUNTROWS(FileB_Scheduler_Contacts),
+			    FileB_Scheduler_Contacts[email]<>""),
+			  COUNTROWS(FileB_Scheduler_Contacts), 0)
+		lineageTag: 6859dad1-22bc-4511-829f-ffb1b3b2ade4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Top1K Score' =
+			
+			CALCULATE(
+			    AVERAGE(FileA_HubSpot_Import[lifetime_value]),
+			    TOPN(
+			        1000,
+			        FileA_HubSpot_Import,
+			        FileA_HubSpot_Import[lifetime_value],
+			        DESC
+			    )
+			)
+		lineageTag: ca44030e-226a-4f47-8f75-c3a7e4a90fdd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Top1K Customers' =
+			
+			CALCULATE(
+			    COUNTROWS(FileA_HubSpot_Import),
+			    FileA_HubSpot_Import[lifecyclestage] = "customer",
+			    TOPN(
+			        1000,
+			        FileA_HubSpot_Import,
+			        FileA_HubSpot_Import[lifetime_value],
+			        DESC
+			    )
+			)
+		formatString: 0
+		lineageTag: fe634e49-d0ba-42d5-ad17-1f34946305c8
+
+	measure 'Rev Gap' = [Rev LIVE] - [Rev ARCHIVE]
+		lineageTag: d86c432f-409d-43da-9277-59db63f3671d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Archive by Year' = ```
+			CALCULATE(COUNTROWS(FileD_Archive), 
+			    ALLEXCEPT(FileD_Archive, 
+			        FileD_Archive[archive_last_appt])
+			        )
+			```
+		formatString: 0
+		lineageTag: f1a438ec-f1b9-42fa-ae14-27fd6043a806
+
+	measure 'Avg Archive Age' =
+			
+			AVERAGEX(
+			    FileD_Archive,
+			    DATEDIFF(
+			        FileD_Archive[last_known_appointment],
+			        TODAY(),
+			        YEAR
+			    )
+			)
+		lineageTag: bf70409c-0fc3-4d95-9734-e22cb2a548f3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column ACTION
 		lineageTag: ccf16e8c-9717-48ac-9f4f-29e6261fff9c
 		summarizeBy: none
