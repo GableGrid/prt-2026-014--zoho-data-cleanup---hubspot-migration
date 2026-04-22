@@ -67,6 +67,48 @@ table NEW
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Service Revenue' = ```
+			CALCULATE(SUM(FileC_Scheduler_ApptHistory[amount_usd]), 
+			    ALLEXCEPT(FileC_Scheduler_ApptHistory, FileC_Scheduler_ApptHistory[service]))
+			```
+		lineageTag: 0770215c-7603-4964-b7c5-fcb2db346fb5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Monthly Revenue' = ```
+			
+			    CALCULATE(SUM(FileC_Scheduler_ApptHistory[amount_usd]),
+			     DATESMTD(FileC_Scheduler_ApptHistory[appointment_date])
+			     )
+			```
+		lineageTag: 5635ad17-37b0-477c-aa8c-44004092663a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Appts' = COUNTROWS(FileC_Scheduler_ApptHistory)
+		formatString: 0
+		lineageTag: f6364b8c-1170-43a2-98bf-36c1e1a45d17
+
+	measure Completed =
+			CALCULATE(COUNTROWS(FileC_Scheduler_ApptHistory),
+			 FileC_Scheduler_ApptHistory[status]="Completed")
+		formatString: 0
+		lineageTag: 3ad1512f-0718-425f-ae0d-cb0cf70b71de
+
+	measure 'No-Show Rate' =
+			
+			DIVIDE(
+			    CALCULATE(
+			        COUNTROWS(FileC_Scheduler_ApptHistory),
+			        FileC_Scheduler_ApptHistory[status] = "No-Show"
+			    ),
+			    COUNTROWS(FileC_Scheduler_ApptHistory),
+			    0
+			)
+		lineageTag: 25729db3-7cea-4c5a-b803-ba35e8d970ad
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column ACTION
 		lineageTag: ccf16e8c-9717-48ac-9f4f-29e6261fff9c
 		summarizeBy: none
