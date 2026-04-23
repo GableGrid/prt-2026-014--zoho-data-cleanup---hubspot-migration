@@ -1,0 +1,18 @@
+table archive_year
+	lineageTag: 0ffdda3d-1fea-4e62-b4af-ae9946c82f36
+
+	column Column
+		formatString: 0
+		lineageTag: 8dd3c878-474a-4bc8-918c-29b32909eab4
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition archive_year = calculated
+		mode: import
+		source = YEAR(FileD_Archive[last_known_appointment])
+
+	annotation PBI_Id = 0dd01b0a9fb14ea18fedbc871e33e282
+

@@ -152,6 +152,13 @@ table FileB_Scheduler_Contacts
 
 		annotation UnderlyingDateTimeDataType = Date
 
+	column last_appointment_year = YEAR(FileB_Scheduler_Contacts[last_appointment_date])
+		formatString: 0
+		lineageTag: bd9ec7ff-4a24-4b47-98ce-e937587379de
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
 	partition FileB_Scheduler_Contacts = m
 		mode: import
 		source =

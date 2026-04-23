@@ -201,6 +201,13 @@ table FileD_Archive
 
 		annotation UnderlyingDateTimeDataType = Date
 
+	column archive_year = YEAR(FileD_Archive[last_known_appointment])
+		formatString: 0
+		lineageTag: 0c263380-5c44-48f8-9f54-3276812732a0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
 	partition FileD_Archive = m
 		mode: import
 		source =

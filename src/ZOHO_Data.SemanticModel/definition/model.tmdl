@@ -55,6 +55,7 @@ ref table LocalDateTable_5febb286-6fc5-4b4d-9608-b5be1852675c
 ref table DimDate
 ref table LocalDateTable_6b20dae4-1338-45ab-abdb-3da35c337b27
 ref table NEW
+ref table archive_year
 
 ref cultureInfo en-US
 
