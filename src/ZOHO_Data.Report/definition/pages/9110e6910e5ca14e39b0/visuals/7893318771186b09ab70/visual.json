@@ -2,12 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "7893318771186b09ab70",
   "position": {
-    "x": 8.123201467286469,
-    "y": 279.67348765993512,
+    "x": 8.6221942176338171,
+    "y": 279.61817213935922,
     "z": 8000,
-    "height": 72.230971128608928,
-    "width": 216.69291338582676,
-    "tabOrder": 5
+    "height": 72.216684848550315,
+    "width": 230.00394515902903
   },
   "visual": {
     "visualType": "slicer",
@@ -17,23 +16,60 @@
           "projections": [
             {
               "field": {
-                "Column": {
+                "HierarchyLevel": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "FileA_HubSpot_Import"
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "FileD_Archive"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "last_known_appointment"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
                     }
                   },
-                  "Property": "source_system"
+                  "Level": "Year"
                 }
               },
-              "queryRef": "FileA_HubSpot_Import.source_system",
-              "nativeQueryRef": "source_system",
+              "queryRef": "FileD_Archive.last_known_appointment.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "last_known_appointment Year",
               "active": true
             }
           ]
         }
       },
       "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "PropertyVariationSource": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FileD_Archive"
+                          }
+                        },
+                        "Name": "Variation",
+                        "Property": "last_known_appointment"
+                      }
+                    },
+                    "Hierarchy": "Date Hierarchy"
+                  }
+                },
+                "Level": "Year"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
         "isDefaultSort": true
       }
     },

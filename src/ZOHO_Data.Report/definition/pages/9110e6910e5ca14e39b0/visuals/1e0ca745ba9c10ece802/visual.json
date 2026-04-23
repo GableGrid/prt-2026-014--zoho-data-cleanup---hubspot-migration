@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "1e0ca745ba9c10ece802",
   "position": {
-    "x": 11.827833507841616,
-    "y": 7.8694388553543657,
+    "x": 16.784729932551304,
+    "y": 8.0217367588501745,
     "z": 3000,
-    "height": 247.10038005812655,
-    "width": 679.25558145033278
+    "height": 251.88253422789506,
+    "width": 963.92306184080326
   },
   "visual": {
     "visualType": "columnChart",
@@ -31,6 +31,24 @@
             }
           ]
         },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FileB_Scheduler_Contacts"
+                    }
+                  },
+                  "Property": "data_status"
+                }
+              },
+              "queryRef": "FileB_Scheduler_Contacts.data_status",
+              "nativeQueryRef": "data_status"
+            }
+          ]
+        },
         "Y": {
           "projections": [
             {
@@ -46,34 +64,6 @@
               },
               "queryRef": "NEW.Total Contacts",
               "nativeQueryRef": "Total Contacts"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "NEW"
-                    }
-                  },
-                  "Property": "ARCHIVE Contacts"
-                }
-              },
-              "queryRef": "NEW.ARCHIVE Contacts",
-              "nativeQueryRef": "ARCHIVE Contacts"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "NEW"
-                    }
-                  },
-                  "Property": "LIVE Contacts"
-                }
-              },
-              "queryRef": "NEW.LIVE Contacts",
-              "nativeQueryRef": "LIVE Contacts"
             }
           ]
         }
@@ -1459,7 +1449,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Projects by Region'"
+                  "Value": "'Contacts by Year'"
                 }
               }
             }
