@@ -1,33 +1,122 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "d6d931dd7492307e50d3",
+  "name": "a3b8c0c0c5ddb0680b22",
   "position": {
-    "x": 19.54122278541514,
-    "y": 11.051134876742452,
+    "x": 9.7566861417286947,
+    "y": 10.419280876557172,
     "z": 4000,
-    "height": 257.58439609902473,
-    "width": 959.48080043266646
+    "height": 242.85688323489327,
+    "width": 479.05666557484466
   },
   "visual": {
-    "visualType": "donutChart",
+    "visualType": "lineChart",
     "query": {
       "queryState": {
         "Category": {
           "projections": [
             {
               "field": {
-                "Column": {
+                "HierarchyLevel": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "FileA_HubSpot_Import"
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "DimDate"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
                     }
                   },
-                  "Property": "daysmart_status"
+                  "Level": "Year"
                 }
               },
-              "queryRef": "FileA_HubSpot_Import.daysmart_status",
-              "nativeQueryRef": "daysmart_status",
+              "queryRef": "DimDate.Date.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "Date Year",
               "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "DimDate"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Quarter"
+                }
+              },
+              "queryRef": "DimDate.Date.Variation.Date Hierarchy.Quarter",
+              "nativeQueryRef": "Date Quarter",
+              "active": false
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "DimDate"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Month"
+                }
+              },
+              "queryRef": "DimDate.Date.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "Date Month",
+              "active": false
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "DimDate"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Day"
+                }
+              },
+              "queryRef": "DimDate.Date.Variation.Date Hierarchy.Day",
+              "nativeQueryRef": "Date Day",
+              "active": false
             }
           ]
         },
@@ -41,85 +130,20 @@
                       "Entity": "NEW"
                     }
                   },
-                  "Property": "Total Contacts"
+                  "Property": "Monthly Revenue"
                 }
               },
-              "queryRef": "NEW.Total Contacts",
-              "nativeQueryRef": "Total Contacts"
+              "queryRef": "NEW.Monthly Revenue",
+              "nativeQueryRef": "Monthly Revenue"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "NEW"
-                  }
-                },
-                "Property": "Total Contacts"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
       }
     },
     "objects": {
       "dataPoint": [
         {
-          "properties": {
-            "fillTransparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "borderShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "borderColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#FFFFFF'"
-                    }
-                  }
-                }
-              }
-            },
-            "borderTransparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "borderSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "3D"
-                }
-              }
-            },
-            "borderOutlineOnly": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
+          "properties": {}
         },
         {
           "properties": {
@@ -345,38 +369,37 @@
                   "Value": "false"
                 }
               }
-            },
-            "position": {
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "'outside'"
+                  "Value": "true"
                 }
               }
             },
-            "labelStyle": {
+            "showAxisTitle": {
               "expr": {
                 "Literal": {
-                  "Value": "'Percent of total'"
+                  "Value": "false"
                 }
               }
             }
           }
         }
       ],
-      "slices": [
+      "valueAxis": [
         {
           "properties": {
-            "innerRadiusRatio": {
+            "showAxisTitle": {
               "expr": {
                 "Literal": {
-                  "Value": "75L"
-                }
-              }
-            },
-            "startAngle": {
-              "expr": {
-                "Literal": {
-                  "Value": "0L"
+                  "Value": "false"
                 }
               }
             }
@@ -412,7 +435,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "' LIVE VS ARCHIVE'"
+                  "Value": "' Monthly Revenue Trend'"
                 }
               }
             },
@@ -488,7 +511,7 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "29aa763a82254982308c",
+  "parentGroupName": "02d053c60270cde6337b",
   "filterConfig": {
     "filters": [
       {
@@ -547,6 +570,7 @@
             }
           ]
         },
+        "howCreated": "User",
         "objects": {
           "general": [
             {

@@ -43,10 +43,11 @@ table NEW
 
 	measure 'Avg Revenue' =
 			DIVIDE(SUM(FileB_Scheduler_Contacts[lifetime_spend]),
-			    COUNTROWS(FileB_Scheduler_Contacts), 0)
+			    COUNTROWS(FileB_Scheduler_Contacts),0)
+		formatString: 0
 		lineageTag: c7fada12-4a4a-45b2-a365-c3c4beb7f65f
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"isDecimal":true}
 
 	measure 'Rev LIVE' = ```
 			CALCULATE(SUM(FileB_Scheduler_Contacts[lifetime_spend]),
