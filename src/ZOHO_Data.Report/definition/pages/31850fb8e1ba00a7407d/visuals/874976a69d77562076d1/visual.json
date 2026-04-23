@@ -187,5 +187,38 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "b4c9040608a6d7e20860"
+  "parentGroupName": "b4c9040608a6d7e20860",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d332aa30de688e206d1a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FileA_HubSpot_Import"
+              }
+            },
+            "Property": "daysmart_status"
+          }
+        },
+        "type": "Categorical",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
 }

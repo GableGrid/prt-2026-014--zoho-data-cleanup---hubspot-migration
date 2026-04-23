@@ -1,15 +1,15 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "47e0f573a066a9d16a18",
+  "name": "5f1e1530e72a9d8424d6",
   "position": {
-    "x": 12.589460302651059,
-    "y": 9.9982105924543259,
+    "x": 9.7566861417286947,
+    "y": 10.419280876557172,
     "z": 4000,
-    "height": 243.93815989117235,
-    "width": 465.68569084941896
+    "height": 242.85688323489327,
+    "width": 479.05666557484466
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "donutChart",
     "query": {
       "queryState": {
         "Category": {
@@ -19,14 +19,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "FileC_Scheduler_ApptHistory"
+                      "Entity": "FileA_HubSpot_Import"
                     }
                   },
-                  "Property": "service"
+                  "Property": "data_rule_applied"
                 }
               },
-              "queryRef": "FileC_Scheduler_ApptHistory.service",
-              "nativeQueryRef": "service",
+              "queryRef": "FileA_HubSpot_Import.data_rule_applied",
+              "nativeQueryRef": "data_rule_applied",
               "active": true
             }
           ]
@@ -41,11 +41,11 @@
                       "Entity": "NEW"
                     }
                   },
-                  "Property": "Monthly Revenue"
+                  "Property": "Contacts by Year"
                 }
               },
-              "queryRef": "NEW.Monthly Revenue",
-              "nativeQueryRef": "Monthly Revenue"
+              "queryRef": "NEW.Contacts by Year",
+              "nativeQueryRef": "Contacts by Year"
             }
           ]
         }
@@ -60,7 +60,7 @@
                     "Entity": "NEW"
                   }
                 },
-                "Property": "Monthly Revenue"
+                "Property": "Contacts by Year"
               }
             },
             "direction": "Descending"
@@ -72,7 +72,54 @@
     "objects": {
       "dataPoint": [
         {
-          "properties": {}
+          "properties": {
+            "fillTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "borderShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "borderSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "3D"
+                }
+              }
+            },
+            "borderColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "borderTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "borderOutlineOnly": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
         },
         {
           "properties": {
@@ -246,13 +293,6 @@
       "legend": [
         {
           "properties": {
-            "showTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "show": {
               "expr": {
                 "Literal": {
@@ -267,6 +307,20 @@
                 }
               }
             },
+            "showTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
             "labelColor": {
               "solid": {
                 "color": {
@@ -276,13 +330,6 @@
                       "Percent": -0.5
                     }
                   }
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
                 }
               }
             }
@@ -298,37 +345,38 @@
                   "Value": "false"
                 }
               }
-            }
-          }
-        }
-      ],
-      "categoryAxis": [
-        {
-          "properties": {
-            "show": {
+            },
+            "labelStyle": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "'Percent of total'"
                 }
               }
             },
-            "showAxisTitle": {
+            "position": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "'outside'"
                 }
               }
             }
           }
         }
       ],
-      "valueAxis": [
+      "slices": [
         {
           "properties": {
-            "showAxisTitle": {
+            "innerRadiusRatio": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "75L"
+                }
+              }
+            },
+            "startAngle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
                 }
               }
             }
@@ -340,17 +388,10 @@
       "title": [
         {
           "properties": {
-            "titleWrap": {
+            "text": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "' Monthly Revenue Trend'"
                 }
               }
             },
@@ -361,10 +402,10 @@
                 }
               }
             },
-            "text": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'Revenue by Service'"
+                  "Value": "true"
                 }
               }
             },
@@ -372,6 +413,13 @@
               "expr": {
                 "Literal": {
                   "Value": "13D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             }
@@ -440,7 +488,7 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "e2506266b526026e00a6",
+  "parentGroupName": "00e33461b244795d7900",
   "filterConfig": {
     "filters": [
       {
@@ -468,35 +516,32 @@
           "Where": [
             {
               "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "f"
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "f"
+                              }
+                            },
+                            "Property": "daysmart_status"
                           }
-                        },
-                        "Property": "daysmart_status"
-                      }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
                     }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'ARCHIVE'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'LIVE'"
-                        }
-                      }
-                    ]
-                  ]
+                  }
                 }
               }
             }
@@ -506,114 +551,35 @@
         "objects": {
           "general": [
             {
-              "properties": {}
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
             }
           ]
         }
       },
       {
-        "name": "94a581285003aa2599c0",
+        "name": "d86db612c5dcc0c20b26",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "FileC_Scheduler_ApptHistory"
+                "Entity": "FileA_HubSpot_Import"
               }
             },
-            "Property": "service"
+            "Property": "data_rule_applied"
           }
         },
-        "type": "TopN",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "subquery",
-              "Expression": {
-                "Subquery": {
-                  "Query": {
-                    "Version": 2,
-                    "From": [
-                      {
-                        "Name": "f",
-                        "Entity": "FileC_Scheduler_ApptHistory",
-                        "Type": 0
-                      }
-                    ],
-                    "Select": [
-                      {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "f"
-                            }
-                          },
-                          "Property": "service"
-                        },
-                        "Name": "field"
-                      }
-                    ],
-                    "OrderBy": [
-                      {
-                        "Direction": 2,
-                        "Expression": {
-                          "Aggregation": {
-                            "Expression": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "f"
-                                  }
-                                },
-                                "Property": "service"
-                              }
-                            },
-                            "Function": 3
-                          }
-                        }
-                      }
-                    ],
-                    "Top": 5
-                  }
-                }
-              },
-              "Type": 2
-            },
-            {
-              "Name": "f",
-              "Entity": "FileC_Scheduler_ApptHistory",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "f"
-                          }
-                        },
-                        "Property": "service"
-                      }
-                    }
-                  ],
-                  "Table": {
-                    "SourceRef": {
-                      "Source": "subquery"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
+        "type": "Categorical"
       },
       {
-        "name": "59dfc78ea556a0bb9600",
+        "name": "510150ed140721bb6d3b",
         "field": {
           "Measure": {
             "Expression": {
@@ -621,7 +587,7 @@
                 "Entity": "NEW"
               }
             },
-            "Property": "Monthly Revenue"
+            "Property": "Contacts by Year"
           }
         },
         "type": "Advanced"

@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "c5bddd8f8da3db42da0b",
+  "name": "966d3ab3258b1198a43c",
   "position": {
     "x": 0,
     "y": 0,
     "z": 0,
-    "height": 260.16071104154724,
-    "width": 488.53944693462648
+    "height": 702.51162790697674,
+    "width": 247.06976744186048
   },
   "visual": {
     "visualType": "shape",
@@ -17,14 +17,14 @@
             "tileShape": {
               "expr": {
                 "Literal": {
-                  "Value": "'rectangleRounded'"
+                  "Value": "'rectangle'"
                 }
               }
             },
-            "rectangleRoundedCurve": {
+            "roundEdge": {
               "expr": {
                 "Literal": {
-                  "Value": "7L"
+                  "Value": "5L"
                 }
               }
             }
@@ -51,9 +51,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
                     }
                   }
                 }
@@ -79,8 +78,23 @@
         }
       ]
     },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "e2506266b526026e00a6",
+  "parentGroupName": "30bd132750190ba64687",
   "howCreated": "InsertVisualButton"
 }

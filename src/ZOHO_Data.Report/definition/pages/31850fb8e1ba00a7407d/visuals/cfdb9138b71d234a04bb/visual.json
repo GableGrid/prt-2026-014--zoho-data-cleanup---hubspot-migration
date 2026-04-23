@@ -182,5 +182,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "b4c9040608a6d7e20860"
+  "parentGroupName": "b4c9040608a6d7e20860",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "36f48471c9926608cce4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FileC_Scheduler_ApptHistory"
+              }
+            },
+            "Property": "status"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

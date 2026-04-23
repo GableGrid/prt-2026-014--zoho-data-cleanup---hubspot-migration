@@ -1,15 +1,15 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "47e0f573a066a9d16a18",
+  "name": "8de55f21831704713e65",
   "position": {
-    "x": 12.589460302651059,
-    "y": 9.9982105924543259,
+    "x": 9.7566861417286947,
+    "y": 10.419280876557172,
     "z": 4000,
-    "height": 243.93815989117235,
-    "width": 465.68569084941896
+    "height": 242.85688323489327,
+    "width": 479.05666557484466
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "columnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -19,15 +19,33 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "FileC_Scheduler_ApptHistory"
+                      "Entity": "FileA_HubSpot_Import"
                     }
                   },
-                  "Property": "service"
+                  "Property": "data_rule_applied"
                 }
               },
-              "queryRef": "FileC_Scheduler_ApptHistory.service",
-              "nativeQueryRef": "service",
+              "queryRef": "FileA_HubSpot_Import.data_rule_applied",
+              "nativeQueryRef": "data_rule_applied",
               "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FileA_HubSpot_Import"
+                    }
+                  },
+                  "Property": "data_rule_applied"
+                }
+              },
+              "queryRef": "FileA_HubSpot_Import.data_rule_applied",
+              "nativeQueryRef": "data_rule_applied"
             }
           ]
         },
@@ -41,11 +59,11 @@
                       "Entity": "NEW"
                     }
                   },
-                  "Property": "Monthly Revenue"
+                  "Property": "Contacts by Year"
                 }
               },
-              "queryRef": "NEW.Monthly Revenue",
-              "nativeQueryRef": "Monthly Revenue"
+              "queryRef": "NEW.Contacts by Year",
+              "nativeQueryRef": "Contacts by Year"
             }
           ]
         }
@@ -60,7 +78,7 @@
                     "Entity": "NEW"
                   }
                 },
-                "Property": "Monthly Revenue"
+                "Property": "Contacts by Year"
               }
             },
             "direction": "Descending"
@@ -364,7 +382,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Revenue by Service'"
+                  "Value": "' Monthly Revenue Trend'"
                 }
               }
             },
@@ -440,7 +458,7 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "e2506266b526026e00a6",
+  "parentGroupName": "cda3b9f90509cb125c7a",
   "filterConfig": {
     "filters": [
       {
@@ -468,35 +486,32 @@
           "Where": [
             {
               "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "f"
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "f"
+                              }
+                            },
+                            "Property": "daysmart_status"
                           }
-                        },
-                        "Property": "daysmart_status"
-                      }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
                     }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'ARCHIVE'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'LIVE'"
-                        }
-                      }
-                    ]
-                  ]
+                  }
                 }
               }
             }
@@ -506,114 +521,35 @@
         "objects": {
           "general": [
             {
-              "properties": {}
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
             }
           ]
         }
       },
       {
-        "name": "94a581285003aa2599c0",
+        "name": "def383a2828ee160272b",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "FileC_Scheduler_ApptHistory"
+                "Entity": "FileA_HubSpot_Import"
               }
             },
-            "Property": "service"
+            "Property": "data_rule_applied"
           }
         },
-        "type": "TopN",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "subquery",
-              "Expression": {
-                "Subquery": {
-                  "Query": {
-                    "Version": 2,
-                    "From": [
-                      {
-                        "Name": "f",
-                        "Entity": "FileC_Scheduler_ApptHistory",
-                        "Type": 0
-                      }
-                    ],
-                    "Select": [
-                      {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "f"
-                            }
-                          },
-                          "Property": "service"
-                        },
-                        "Name": "field"
-                      }
-                    ],
-                    "OrderBy": [
-                      {
-                        "Direction": 2,
-                        "Expression": {
-                          "Aggregation": {
-                            "Expression": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "f"
-                                  }
-                                },
-                                "Property": "service"
-                              }
-                            },
-                            "Function": 3
-                          }
-                        }
-                      }
-                    ],
-                    "Top": 5
-                  }
-                }
-              },
-              "Type": 2
-            },
-            {
-              "Name": "f",
-              "Entity": "FileC_Scheduler_ApptHistory",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "f"
-                          }
-                        },
-                        "Property": "service"
-                      }
-                    }
-                  ],
-                  "Table": {
-                    "SourceRef": {
-                      "Source": "subquery"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
+        "type": "Categorical"
       },
       {
-        "name": "59dfc78ea556a0bb9600",
+        "name": "a6d65e62d1c0d2984ab9",
         "field": {
           "Measure": {
             "Expression": {
@@ -621,7 +557,7 @@
                 "Entity": "NEW"
               }
             },
-            "Property": "Monthly Revenue"
+            "Property": "Contacts by Year"
           }
         },
         "type": "Advanced"

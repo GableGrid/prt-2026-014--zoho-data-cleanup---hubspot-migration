@@ -1,10 +1,10 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "29d83be0a3a3ba904019",
+  "name": "da61fcf64e99b36da58c",
   "position": {
     "x": 8.6221942176338171,
-    "y": 83.46323462366513,
-    "z": 5000,
+    "y": 180.53016269599951,
+    "z": 7000,
     "height": 72.216684848550315,
     "width": 230.00394515902903
   },
@@ -19,14 +19,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "FileA_HubSpot_Import"
+                      "Entity": "FileC_Scheduler_ApptHistory"
                     }
                   },
-                  "Property": "daysmart_status"
+                  "Property": "status"
                 }
               },
-              "queryRef": "FileA_HubSpot_Import.daysmart_status",
-              "nativeQueryRef": "daysmart_status",
+              "queryRef": "FileC_Scheduler_ApptHistory.status",
+              "nativeQueryRef": "status",
               "active": true
             }
           ]
@@ -180,45 +180,7 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "Region1",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "67fe80481dbc3924d52a",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d332aa30de688e206d1a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "FileA_HubSpot_Import"
-              }
-            },
-            "Property": "daysmart_status"
-          }
-        },
-        "type": "Categorical",
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      }
-    ]
-  }
+  "parentGroupName": "30bd132750190ba64687"
 }

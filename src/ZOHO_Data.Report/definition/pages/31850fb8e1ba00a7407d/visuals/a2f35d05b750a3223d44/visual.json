@@ -1,15 +1,15 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "47e0f573a066a9d16a18",
+  "name": "a2f35d05b750a3223d44",
   "position": {
-    "x": 12.589460302651059,
-    "y": 9.9982105924543259,
+    "x": 9.7575991447019419,
+    "y": 11.073546012696909,
     "z": 4000,
-    "height": 243.93815989117235,
-    "width": 465.68569084941896
+    "height": 258.1067640716455,
+    "width": 479.10149433674934
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "pieChart",
     "query": {
       "queryState": {
         "Category": {
@@ -19,14 +19,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "FileC_Scheduler_ApptHistory"
+                      "Entity": "FileA_HubSpot_Import"
                     }
                   },
-                  "Property": "service"
+                  "Property": "daysmart_status"
                 }
               },
-              "queryRef": "FileC_Scheduler_ApptHistory.service",
-              "nativeQueryRef": "service",
+              "queryRef": "FileA_HubSpot_Import.daysmart_status",
+              "nativeQueryRef": "daysmart_status",
               "active": true
             }
           ]
@@ -41,11 +41,11 @@
                       "Entity": "NEW"
                     }
                   },
-                  "Property": "Monthly Revenue"
+                  "Property": "Service Revenue"
                 }
               },
-              "queryRef": "NEW.Monthly Revenue",
-              "nativeQueryRef": "Monthly Revenue"
+              "queryRef": "NEW.Service Revenue",
+              "nativeQueryRef": "Service Revenue"
             }
           ]
         }
@@ -60,7 +60,7 @@
                     "Entity": "NEW"
                   }
                 },
-                "Property": "Monthly Revenue"
+                "Property": "Service Revenue"
               }
             },
             "direction": "Descending"
@@ -72,7 +72,54 @@
     "objects": {
       "dataPoint": [
         {
-          "properties": {}
+          "properties": {
+            "fillTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "borderShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "borderColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "borderTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "borderSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "3D"
+                }
+              }
+            },
+            "borderOutlineOnly": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
         },
         {
           "properties": {
@@ -298,37 +345,38 @@
                   "Value": "false"
                 }
               }
-            }
-          }
-        }
-      ],
-      "categoryAxis": [
-        {
-          "properties": {
-            "show": {
+            },
+            "position": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "'outside'"
                 }
               }
             },
-            "showAxisTitle": {
+            "labelStyle": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "'Percent of total'"
                 }
               }
             }
           }
         }
       ],
-      "valueAxis": [
+      "slices": [
         {
           "properties": {
-            "showAxisTitle": {
+            "innerRadiusRatio": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "75L"
+                }
+              }
+            },
+            "startAngle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
                 }
               }
             }
@@ -364,7 +412,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Revenue by Service'"
+                  "Value": "' LIVE VS ARCHIVE'"
                 }
               }
             },
@@ -440,7 +488,7 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "e2506266b526026e00a6",
+  "parentGroupName": "b6fa608f5507c30b10bd",
   "filterConfig": {
     "filters": [
       {
@@ -468,142 +516,45 @@
           "Where": [
             {
               "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "f"
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "f"
+                              }
+                            },
+                            "Property": "daysmart_status"
                           }
-                        },
-                        "Property": "daysmart_status"
-                      }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
                     }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'ARCHIVE'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'LIVE'"
-                        }
-                      }
-                    ]
-                  ]
+                  }
                 }
               }
             }
           ]
         },
-        "howCreated": "User",
         "objects": {
           "general": [
             {
-              "properties": {}
-            }
-          ]
-        }
-      },
-      {
-        "name": "94a581285003aa2599c0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "FileC_Scheduler_ApptHistory"
-              }
-            },
-            "Property": "service"
-          }
-        },
-        "type": "TopN",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "subquery",
-              "Expression": {
-                "Subquery": {
-                  "Query": {
-                    "Version": 2,
-                    "From": [
-                      {
-                        "Name": "f",
-                        "Entity": "FileC_Scheduler_ApptHistory",
-                        "Type": 0
-                      }
-                    ],
-                    "Select": [
-                      {
-                        "Column": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "f"
-                            }
-                          },
-                          "Property": "service"
-                        },
-                        "Name": "field"
-                      }
-                    ],
-                    "OrderBy": [
-                      {
-                        "Direction": 2,
-                        "Expression": {
-                          "Aggregation": {
-                            "Expression": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "f"
-                                  }
-                                },
-                                "Property": "service"
-                              }
-                            },
-                            "Function": 3
-                          }
-                        }
-                      }
-                    ],
-                    "Top": 5
-                  }
-                }
-              },
-              "Type": 2
-            },
-            {
-              "Name": "f",
-              "Entity": "FileC_Scheduler_ApptHistory",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "f"
-                          }
-                        },
-                        "Property": "service"
-                      }
-                    }
-                  ],
-                  "Table": {
-                    "SourceRef": {
-                      "Source": "subquery"
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
                     }
                   }
                 }
@@ -613,7 +564,7 @@
         }
       },
       {
-        "name": "59dfc78ea556a0bb9600",
+        "name": "5fa084b008c031cece62",
         "field": {
           "Measure": {
             "Expression": {
@@ -621,7 +572,7 @@
                 "Entity": "NEW"
               }
             },
-            "Property": "Monthly Revenue"
+            "Property": "Service Revenue"
           }
         },
         "type": "Advanced"

@@ -1,36 +1,17 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "47e0f573a066a9d16a18",
+  "name": "1974b12f0089dd56682a",
   "position": {
-    "x": 12.589460302651059,
-    "y": 9.9982105924543259,
+    "x": 12.634583816280633,
+    "y": 10.606209885238712,
     "z": 4000,
-    "height": 243.93815989117235,
-    "width": 465.68569084941896
+    "height": 258.77223718185178,
+    "width": 467.35481518938104
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "gauge",
     "query": {
       "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "FileC_Scheduler_ApptHistory"
-                    }
-                  },
-                  "Property": "service"
-                }
-              },
-              "queryRef": "FileC_Scheduler_ApptHistory.service",
-              "nativeQueryRef": "service",
-              "active": true
-            }
-          ]
-        },
         "Y": {
           "projections": [
             {
@@ -41,11 +22,11 @@
                       "Entity": "NEW"
                     }
                   },
-                  "Property": "Monthly Revenue"
+                  "Property": "No-Show Rate"
                 }
               },
-              "queryRef": "NEW.Monthly Revenue",
-              "nativeQueryRef": "Monthly Revenue"
+              "queryRef": "NEW.No-Show Rate",
+              "nativeQueryRef": "No-Show Rate"
             }
           ]
         }
@@ -60,7 +41,7 @@
                     "Entity": "NEW"
                   }
                 },
-                "Property": "Monthly Revenue"
+                "Property": "No-Show Rate"
               }
             },
             "direction": "Descending"
@@ -243,52 +224,6 @@
           }
         }
       ],
-      "legend": [
-        {
-          "properties": {
-            "showTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'RightCenter'"
-                }
-              }
-            },
-            "labelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.5
-                    }
-                  }
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            }
-          }
-        }
-      ],
       "labels": [
         {
           "properties": {
@@ -302,33 +237,27 @@
           }
         }
       ],
-      "categoryAxis": [
+      "axis": [
         {
           "properties": {
-            "show": {
+            "min": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "0D"
                 }
               }
             },
-            "showAxisTitle": {
+            "max": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "1D"
                 }
               }
-            }
-          }
-        }
-      ],
-      "valueAxis": [
-        {
-          "properties": {
-            "showAxisTitle": {
+            },
+            "target": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "0.1D"
                 }
               }
             }
@@ -364,7 +293,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Revenue by Service'"
+                  "Value": "'No-Show Rate'"
                 }
               }
             },
@@ -440,7 +369,7 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "e2506266b526026e00a6",
+  "parentGroupName": "bb2da33fd0dae164c72b",
   "filterConfig": {
     "filters": [
       {
@@ -610,10 +539,11 @@
               }
             }
           ]
-        }
+        },
+        "howCreated": "User"
       },
       {
-        "name": "59dfc78ea556a0bb9600",
+        "name": "f6897f982e269c1ae925",
         "field": {
           "Measure": {
             "Expression": {
@@ -621,7 +551,7 @@
                 "Entity": "NEW"
               }
             },
-            "Property": "Monthly Revenue"
+            "Property": "No-Show Rate"
           }
         },
         "type": "Advanced"
