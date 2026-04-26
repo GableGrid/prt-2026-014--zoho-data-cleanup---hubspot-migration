@@ -19,14 +19,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "FileA_HubSpot_Import"
+                      "Entity": "FileD_Archive"
                     }
                   },
-                  "Property": "daysmart_status"
+                  "Property": "zerobounce_status"
                 }
               },
-              "queryRef": "FileA_HubSpot_Import.daysmart_status",
-              "nativeQueryRef": "daysmart_status",
+              "queryRef": "FileD_Archive.zerobounce_status",
+              "nativeQueryRef": "zerobounce_status",
               "active": true
             }
           ]
@@ -203,6 +203,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "objects": {
           "general": [
             {

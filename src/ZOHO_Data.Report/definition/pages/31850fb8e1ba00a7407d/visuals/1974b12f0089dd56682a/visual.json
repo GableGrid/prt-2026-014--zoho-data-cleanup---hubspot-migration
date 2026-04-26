@@ -541,20 +541,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "f6897f982e269c1ae925",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "NEW"
-              }
-            },
-            "Property": "No-Show Rate"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

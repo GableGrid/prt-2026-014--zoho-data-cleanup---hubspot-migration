@@ -113,23 +113,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "2ef722c2e25433a01410",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "580d93b502ec301d6134",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "NEW"
-              }
-            },
-            "Property": "Top1K Customers"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
-  }
+  "parentGroupName": "2ef722c2e25433a01410"
 }

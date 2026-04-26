@@ -173,23 +173,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "c41661b8ec65c4d78464",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "085f04dab0bc9729dee5",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "NEW"
-              }
-            },
-            "Property": "Avg Revenue"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
-  }
+  "parentGroupName": "c41661b8ec65c4d78464"
 }

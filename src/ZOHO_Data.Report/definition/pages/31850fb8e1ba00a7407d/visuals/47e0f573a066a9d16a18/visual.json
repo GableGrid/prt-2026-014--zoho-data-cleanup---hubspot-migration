@@ -611,20 +611,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "59dfc78ea556a0bb9600",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "NEW"
-              }
-            },
-            "Property": "Monthly Revenue"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

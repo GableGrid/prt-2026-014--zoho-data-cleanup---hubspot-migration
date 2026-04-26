@@ -182,23 +182,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "e8056be06c5d039c0eb3",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "5443208ca227ccab7db0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "FileA_HubSpot_Import"
-              }
-            },
-            "Property": "zerobounce_status"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
-  }
+  "parentGroupName": "e8056be06c5d039c0eb3"
 }
