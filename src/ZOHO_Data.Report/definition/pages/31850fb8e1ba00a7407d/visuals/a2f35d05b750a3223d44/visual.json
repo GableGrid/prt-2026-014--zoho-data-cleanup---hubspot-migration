@@ -6,10 +6,11 @@
     "y": 11.073546012696909,
     "z": 4000,
     "height": 258.1067640716455,
-    "width": 479.10149433674934
+    "width": 479.10149433674934,
+    "tabOrder": 1000
   },
   "visual": {
-    "visualType": "pieChart",
+    "visualType": "donutChart",
     "query": {
       "queryState": {
         "Category": {
@@ -35,17 +36,22 @@
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "NEW"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FileA_HubSpot_Import"
+                        }
+                      },
+                      "Property": "lifetime_value"
                     }
                   },
-                  "Property": "Service Revenue"
+                  "Function": 0
                 }
               },
-              "queryRef": "NEW.Service Revenue",
-              "nativeQueryRef": "Service Revenue"
+              "queryRef": "Sum(FileA_HubSpot_Import.lifetime_value)",
+              "nativeQueryRef": "Sum of lifetime_value"
             }
           ]
         }
@@ -54,13 +60,18 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Aggregation": {
                 "Expression": {
-                  "SourceRef": {
-                    "Entity": "NEW"
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "FileA_HubSpot_Import"
+                      }
+                    },
+                    "Property": "lifetime_value"
                   }
                 },
-                "Property": "Service Revenue"
+                "Function": 0
               }
             },
             "direction": "Descending"

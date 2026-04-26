@@ -2,11 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "d6d931dd7492307e50d3",
   "position": {
-    "x": 19.54122278541514,
-    "y": 11.051134876742452,
+    "x": 7.790849429120172,
+    "y": 9.9358006117847655,
     "z": 4000,
-    "height": 257.58439609902473,
-    "width": 959.48080043266646
+    "height": 257.0862800565771,
+    "width": 415.072973964063,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "donutChart",

@@ -2,11 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "29d83be0a3a3ba904019",
   "position": {
-    "x": 8.6221942176338171,
-    "y": 83.46323462366513,
+    "x": 5.8514285714285714,
+    "y": 103.79864920318708,
     "z": 5000,
-    "height": 72.216684848550315,
-    "width": 230.00394515902903
+    "height": 73.142857142857139,
+    "width": 235.85436734693874,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -19,15 +20,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "FileD_Archive"
+                      "Entity": "FileA_HubSpot_Import"
                     }
                   },
-                  "Property": "zerobounce_status"
+                  "Property": "daysmart_status"
                 }
               },
-              "queryRef": "FileD_Archive.zerobounce_status",
-              "nativeQueryRef": "zerobounce_status",
-              "active": true
+              "queryRef": "FileA_HubSpot_Import.daysmart_status",
+              "nativeQueryRef": "daysmart_status",
+              "active": true,
+              "displayName": "daysmart_status"
             }
           ]
         }
@@ -203,7 +205,6 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
         "objects": {
           "general": [
             {

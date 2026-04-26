@@ -23,11 +23,11 @@
                       "Entity": "NEW"
                     }
                   },
-                  "Property": "No-Show Rate"
+                  "Property": "Deliverability"
                 }
               },
-              "queryRef": "NEW.No-Show Rate",
-              "nativeQueryRef": "No-Show Rate"
+              "queryRef": "NEW.Deliverability",
+              "nativeQueryRef": "Deliverability"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "NEW"
                   }
                 },
-                "Property": "No-Show Rate"
+                "Property": "Deliverability"
               }
             },
             "direction": "Descending"
@@ -155,5 +155,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "d9e390e1246276bda201"
+  "parentGroupName": "d9e390e1246276bda201",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c2c24fa2406e26351479",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NEW"
+              }
+            },
+            "Property": "Deliverability"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

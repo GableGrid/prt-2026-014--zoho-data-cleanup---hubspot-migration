@@ -50,6 +50,17 @@
           "type": "BaseTheme"
         }
       ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "a9cae0ab-df3d-4f43-a374-389a2e9823101985433343.jpg",
+          "path": "a9cae0ab-df3d-4f43-a374-389a2e9823101985433343.jpg",
+          "type": "Image"
+        }
+      ]
     }
   ],
   "settings": {

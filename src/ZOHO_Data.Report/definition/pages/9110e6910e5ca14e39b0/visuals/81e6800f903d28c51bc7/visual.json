@@ -2,11 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "81e6800f903d28c51bc7",
   "position": {
-    "x": 8.6221942176338171,
-    "y": 180.53016269599951,
+    "x": 5.8514285714285714,
+    "y": 201.81007777461579,
     "z": 7000,
-    "height": 72.216684848550315,
-    "width": 230.00394515902903
+    "height": 71.68,
+    "width": 235.85436734693874,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "slicer",
@@ -27,7 +28,8 @@
               },
               "queryRef": "FileA_HubSpot_Import.zerobounce_status",
               "nativeQueryRef": "zerobounce_status",
-              "active": true
+              "active": true,
+              "displayName": "zerobounce_status"
             }
           ]
         }

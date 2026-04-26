@@ -17,17 +17,22 @@
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "NEW"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FileA_HubSpot_Import"
+                        }
+                      },
+                      "Property": "hs_email_click"
                     }
                   },
-                  "Property": "Total Appts"
+                  "Function": 0
                 }
               },
-              "queryRef": "NEW.Total Appts",
-              "nativeQueryRef": "Total Appts"
+              "queryRef": "Sum(FileA_HubSpot_Import.hs_email_click)",
+              "nativeQueryRef": "Sum of hs_email_click"
             }
           ]
         }
@@ -36,13 +41,18 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Aggregation": {
                 "Expression": {
-                  "SourceRef": {
-                    "Entity": "NEW"
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "FileA_HubSpot_Import"
+                      }
+                    },
+                    "Property": "hs_email_click"
                   }
                 },
-                "Property": "Total Appts"
+                "Function": 0
               }
             },
             "direction": "Descending"
@@ -114,5 +124,28 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "182087da6500341cc70c"
+  "parentGroupName": "182087da6500341cc70c",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f3598be3d5e43397a676",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FileA_HubSpot_Import"
+                  }
+                },
+                "Property": "hs_email_click"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

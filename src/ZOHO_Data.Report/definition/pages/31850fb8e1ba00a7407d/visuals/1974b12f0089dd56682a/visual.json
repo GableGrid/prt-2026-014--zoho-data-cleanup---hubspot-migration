@@ -6,7 +6,8 @@
     "y": 10.606209885238712,
     "z": 4000,
     "height": 258.77223718185178,
-    "width": 467.35481518938104
+    "width": 467.35481518938104,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "gauge",
@@ -53,7 +54,32 @@
     "objects": {
       "dataPoint": [
         {
-          "properties": {}
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 7,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            },
+            "target": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 7,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          }
         },
         {
           "properties": {
@@ -258,6 +284,38 @@
               "expr": {
                 "Literal": {
                   "Value": "0.1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "target": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }

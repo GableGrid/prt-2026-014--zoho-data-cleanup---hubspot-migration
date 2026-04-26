@@ -103,7 +103,19 @@
     "objects": {
       "dataPoint": [
         {
-          "properties": {}
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#9FC2E0'"
+                    }
+                  }
+                }
+              }
+            }
+          }
         },
         {
           "properties": {
@@ -111,9 +123,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 7,
-                      "Percent": -0.5
+                    "Literal": {
+                      "Value": "'#14213D'"
                     }
                   }
                 }
@@ -130,15 +141,56 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "List1_Projects"
+                            "Entity": "RentRoll"
                           }
                         },
-                        "Property": "Status"
+                        "Property": "Unit Number"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Active'"
+                        "Value": "'U120'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#14213D'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "RentRoll"
+                          }
+                        },
+                        "Property": "Unit Number"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'U118'"
                       }
                     }
                   }
@@ -154,7 +206,7 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 7,
+                      "ColorId": 6,
                       "Percent": -0.25
                     }
                   }
@@ -172,15 +224,15 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "List1_Projects"
+                            "Entity": "RentRoll"
                           }
                         },
-                        "Property": "Status"
+                        "Property": "Unit Number"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Completed'"
+                        "Value": "'U112'"
                       }
                     }
                   }
@@ -196,7 +248,7 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 8,
+                      "ColorId": 6,
                       "Percent": -0.25
                     }
                   }
@@ -214,15 +266,15 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "List1_Projects"
+                            "Entity": "RentRoll"
                           }
                         },
-                        "Property": "Status"
+                        "Property": "Unit Number"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Planning'"
+                        "Value": "'U102'"
                       }
                     }
                   }
@@ -238,7 +290,7 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 3,
+                      "ColorId": 6,
                       "Percent": 0.4
                     }
                   }
@@ -256,15 +308,561 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "List1_Projects"
+                            "Entity": "RentRoll"
                           }
                         },
-                        "Property": "Status"
+                        "Property": "Unit Number"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'On Hold'"
+                        "Value": "'U104'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 6,
+                      "Percent": 0.4
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "RentRoll"
+                          }
+                        },
+                        "Property": "Unit Number"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'U103'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Female Dormitories in Budapest"
+                          }
+                        },
+                        "Property": "Hotel Name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Verno House Budapest, Vignette Collection by IHG'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Female Dormitories in Budapest"
+                          }
+                        },
+                        "Property": "Hotel Name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Millennium Court, Budapest - Marriott Executive Apartments'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Female Dormitories in Budapest"
+                          }
+                        },
+                        "Property": "Hotel Name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Courtyard by Marriott Budapest City Center'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Female Dormitories in Budapest"
+                          }
+                        },
+                        "Property": "Hotel Name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Budapest A+ Apartment'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Female Dormitories in Budapest"
+                          }
+                        },
+                        "Property": "Hotel Name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Margaret Bridge Studio Apartment'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Female Dormitories in Budapest"
+                          }
+                        },
+                        "Property": "Hotel Name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Top Apartment Budapest - Studio (1 Adult)'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Female Dormitories in Budapest"
+                          }
+                        },
+                        "Property": "Hotel Name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'West City Apartments - Studio Apartment'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Female Dormitories in Budapest"
+                          }
+                        },
+                        "Property": "Hotel Name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Apartment4you Budapest - Apartment'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Female Dormitories in Budapest"
+                          }
+                        },
+                        "Property": "Hotel Name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Matild Palace, a Luxury Collection Hotel, Budapest'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Female Dormitories in Budapest"
+                          }
+                        },
+                        "Property": "Hotel Name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'InterContinental Budapest'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Female Dormitories in Budapest"
+                          }
+                        },
+                        "Property": "Hotel Name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Budapest Marriott Hotel'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Female Dormitories in Budapest"
+                          }
+                        },
+                        "Property": "Hotel Name"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'West City Apartments'"
                       }
                     }
                   }
@@ -274,7 +872,7 @@
           }
         }
       ],
-      "legend": [
+      "categoryAxis": [
         {
           "properties": {
             "show": {
@@ -284,49 +882,24 @@
                 }
               }
             },
-            "position": {
+            "innerPadding": {
               "expr": {
                 "Literal": {
-                  "Value": "'RightCenter'"
+                  "Value": "22L"
                 }
               }
             },
-            "showTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "labelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.5
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      ],
-      "categoryAxis": [
-        {
-          "properties": {
             "showAxisTitle": {
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "gridlineShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -336,10 +909,147 @@
       "valueAxis": [
         {
           "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "invertAxis": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "logAxisScale": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
             "showAxisTitle": {
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "gridlineShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridlineThickness": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "gridlineTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "gridlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'dotted'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "zoom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showOnCategoryAxis": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showOnValueAxis": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showLabels": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "markers": [
+        {
+          "properties": {
+            "borderShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "borderWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "borderTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "bubbles": [
+        {
+          "properties": {
+            "bubbleSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "-20L"
+                }
+              }
+            },
+            "markerRangeType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'magnitude'"
+                }
+              }
+            },
+            "markerShape": {
+              "expr": {
+                "Literal": {
+                  "Value": "'circle'"
                 }
               }
             }
@@ -358,24 +1068,10 @@
                 }
               }
             },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "titleWrap": {
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "13D"
                 }
               }
             },
@@ -416,32 +1112,6 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "visualHeader": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "visualTooltip": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
                 }
               }
             }

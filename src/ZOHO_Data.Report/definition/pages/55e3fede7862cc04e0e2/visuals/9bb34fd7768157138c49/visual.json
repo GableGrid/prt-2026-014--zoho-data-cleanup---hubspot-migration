@@ -23,11 +23,11 @@
                       "Entity": "NEW"
                     }
                   },
-                  "Property": "Total Revenue"
+                  "Property": "Total Opens"
                 }
               },
-              "queryRef": "NEW.Total Revenue",
-              "nativeQueryRef": "Total Revenue"
+              "queryRef": "NEW.Total Opens",
+              "nativeQueryRef": "Total Opens"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "NEW"
                   }
                 },
-                "Property": "Total Revenue"
+                "Property": "Total Opens"
               }
             },
             "direction": "Descending"

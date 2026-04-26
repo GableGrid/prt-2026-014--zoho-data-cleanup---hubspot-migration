@@ -23,11 +23,11 @@
                       "Entity": "NEW"
                     }
                   },
-                  "Property": "Avg Revenue"
+                  "Property": "Total Appts"
                 }
               },
-              "queryRef": "NEW.Avg Revenue",
-              "nativeQueryRef": "Avg Revenue"
+              "queryRef": "NEW.Total Appts",
+              "nativeQueryRef": "Total Appts"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "NEW"
                   }
                 },
-                "Property": "Avg Revenue"
+                "Property": "Total Appts"
               }
             },
             "direction": "Descending"

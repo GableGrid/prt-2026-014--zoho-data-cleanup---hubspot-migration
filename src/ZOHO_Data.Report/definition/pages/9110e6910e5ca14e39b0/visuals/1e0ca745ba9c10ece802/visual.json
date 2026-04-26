@@ -6,7 +6,8 @@
     "y": 8.0217367588501745,
     "z": 3000,
     "height": 251.88253422789506,
-    "width": 963.92306184080326
+    "width": 963.92306184080326,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "columnChart",
@@ -94,7 +95,7 @@
             "innerPadding": {
               "expr": {
                 "Literal": {
-                  "Value": "25L"
+                  "Value": "30L"
                 }
               }
             },
@@ -171,6 +172,20 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "gridlineTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "gridlineThickness": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }
