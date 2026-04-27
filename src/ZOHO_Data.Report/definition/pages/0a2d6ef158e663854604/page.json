@@ -8,15 +8,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "8d9eb78e000409b56354",
+        "name": "e076a35270014ded8309",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "top1000_marketing_contacts"
+                "Entity": "FileA_HubSpot_Import"
               }
             },
-            "Property": "Marketing_Score"
+            "Property": "zoho_lead_status"
           }
         },
         "type": "Categorical",
@@ -24,8 +24,8 @@
           "Version": 2,
           "From": [
             {
-              "Name": "t",
-              "Entity": "top1000_marketing_contacts",
+              "Name": "f",
+              "Entity": "FileA_HubSpot_Import",
               "Type": 0
             }
           ],
@@ -40,10 +40,10 @@
                           "Column": {
                             "Expression": {
                               "SourceRef": {
-                                "Source": "t"
+                                "Source": "f"
                               }
                             },
-                            "Property": "Marketing_Score"
+                            "Property": "zoho_lead_status"
                           }
                         }
                       ],
@@ -52,6 +52,13 @@
                           {
                             "Literal": {
                               "Value": "null"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "''"
                             }
                           }
                         ]

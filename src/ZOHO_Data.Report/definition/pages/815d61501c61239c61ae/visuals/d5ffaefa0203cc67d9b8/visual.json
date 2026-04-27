@@ -17,28 +17,17 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "FileD_Archive"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "last_known_appointment"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
+                    "SourceRef": {
+                      "Entity": "DimDate"
                     }
                   },
-                  "Level": "Year"
+                  "Property": "Date"
                 }
               },
-              "queryRef": "FileD_Archive.last_known_appointment.Variation.Date Hierarchy.Year",
-              "nativeQueryRef": "last_known_appointment Year",
+              "queryRef": "DimDate.Date",
+              "nativeQueryRef": "Date",
               "active": true
             }
           ]
@@ -48,24 +37,13 @@
         "sort": [
           {
             "field": {
-              "HierarchyLevel": {
+              "Column": {
                 "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "PropertyVariationSource": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "FileD_Archive"
-                          }
-                        },
-                        "Name": "Variation",
-                        "Property": "last_known_appointment"
-                      }
-                    },
-                    "Hierarchy": "Date Hierarchy"
+                  "SourceRef": {
+                    "Entity": "DimDate"
                   }
                 },
-                "Level": "Year"
+                "Property": "Date"
               }
             },
             "direction": "Ascending"
@@ -220,5 +198,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "6b6949ea87019820ed7b"
+  "parentGroupName": "6b6949ea87019820ed7b",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d052b00f0dd2a227ebdb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimDate"
+              }
+            },
+            "Property": "Date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

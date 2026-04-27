@@ -87,6 +87,13 @@
                   }
                 }
               }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000D"
+                }
+              }
             }
           }
         }
@@ -174,5 +181,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "64028a90ad60b2429b31"
+  "parentGroupName": "64028a90ad60b2429b31",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d6d189c00b1c9d8825ba",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NEW"
+              }
+            },
+            "Property": "Contacts by Year"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

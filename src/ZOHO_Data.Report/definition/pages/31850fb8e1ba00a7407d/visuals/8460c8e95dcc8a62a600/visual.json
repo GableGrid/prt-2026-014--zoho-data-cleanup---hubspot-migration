@@ -23,11 +23,11 @@
                       "Entity": "FileA_HubSpot_Import"
                     }
                   },
-                  "Property": "daysmart_status"
+                  "Property": "daysmart_id"
                 }
               },
-              "queryRef": "FileA_HubSpot_Import.daysmart_status",
-              "nativeQueryRef": "daysmart_status",
+              "queryRef": "FileA_HubSpot_Import.daysmart_id",
+              "nativeQueryRef": "daysmart_id",
               "active": true
             }
           ]
@@ -181,11 +181,6 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "Region1",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
     "drillFilterOtherVisuals": true
   },
   "parentGroupName": "0b6b2b5940d7c9cc9360",
@@ -204,6 +199,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "objects": {
           "general": [
             {
@@ -219,6 +215,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "18d6c2cea263604c2ce5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FileA_HubSpot_Import"
+              }
+            },
+            "Property": "daysmart_id"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

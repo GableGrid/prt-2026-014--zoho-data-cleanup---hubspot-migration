@@ -32664,6 +32664,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.739
 			          }
+			        },
+			        {
+			          "Zoho Status": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -33174,7 +33184,17 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "status": {
+			          "Record Status": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Data Status": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -33797,6 +33817,16 @@ cultureInfo en-US
 			          }
 			        },
 			        {
+			          "ZB Status": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "status": {
 			            "State": "Suggested",
 			            "Source": {
@@ -34312,6 +34342,16 @@ cultureInfo en-US
 			        },
 			        {
 			          "data_rule": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Rule Applied": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -41232,6 +41272,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.739
 			          }
+			        },
+			        {
+			          "Lead Status": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -41358,6 +41408,16 @@ cultureInfo en-US
 			        },
 			        {
 			          "status": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Bounce Status": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

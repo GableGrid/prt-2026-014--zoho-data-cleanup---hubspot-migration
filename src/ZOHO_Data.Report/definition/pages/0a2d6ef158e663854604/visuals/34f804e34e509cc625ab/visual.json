@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "FileA_HubSpot_Import.daysmart_status",
-              "nativeQueryRef": "daysmart_status",
-              "active": true
+              "nativeQueryRef": "Record Status",
+              "active": true,
+              "displayName": "Record Status"
             }
           ]
         }
@@ -180,11 +181,6 @@
           }
         }
       ]
-    },
-    "syncGroup": {
-      "groupName": "Region1",
-      "fieldChanges": true,
-      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   },

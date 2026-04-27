@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "29d83be0a3a3ba904019",
   "position": {
-    "x": 5.8514285714285714,
-    "y": 103.79864920318708,
+    "x": 2.0823957911776612,
+    "y": 100.82525293403481,
     "z": 5000,
-    "height": 73.142857142857139,
-    "width": 235.85436734693874,
+    "height": 76.1473087818697,
+    "width": 239.32011331444761,
     "tabOrder": 1000
   },
   "visual": {
@@ -23,12 +23,13 @@
                       "Entity": "FileA_HubSpot_Import"
                     }
                   },
-                  "Property": "daysmart_status"
+                  "Property": "zerobounce_status"
                 }
               },
-              "queryRef": "FileA_HubSpot_Import.daysmart_status",
-              "nativeQueryRef": "daysmart_status",
-              "active": true
+              "queryRef": "FileA_HubSpot_Import.zerobounce_status",
+              "nativeQueryRef": "ZB Status",
+              "active": true,
+              "displayName": "ZB Status"
             }
           ]
         }
@@ -181,11 +182,6 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "Region1",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
     "drillFilterOtherVisuals": true
   },
   "parentGroupName": "67fe80481dbc3924d52a",
@@ -204,6 +200,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "objects": {
           "general": [
             {

@@ -23,11 +23,11 @@
                       "Entity": "NEW"
                     }
                   },
-                  "Property": "Completed"
+                  "Property": "Top1K Customers"
                 }
               },
-              "queryRef": "NEW.Completed",
-              "nativeQueryRef": "Completed"
+              "queryRef": "NEW.Top1K Customers",
+              "nativeQueryRef": "Top1K Customers"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "NEW"
                   }
                 },
-                "Property": "Completed"
+                "Property": "Top1K Customers"
               }
             },
             "direction": "Descending"
@@ -91,7 +91,7 @@
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "1000D"
                 }
               }
             }
@@ -162,5 +162,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "c5452f4d0638d06187d3"
+  "parentGroupName": "c5452f4d0638d06187d3",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2d451e7aa1076acd92e9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NEW"
+              }
+            },
+            "Property": "Top1K Customers"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

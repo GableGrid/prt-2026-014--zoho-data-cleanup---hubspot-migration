@@ -23,11 +23,11 @@
                       "Entity": "NEW"
                     }
                   },
-                  "Property": "Rev ARCHIVE"
+                  "Property": "Total Revenue"
                 }
               },
-              "queryRef": "NEW.Rev ARCHIVE",
-              "nativeQueryRef": "Rev ARCHIVE"
+              "queryRef": "NEW.Total Revenue",
+              "nativeQueryRef": "Total Revenue"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "NEW"
                   }
                 },
-                "Property": "Rev ARCHIVE"
+                "Property": "Total Revenue"
               }
             },
             "direction": "Descending"
@@ -114,5 +114,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "d26e3b848b064c120c79"
+  "parentGroupName": "d26e3b848b064c120c79",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a4ee580655a12ea6251c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NEW"
+              }
+            },
+            "Property": "Total Revenue"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
 }

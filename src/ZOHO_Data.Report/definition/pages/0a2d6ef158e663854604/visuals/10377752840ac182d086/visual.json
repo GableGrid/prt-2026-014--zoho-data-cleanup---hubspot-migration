@@ -20,35 +20,21 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DimDate"
+                      "Entity": "FileA_HubSpot_Import"
                     }
                   },
-                  "Property": "Date"
+                  "Property": "zoho_lead_status"
                 }
               },
-              "queryRef": "DimDate.Date",
-              "nativeQueryRef": "Date",
-              "active": true
+              "queryRef": "FileA_HubSpot_Import.zoho_lead_status",
+              "nativeQueryRef": "Zoho Status",
+              "active": true,
+              "displayName": "Zoho Status"
             }
           ]
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "DimDate"
-                  }
-                },
-                "Property": "Date"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ],
         "isDefaultSort": true
       }
     },
@@ -198,5 +184,38 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "1d96a0677711d5c83aec"
+  "parentGroupName": "1d96a0677711d5c83aec",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5ebb5856d4cdae6e6e33",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FileA_HubSpot_Import"
+              }
+            },
+            "Property": "zoho_lead_status"
+          }
+        },
+        "type": "Categorical",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
 }

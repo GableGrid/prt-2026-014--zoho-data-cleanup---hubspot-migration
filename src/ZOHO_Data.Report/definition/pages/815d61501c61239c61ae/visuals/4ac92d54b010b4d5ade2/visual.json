@@ -23,12 +23,13 @@
                       "Entity": "FileD_Archive"
                     }
                   },
-                  "Property": "first_name"
+                  "Property": "zoho_lead_status"
                 }
               },
-              "queryRef": "FileD_Archive.first_name",
-              "nativeQueryRef": "first_name",
-              "active": true
+              "queryRef": "FileD_Archive.zoho_lead_status",
+              "nativeQueryRef": "Lead Status",
+              "active": true,
+              "displayName": "Lead Status"
             }
           ]
         }
@@ -183,5 +184,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "6b6949ea87019820ed7b"
+  "parentGroupName": "6b6949ea87019820ed7b",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a026a23f9c083d0bd595",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FileD_Archive"
+              }
+            },
+            "Property": "zoho_lead_status"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

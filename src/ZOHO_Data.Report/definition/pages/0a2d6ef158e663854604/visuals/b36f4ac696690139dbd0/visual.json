@@ -23,12 +23,13 @@
                       "Entity": "FileA_HubSpot_Import"
                     }
                   },
-                  "Property": "zerobounce_status"
+                  "Property": "lifecyclestage"
                 }
               },
-              "queryRef": "FileA_HubSpot_Import.zerobounce_status",
-              "nativeQueryRef": "zerobounce_status",
-              "active": true
+              "queryRef": "FileA_HubSpot_Import.lifecyclestage",
+              "nativeQueryRef": "Life Stage",
+              "active": true,
+              "displayName": "Life Stage"
             }
           ]
         }
@@ -183,5 +184,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "1d96a0677711d5c83aec"
+  "parentGroupName": "1d96a0677711d5c83aec",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e49b438d20b086362026",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FileA_HubSpot_Import"
+              }
+            },
+            "Property": "lifecyclestage"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

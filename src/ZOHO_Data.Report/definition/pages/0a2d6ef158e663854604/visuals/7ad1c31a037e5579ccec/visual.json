@@ -1358,6 +1358,34 @@
             }
           ]
         }
+      },
+      {
+        "name": "b52250196c89e52e4002",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "top1000_marketing_contacts"
+              }
+            },
+            "Property": "score_band"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "77c8fd2f11062b024cd4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NEW"
+              }
+            },
+            "Property": "Top1K Score"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

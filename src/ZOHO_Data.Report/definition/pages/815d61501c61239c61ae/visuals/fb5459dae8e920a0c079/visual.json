@@ -20,15 +20,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "FileA_HubSpot_Import"
+                      "Entity": "FileD_Archive"
                     }
                   },
-                  "Property": "daysmart_status"
+                  "Property": "zerobounce_status"
                 }
               },
-              "queryRef": "FileA_HubSpot_Import.daysmart_status",
-              "nativeQueryRef": "daysmart_status",
-              "active": true
+              "queryRef": "FileD_Archive.zerobounce_status",
+              "nativeQueryRef": "Bounce Status",
+              "active": true,
+              "displayName": "Bounce Status"
             }
           ]
         }
@@ -181,11 +182,6 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "Region1",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
     "drillFilterOtherVisuals": true
   },
   "parentGroupName": "6b6949ea87019820ed7b",
@@ -204,6 +200,7 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
         "objects": {
           "general": [
             {
@@ -219,6 +216,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "e8b7f6a574103b205dc2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FileD_Archive"
+              }
+            },
+            "Property": "zerobounce_status"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

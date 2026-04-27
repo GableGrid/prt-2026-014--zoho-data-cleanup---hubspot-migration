@@ -27,9 +27,9 @@
                 }
               },
               "queryRef": "FileA_HubSpot_Import.daysmart_status",
-              "nativeQueryRef": "status",
+              "nativeQueryRef": "Record Status",
               "active": true,
-              "displayName": "status"
+              "displayName": "Record Status"
             }
           ]
         }

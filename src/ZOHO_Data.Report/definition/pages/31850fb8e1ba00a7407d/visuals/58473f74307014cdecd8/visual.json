@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "a54b763029867432da03",
+  "name": "58473f74307014cdecd8",
   "position": {
-    "x": 5.8514285714285714,
-    "y": 103.79864920318708,
-    "z": 5000,
-    "height": 73.142857142857139,
-    "width": 235.85436734693874,
-    "tabOrder": 1000
+    "x": 12.691218130311615,
+    "y": 103.34277620396601,
+    "z": 12001,
+    "height": 74.3342776203966,
+    "width": 228.44192634560909,
+    "tabOrder": 4001
   },
   "visual": {
     "visualType": "slicer",
@@ -27,9 +27,9 @@
                 }
               },
               "queryRef": "FileA_HubSpot_Import.daysmart_status",
-              "nativeQueryRef": "Record Status",
+              "nativeQueryRef": "Data Status",
               "active": true,
-              "displayName": "Record Status"
+              "displayName": "Data Status"
             }
           ]
         }
@@ -184,7 +184,6 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "0608d13b868a1bb33b51",
   "filterConfig": {
     "filters": [
       {
