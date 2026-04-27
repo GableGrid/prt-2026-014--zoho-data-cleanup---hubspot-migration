@@ -350,6 +350,18 @@ table top1000_marketing_contacts
 
 		annotation SummarizationSetBy = Automatic
 
+	column score_band =
+			
+			IF(top1000_marketing_contacts[marketing_score] >= 80, "80+",
+			IF(top1000_marketing_contacts[marketing_score] >= 75, "75-80",
+			IF(top1000_marketing_contacts[marketing_score] >= 70, "70-75",
+			IF(top1000_marketing_contacts[marketing_score] >= 65, "65-70",
+			"60-65"))))
+		lineageTag: 719ffcd5-c2f3-4187-8d05-73050135cbb5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition top1000_marketing_contacts = m
 		mode: import
 		source =

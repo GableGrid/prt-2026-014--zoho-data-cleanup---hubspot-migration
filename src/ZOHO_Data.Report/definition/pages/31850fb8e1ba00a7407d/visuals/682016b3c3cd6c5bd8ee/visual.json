@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "FileA_HubSpot_Import"
+                      "Entity": "FileC_Scheduler_ApptHistory"
                     }
                   },
-                  "Property": "zerobounce_status"
+                  "Property": "status"
                 }
               },
-              "queryRef": "FileA_HubSpot_Import.zerobounce_status",
-              "nativeQueryRef": "zerobounce_status",
+              "queryRef": "FileC_Scheduler_ApptHistory.status",
+              "nativeQueryRef": "status",
               "active": true
             }
           ]
@@ -183,5 +183,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "0b6b2b5940d7c9cc9360"
+  "parentGroupName": "0b6b2b5940d7c9cc9360",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6ace2ea9e013b29470dc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FileC_Scheduler_ApptHistory"
+              }
+            },
+            "Property": "status"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

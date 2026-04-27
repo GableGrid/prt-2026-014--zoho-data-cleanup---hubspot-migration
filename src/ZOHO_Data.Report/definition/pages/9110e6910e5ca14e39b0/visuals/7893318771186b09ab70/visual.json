@@ -198,5 +198,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "67fe80481dbc3924d52a"
+  "parentGroupName": "67fe80481dbc3924d52a",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b232749bd9d0b5a20234",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimDate"
+              }
+            },
+            "Property": "Date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

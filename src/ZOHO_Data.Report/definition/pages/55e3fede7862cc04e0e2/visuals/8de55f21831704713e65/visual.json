@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "FileA_HubSpot_Import.data_rule_applied",
-              "nativeQueryRef": "data_rule_applied",
-              "active": true
+              "nativeQueryRef": "data_rule",
+              "active": true,
+              "displayName": "data_rule"
             }
           ]
         },
@@ -46,7 +47,8 @@
                 }
               },
               "queryRef": "FileA_HubSpot_Import.data_rule_applied",
-              "nativeQueryRef": "data_rule_applied"
+              "nativeQueryRef": "data_rule",
+              "displayName": "data_rule"
             }
           ]
         },
@@ -275,7 +277,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -302,6 +304,13 @@
               "expr": {
                 "Literal": {
                   "Value": "10D"
+                }
+              }
+            },
+            "showGradientLegend": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -335,6 +344,13 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "30L"
                 }
               }
             }

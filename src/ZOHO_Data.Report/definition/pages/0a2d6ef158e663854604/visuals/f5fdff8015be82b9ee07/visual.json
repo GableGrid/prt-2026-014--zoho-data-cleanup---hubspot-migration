@@ -6,7 +6,8 @@
     "y": 5.9534883720930152,
     "z": 1000,
     "height": 62.511627906976727,
-    "width": 209.77056344623063
+    "width": 209.77056344623063,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "card",
@@ -16,17 +17,23 @@
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "NEW"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "top1000_marketing_contacts"
+                        }
+                      },
+                      "Property": "Marketing_Score"
                     }
                   },
-                  "Property": "Top1K Customers"
+                  "Function": 0
                 }
               },
-              "queryRef": "NEW.Top1K Customers",
-              "nativeQueryRef": "Top1K Customers"
+              "queryRef": "Sum(top1000_marketing_contacts.Marketing_Score)",
+              "nativeQueryRef": "Marketing_Score",
+              "displayName": "Marketing_Score"
             }
           ]
         }
@@ -35,13 +42,18 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Aggregation": {
                 "Expression": {
-                  "SourceRef": {
-                    "Entity": "NEW"
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "top1000_marketing_contacts"
+                      }
+                    },
+                    "Property": "Marketing_Score"
                   }
                 },
-                "Property": "Top1K Customers"
+                "Function": 0
               }
             },
             "direction": "Descending"

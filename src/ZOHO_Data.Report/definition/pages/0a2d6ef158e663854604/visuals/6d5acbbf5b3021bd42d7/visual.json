@@ -2,11 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "6d5acbbf5b3021bd42d7",
   "position": {
-    "x": 19.548093586452865,
-    "y": 10.847470501621165,
+    "x": 10.601818451226762,
+    "y": 11.205521206240048,
     "z": 4000,
-    "height": 252.83730309386149,
-    "width": 959.81815914105891
+    "height": 251.64732427649722,
+    "width": 980.186305899786,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "scatterChart",
@@ -870,6 +871,90 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FileA_HubSpot_Import"
+                          }
+                        },
+                        "Property": "lifecyclestage"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'customer'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FileA_HubSpot_Import"
+                          }
+                        },
+                        "Property": "lifecyclestage"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'lead'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
         }
       ],
       "categoryAxis": [
@@ -900,6 +985,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "gridlineThickness": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }
@@ -1027,6 +1119,57 @@
               }
             }
           }
+        },
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "7D"
+                }
+              }
+            },
+            "borderTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "borderColorMatchFill": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FileA_HubSpot_Import"
+                          }
+                        },
+                        "Property": "lifecyclestage"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'customer'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
         }
       ],
       "bubbles": [
@@ -1055,6 +1198,26 @@
             }
           }
         }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "showGradientLegend": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -1064,7 +1227,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "' Monthly Revenue Trend'"
+                  "Value": "'Opens vs Score'"
                 }
               }
             },

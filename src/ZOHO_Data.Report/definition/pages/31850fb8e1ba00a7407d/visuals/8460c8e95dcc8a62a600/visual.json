@@ -27,9 +27,8 @@
                 }
               },
               "queryRef": "FileA_HubSpot_Import.daysmart_status",
-              "nativeQueryRef": "status",
-              "active": true,
-              "displayName": "status"
+              "nativeQueryRef": "daysmart_status",
+              "active": true
             }
           ]
         }

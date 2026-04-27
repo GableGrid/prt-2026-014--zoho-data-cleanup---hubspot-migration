@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "90b10cba5b803d7c19eb",
+  "name": "34f804e34e509cc625ab",
   "position": {
-    "x": 8.6221942176338171,
-    "y": 279.61817213935922,
-    "z": 8000,
-    "height": 72.216684848550315,
-    "width": 230.00394515902903,
-    "tabOrder": 2000
+    "x": 5.8514285714285714,
+    "y": 103.79864920318708,
+    "z": 5000,
+    "height": 73.142857142857139,
+    "width": 235.85436734693874,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "FileD_Archive"
+                      "Entity": "FileA_HubSpot_Import"
                     }
                   },
-                  "Property": "first_name"
+                  "Property": "daysmart_status"
                 }
               },
-              "queryRef": "FileD_Archive.first_name",
-              "nativeQueryRef": "first_name",
+              "queryRef": "FileA_HubSpot_Import.daysmart_status",
+              "nativeQueryRef": "daysmart_status",
               "active": true
             }
           ]
@@ -181,13 +181,18 @@
         }
       ]
     },
+    "syncGroup": {
+      "groupName": "Region1",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "2590618aba22046e65c4",
+  "parentGroupName": "1d96a0677711d5c83aec",
   "filterConfig": {
     "filters": [
       {
-        "name": "0cc29b9679db0e53ebcb",
+        "name": "d332aa30de688e206d1a",
         "field": {
           "Column": {
             "Expression": {
@@ -195,54 +200,10 @@
                 "Entity": "FileA_HubSpot_Import"
               }
             },
-            "Property": "lifecyclestage"
+            "Property": "daysmart_status"
           }
         },
         "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "f",
-              "Entity": "FileA_HubSpot_Import",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "In": {
-                      "Expressions": [
-                        {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "f"
-                              }
-                            },
-                            "Property": "lifecyclestage"
-                          }
-                        }
-                      ],
-                      "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "null"
-                            }
-                          }
-                        ]
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User",
         "objects": {
           "general": [
             {

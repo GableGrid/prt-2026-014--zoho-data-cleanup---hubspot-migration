@@ -242,6 +242,25 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "NEW.Total Contacts"
+          }
         }
       ],
       "legend": [
@@ -326,6 +345,37 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "lineStyles": [
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FileA_HubSpot_Import"
+                          }
+                        },
+                        "Property": "daysmart_status"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'No DaySmart Record'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       ]

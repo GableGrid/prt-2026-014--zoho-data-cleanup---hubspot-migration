@@ -27,27 +27,8 @@
                 }
               },
               "queryRef": "FileA_HubSpot_Import.firstname",
-              "nativeQueryRef": "firstname"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "FileA_HubSpot_Import"
-                        }
-                      },
-                      "Property": "hs_email_open"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(FileA_HubSpot_Import.hs_email_open)",
-              "nativeQueryRef": "hs_email_open",
-              "displayName": "hs_email_open"
+              "nativeQueryRef": "first name",
+              "displayName": "first name"
             },
             {
               "field": {
@@ -61,7 +42,8 @@
                 }
               },
               "queryRef": "FileA_HubSpot_Import.lastname",
-              "nativeQueryRef": "lastname"
+              "nativeQueryRef": "last name",
+              "displayName": "last name"
             },
             {
               "field": {
@@ -80,8 +62,8 @@
                 }
               },
               "queryRef": "Sum(FileA_HubSpot_Import.lifetime_value)",
-              "nativeQueryRef": "lifetime_value",
-              "displayName": "lifetime_value"
+              "nativeQueryRef": "value",
+              "displayName": "value"
             },
             {
               "field": {
@@ -95,7 +77,8 @@
                 }
               },
               "queryRef": "FileA_HubSpot_Import.primary_service",
-              "nativeQueryRef": "primary_service"
+              "nativeQueryRef": "service",
+              "displayName": "service"
             },
             {
               "field": {
@@ -109,8 +92,8 @@
                 }
               },
               "queryRef": "FileA_HubSpot_Import.zerobounce_status",
-              "nativeQueryRef": "zero_bounce_status",
-              "displayName": "zero_bounce_status"
+              "nativeQueryRef": "status",
+              "displayName": "status"
             },
             {
               "field": {
@@ -124,24 +107,42 @@
                 }
               },
               "queryRef": "FileA_HubSpot_Import.source_system",
-              "nativeQueryRef": "source_system"
+              "nativeQueryRef": "system",
+              "displayName": "system"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "FileA_HubSpot_Import"
+                      "Entity": "DimDate"
                     }
                   },
-                  "Property": "hs_lead_status"
+                  "Property": "Year"
                 }
               },
-              "queryRef": "FileA_HubSpot_Import.hs_lead_status",
-              "nativeQueryRef": "hs_lead_status"
+              "queryRef": "Sum(DimDate.Year)",
+              "nativeQueryRef": "Year"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FileA_HubSpot_Import"
+                  }
+                },
+                "Property": "primary_service"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
     },
     "objects": {
@@ -403,6 +404,104 @@
           "selector": {
             "metadata": "Sum(Female Dormitories in Budapest.Rating)"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "146.26028946378514D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FileA_HubSpot_Import.zerobounce_status"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "131.83489284788803D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FileA_HubSpot_Import.firstname"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "155.7867100797813D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FileA_HubSpot_Import.lastname"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "143.6723278707701D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FileA_HubSpot_Import.lifetime_value)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "148.4500290894694D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FileA_HubSpot_Import.primary_service"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "128.63970228146854D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FileA_HubSpot_Import.source_system"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110.10521246705576D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(DimDate.Year)"
+          }
         }
       ],
       "total": [
@@ -445,6 +544,90 @@
           },
           "selector": {
             "metadata": "Sum(Female Dormitories in Budapest.Price)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FileA_HubSpot_Import.lastname"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FileA_HubSpot_Import.lifetime_value)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FileA_HubSpot_Import.primary_service"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FileA_HubSpot_Import.zerobounce_status"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FileA_HubSpot_Import.source_system"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(DimDate.Year)"
           }
         }
       ]

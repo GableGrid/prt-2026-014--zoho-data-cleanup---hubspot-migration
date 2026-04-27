@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "12f174222778ed01219b",
   "position": {
-    "x": 9.7566861417286947,
-    "y": 10.419280876557172,
+    "x": 8.7771428571428576,
+    "y": 8.7771428571428576,
     "z": 4000,
-    "height": 242.85688323489327,
-    "width": 479.05666557484466,
+    "height": 242.83428571428573,
+    "width": 478.35428571428571,
     "tabOrder": 1000
   },
   "visual": {
@@ -44,14 +44,14 @@
                           "Entity": "FileD_Archive"
                         }
                       },
-                      "Property": "source_system"
+                      "Property": "archive_year"
                     }
                   },
-                  "Function": 5
+                  "Function": 0
                 }
               },
-              "queryRef": "CountNonNull(FileD_Archive.source_system)",
-              "nativeQueryRef": "Count of source_system"
+              "queryRef": "Sum(FileD_Archive.archive_year)",
+              "nativeQueryRef": "Sum of archive_year"
             }
           ]
         }
@@ -68,10 +68,10 @@
                         "Entity": "FileD_Archive"
                       }
                     },
-                    "Property": "source_system"
+                    "Property": "archive_year"
                   }
                 },
-                "Function": 5
+                "Function": 0
               }
             },
             "direction": "Descending"
@@ -299,6 +299,223 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            },
+            "fillTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FileD_Archive"
+                          }
+                        },
+                        "Property": "zerobounce_status"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'valid'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FileD_Archive"
+                          }
+                        },
+                        "Property": "zerobounce_status"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'catch-all'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FileD_Archive"
+                          }
+                        },
+                        "Property": "zerobounce_status"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'unknown'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FileD_Archive"
+                          }
+                        },
+                        "Property": "zerobounce_status"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'do_not_mail'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FileD_Archive"
+                          }
+                        },
+                        "Property": "zerobounce_status"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'invalid'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
         }
       ],
       "legend": [
@@ -401,7 +618,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "' Monthly Revenue Trend'"
+                  "Value": "'Archive Status'"
                 }
               }
             },

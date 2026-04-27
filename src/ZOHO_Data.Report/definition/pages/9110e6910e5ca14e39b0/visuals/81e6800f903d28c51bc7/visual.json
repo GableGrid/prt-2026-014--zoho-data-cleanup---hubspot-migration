@@ -23,13 +23,13 @@
                       "Entity": "FileA_HubSpot_Import"
                     }
                   },
-                  "Property": "zerobounce_status"
+                  "Property": "daysmart_status"
                 }
               },
-              "queryRef": "FileA_HubSpot_Import.zerobounce_status",
-              "nativeQueryRef": "zerobounce_status",
+              "queryRef": "FileA_HubSpot_Import.daysmart_status",
+              "nativeQueryRef": "status",
               "active": true,
-              "displayName": "zerobounce_status"
+              "displayName": "status"
             }
           ]
         }
@@ -184,5 +184,23 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "67fe80481dbc3924d52a"
+  "parentGroupName": "67fe80481dbc3924d52a",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "992169a60c80c07451a0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FileA_HubSpot_Import"
+              }
+            },
+            "Property": "daysmart_status"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

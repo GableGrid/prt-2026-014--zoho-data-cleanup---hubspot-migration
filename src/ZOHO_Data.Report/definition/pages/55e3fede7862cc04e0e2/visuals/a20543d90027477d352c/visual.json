@@ -32,7 +32,8 @@
                 }
               },
               "queryRef": "Sum(FileA_HubSpot_Import.hs_email_click)",
-              "nativeQueryRef": "Sum of hs_email_click"
+              "nativeQueryRef": "email_click",
+              "displayName": "email_click"
             }
           ]
         }
@@ -124,28 +125,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "182087da6500341cc70c",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f3598be3d5e43397a676",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "FileA_HubSpot_Import"
-                  }
-                },
-                "Property": "hs_email_click"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
-  }
+  "parentGroupName": "182087da6500341cc70c"
 }

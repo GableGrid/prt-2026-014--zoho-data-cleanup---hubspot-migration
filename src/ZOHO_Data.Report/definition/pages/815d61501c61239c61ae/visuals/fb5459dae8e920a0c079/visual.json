@@ -1,12 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "649fd6e4d53652e0c101",
+  "name": "fb5459dae8e920a0c079",
   "position": {
-    "x": 8.6221942176338171,
-    "y": 279.61817213935922,
-    "z": 8000,
-    "height": 72.216684848550315,
-    "width": 230.00394515902903
+    "x": 5.8514285714285714,
+    "y": 103.79864920318708,
+    "z": 5000,
+    "height": 73.142857142857139,
+    "width": 235.85436734693874,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -22,11 +23,11 @@
                       "Entity": "FileA_HubSpot_Import"
                     }
                   },
-                  "Property": "lifecyclestage"
+                  "Property": "daysmart_status"
                 }
               },
-              "queryRef": "FileA_HubSpot_Import.lifecyclestage",
-              "nativeQueryRef": "lifecyclestage",
+              "queryRef": "FileA_HubSpot_Import.daysmart_status",
+              "nativeQueryRef": "daysmart_status",
               "active": true
             }
           ]
@@ -180,13 +181,18 @@
         }
       ]
     },
+    "syncGroup": {
+      "groupName": "Region1",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "e8056be06c5d039c0eb3",
+  "parentGroupName": "6b6949ea87019820ed7b",
   "filterConfig": {
     "filters": [
       {
-        "name": "0cc29b9679db0e53ebcb",
+        "name": "d332aa30de688e206d1a",
         "field": {
           "Column": {
             "Expression": {
@@ -194,53 +200,10 @@
                 "Entity": "FileA_HubSpot_Import"
               }
             },
-            "Property": "lifecyclestage"
+            "Property": "daysmart_status"
           }
         },
         "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "f",
-              "Entity": "FileA_HubSpot_Import",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "In": {
-                      "Expressions": [
-                        {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "f"
-                              }
-                            },
-                            "Property": "lifecyclestage"
-                          }
-                        }
-                      ],
-                      "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "null"
-                            }
-                          }
-                        ]
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
         "objects": {
           "general": [
             {

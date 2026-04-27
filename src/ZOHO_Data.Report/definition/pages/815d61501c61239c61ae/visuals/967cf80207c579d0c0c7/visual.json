@@ -23,11 +23,11 @@
                       "Entity": "FileD_Archive"
                     }
                   },
-                  "Property": "daysmart_id"
+                  "Property": "master_id"
                 }
               },
-              "queryRef": "FileD_Archive.daysmart_id",
-              "nativeQueryRef": "daysmart_id"
+              "queryRef": "FileD_Archive.master_id",
+              "nativeQueryRef": "master_id"
             },
             {
               "field": {
@@ -37,31 +37,25 @@
                       "Entity": "FileD_Archive"
                     }
                   },
-                  "Property": "archived_date"
+                  "Property": "first_name"
                 }
               },
-              "queryRef": "FileD_Archive.archived_date",
-              "nativeQueryRef": "archived_date"
+              "queryRef": "FileD_Archive.first_name",
+              "nativeQueryRef": "first_name"
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "FileD_Archive"
-                        }
-                      },
-                      "Property": "archive_total_spent"
+                    "SourceRef": {
+                      "Entity": "FileD_Archive"
                     }
                   },
-                  "Function": 0
+                  "Property": "email"
                 }
               },
-              "queryRef": "Sum(FileD_Archive.archive_total_spent)",
-              "nativeQueryRef": "archive_total_spent",
-              "displayName": "archive_total_spent"
+              "queryRef": "FileD_Archive.email",
+              "nativeQueryRef": "email"
             },
             {
               "field": {
@@ -75,7 +69,28 @@
                 }
               },
               "queryRef": "FileD_Archive.archive_last_service",
-              "nativeQueryRef": "archive_last_service"
+              "nativeQueryRef": "last_service",
+              "displayName": "last_service"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FileD_Archive"
+                        }
+                      },
+                      "Property": "archive_year"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(FileD_Archive.archive_year)",
+              "nativeQueryRef": "archive_year",
+              "displayName": "archive_year"
             },
             {
               "field": {
@@ -85,25 +100,32 @@
                       "Entity": "FileD_Archive"
                     }
                   },
-                  "Property": "reason_archived"
+                  "Property": "zerobounce_status"
                 }
               },
-              "queryRef": "FileD_Archive.reason_archived",
-              "nativeQueryRef": "reason_archived"
+              "queryRef": "FileD_Archive.zerobounce_status",
+              "nativeQueryRef": "status",
+              "displayName": "status"
             },
             {
               "field": {
-                "Column": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "FileD_Archive"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "FileD_Archive"
+                        }
+                      },
+                      "Property": "archive_appt_count"
                     }
                   },
-                  "Property": "rule_applied"
+                  "Function": 0
                 }
               },
-              "queryRef": "FileD_Archive.rule_applied",
-              "nativeQueryRef": "rule_applied"
+              "queryRef": "Sum(FileD_Archive.archive_appt_count)",
+              "nativeQueryRef": "appt_count",
+              "displayName": "appt_count"
             }
           ]
         }
@@ -118,10 +140,10 @@
                     "Entity": "FileD_Archive"
                   }
                 },
-                "Property": "daysmart_id"
+                "Property": "archive_last_service"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
@@ -391,13 +413,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "220.00847841578653D"
+                  "Value": "129.48813914553193D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "FileD_Archive.reason_archived"
+            "metadata": "FileD_Archive.master_id"
           }
         },
         {
@@ -405,13 +427,83 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "164.60975657159733D"
+                  "Value": "129.54935894802665D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Sum(FileD_Archive.archive_total_spent)"
+            "metadata": "FileD_Archive.first_name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "234.7795580650933D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FileD_Archive.email"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "130.39239829091585D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FileD_Archive.archive_year)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "126.33046831335922D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FileD_Archive.archive_last_service"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "102.80747545867378D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FileD_Archive.zerobounce_status"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "109.24D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FileD_Archive.archive_appt_count)"
           }
         }
       ],
@@ -455,6 +547,90 @@
           },
           "selector": {
             "metadata": "Sum(Female Dormitories in Budapest.Price)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FileD_Archive.first_name"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FileD_Archive.email"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FileD_Archive.archive_last_service"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FileD_Archive.archive_year)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FileD_Archive.zerobounce_status"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FileD_Archive.archive_appt_count)"
           }
         }
       ]

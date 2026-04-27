@@ -155,23 +155,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "d9e390e1246276bda201",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c2c24fa2406e26351479",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "NEW"
-              }
-            },
-            "Property": "Deliverability"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
-  }
+  "parentGroupName": "d9e390e1246276bda201"
 }

@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "FileA_HubSpot_Import.data_rule_applied",
-              "nativeQueryRef": "data_rule_applied",
-              "active": true
+              "nativeQueryRef": "data_rule",
+              "active": true,
+              "displayName": "data_rule"
             }
           ]
         },
@@ -289,6 +290,132 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FileA_HubSpot_Import"
+                          }
+                        },
+                        "Property": "data_rule_applied"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Pass'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": -0.25
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FileA_HubSpot_Import"
+                          }
+                        },
+                        "Property": "data_rule_applied"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Clinical Exception'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "FileA_HubSpot_Import"
+                          }
+                        },
+                        "Property": "data_rule_applied"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Do Not Mail'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
         }
       ],
       "legend": [
@@ -392,7 +519,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Data Rules Applied'"
+                  "Value": "'Applied Data logic'"
                 }
               }
             },
@@ -493,7 +620,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "1a14074ea5bb42001965",
+        "name": "aac5bedd70a120cc8da1",
         "field": {
           "Column": {
             "Expression": {
@@ -501,69 +628,24 @@
                 "Entity": "FileA_HubSpot_Import"
               }
             },
-            "Property": "daysmart_status"
+            "Property": "data_rule_applied"
           }
         },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "f",
-              "Entity": "FileA_HubSpot_Import",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "In": {
-                      "Expressions": [
-                        {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "f"
-                              }
-                            },
-                            "Property": "daysmart_status"
-                          }
-                        }
-                      ],
-                      "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "null"
-                            }
-                          }
-                        ]
-                      ]
-                    }
-                  }
-                }
+        "type": "Categorical"
+      },
+      {
+        "name": "e5c44c7b0c66bb12cc00",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NEW"
               }
-            }
-          ]
+            },
+            "Property": "Contacts by Year"
+          }
         },
-        "howCreated": "User",
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
+        "type": "Advanced"
       }
     ]
   }

@@ -1,12 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "0305a79d740a1ee91ae0",
+  "name": "a150051381b727a03a0c",
   "position": {
-    "x": 3.6735107220398926,
-    "y": 373.16686185614731,
+    "x": 6.2161444762356792,
+    "y": 391.7909947181372,
     "z": 12000,
-    "height": 294.63938732314432,
-    "width": 243.28919196432071
+    "height": 295.49714285714288,
+    "width": 241.57204897959184,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "pageNavigator",
@@ -31,7 +32,7 @@
             "horizontalAlignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'center'"
+                  "Value": "'left'"
                 }
               }
             },
@@ -64,7 +65,7 @@
             "horizontalAlignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'center'"
+                  "Value": "'left'"
                 }
               }
             },
@@ -78,7 +79,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "13D"
                 }
               }
             },
@@ -357,10 +358,44 @@
             }
           }
         }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "e8056be06c5d039c0eb3",
+  "parentGroupName": "6b6949ea87019820ed7b",
   "howCreated": "InsertVisualButton"
 }

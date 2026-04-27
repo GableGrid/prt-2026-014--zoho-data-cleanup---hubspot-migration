@@ -17,23 +17,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "FileD_Archive"
-                        }
-                      },
-                      "Property": "archive_year"
+                    "SourceRef": {
+                      "Entity": "NEW"
                     }
                   },
-                  "Function": 0
+                  "Property": "Completed"
                 }
               },
-              "queryRef": "Sum(FileD_Archive.archive_year)",
-              "nativeQueryRef": "archive_year",
-              "displayName": "archive_year"
+              "queryRef": "NEW.Completed",
+              "nativeQueryRef": "Completed"
             }
           ]
         }
@@ -42,18 +36,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "FileD_Archive"
-                      }
-                    },
-                    "Property": "archive_year"
+                  "SourceRef": {
+                    "Entity": "NEW"
                   }
                 },
-                "Function": 0
+                "Property": "Completed"
               }
             },
             "direction": "Descending"
@@ -96,6 +85,13 @@
                       "Percent": 0.1
                     }
                   }
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }

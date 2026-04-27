@@ -1,12 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "fb27fb10d09aa5290ce9",
+  "name": "b36f4ac696690139dbd0",
   "position": {
-    "x": 8.6221942176338171,
-    "y": 83.46323462366513,
-    "z": 5000,
-    "height": 72.216684848550315,
-    "width": 230.00394515902903
+    "x": 5.8514285714285714,
+    "y": 201.81007777461579,
+    "z": 7000,
+    "height": 71.68,
+    "width": 235.85436734693874,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "slicer",
@@ -22,11 +23,11 @@
                       "Entity": "FileA_HubSpot_Import"
                     }
                   },
-                  "Property": "daysmart_status"
+                  "Property": "zerobounce_status"
                 }
               },
-              "queryRef": "FileA_HubSpot_Import.daysmart_status",
-              "nativeQueryRef": "daysmart_status",
+              "queryRef": "FileA_HubSpot_Import.zerobounce_status",
+              "nativeQueryRef": "zerobounce_status",
               "active": true
             }
           ]
@@ -180,45 +181,7 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "Region1",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "e8056be06c5d039c0eb3",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d332aa30de688e206d1a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "FileA_HubSpot_Import"
-              }
-            },
-            "Property": "daysmart_status"
-          }
-        },
-        "type": "Categorical",
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      }
-    ]
-  }
+  "parentGroupName": "1d96a0677711d5c83aec"
 }

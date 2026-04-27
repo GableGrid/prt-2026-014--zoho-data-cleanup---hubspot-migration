@@ -23,11 +23,11 @@
                       "Entity": "NEW"
                     }
                   },
-                  "Property": "Deleted"
+                  "Property": "Contacts by Year"
                 }
               },
-              "queryRef": "NEW.Deleted",
-              "nativeQueryRef": "Deleted"
+              "queryRef": "NEW.Contacts by Year",
+              "nativeQueryRef": "Contacts by Year"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "NEW"
                   }
                 },
-                "Property": "Deleted"
+                "Property": "Contacts by Year"
               }
             },
             "direction": "Descending"

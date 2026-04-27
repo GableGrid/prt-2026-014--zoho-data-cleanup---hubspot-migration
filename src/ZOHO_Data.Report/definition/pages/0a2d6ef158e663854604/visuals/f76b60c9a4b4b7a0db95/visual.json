@@ -5,8 +5,9 @@
     "x": 0,
     "y": 0,
     "z": 6000,
-    "height": 264.39096159453442,
-    "width": 980.84968125122987
+    "height": 263.54483088160009,
+    "width": 537.03238076855644,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "tableEx",
@@ -26,21 +27,23 @@
                 }
               },
               "queryRef": "top1000_marketing_contacts.Full_Name",
-              "nativeQueryRef": "Full_Name"
+              "nativeQueryRef": "Name",
+              "displayName": "Name"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "top1000_marketing_contacts"
+                      "Entity": "FileA_HubSpot_Import"
                     }
                   },
-                  "Property": "Email"
+                  "Property": "lifecyclestage"
                 }
               },
-              "queryRef": "top1000_marketing_contacts.Email",
-              "nativeQueryRef": "Email"
+              "queryRef": "FileA_HubSpot_Import.lifecyclestage",
+              "nativeQueryRef": "Life Stage",
+              "displayName": "Life Stage"
             },
             {
               "field": {
@@ -59,65 +62,43 @@
                 }
               },
               "queryRef": "Sum(top1000_marketing_contacts.Marketing_Score)",
-              "nativeQueryRef": "Marketing_Score",
-              "displayName": "Marketing_Score"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "FileA_HubSpot_Import"
-                        }
-                      },
-                      "Property": "hs_email_click"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(FileA_HubSpot_Import.hs_email_click)",
-              "nativeQueryRef": "hs_email_click",
-              "displayName": "hs_email_click"
+              "nativeQueryRef": "Score",
+              "displayName": "Score"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "FileA_HubSpot_Import"
+                      "Entity": "top1000_marketing_contacts"
                     }
                   },
-                  "Property": "hs_lead_status"
+                  "Property": "ZB_Status"
                 }
               },
-              "queryRef": "FileA_HubSpot_Import.hs_lead_status",
-              "nativeQueryRef": "hs_lead_status"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "FileA_HubSpot_Import"
-                        }
-                      },
-                      "Property": "lifetime_value"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(FileA_HubSpot_Import.lifetime_value)",
-              "nativeQueryRef": "lifetime_value",
-              "displayName": "lifetime_value"
+              "queryRef": "top1000_marketing_contacts.ZB_Status",
+              "nativeQueryRef": "Status",
+              "displayName": "Status"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "top1000_marketing_contacts"
+                  }
+                },
+                "Property": "Full_Name"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "objects": {
@@ -379,6 +360,62 @@
           "selector": {
             "metadata": "Sum(Female Dormitories in Budapest.Rating)"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "156.3170586584339D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "top1000_marketing_contacts.Full_Name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "123.08574853171199D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FileA_HubSpot_Import.lifecyclestage"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "122.74990294213411D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(top1000_marketing_contacts.Marketing_Score)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110.07447141410488D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "top1000_marketing_contacts.ZB_Status"
+          }
         }
       ],
       "total": [
@@ -421,6 +458,34 @@
           },
           "selector": {
             "metadata": "Sum(Female Dormitories in Budapest.Price)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(top1000_marketing_contacts.Marketing_Score)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "top1000_marketing_contacts.ZB_Status"
           }
         }
       ]

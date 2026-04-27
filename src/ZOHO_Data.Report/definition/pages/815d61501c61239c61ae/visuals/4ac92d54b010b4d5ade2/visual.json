@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "8f752bc31bda9715a05d",
+  "name": "4ac92d54b010b4d5ade2",
   "position": {
-    "x": 8.6221942176338171,
-    "y": 180.53016269599951,
-    "z": 7000,
-    "height": 72.216684848550315,
-    "width": 230.00394515902903,
-    "tabOrder": 3000
+    "x": 5.8514285714285714,
+    "y": 301.28436348890131,
+    "z": 8000,
+    "height": 71.68,
+    "width": 235.85436734693874,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "slicer",
@@ -17,60 +17,23 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "FileD_Archive"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "last_known_appointment"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
+                    "SourceRef": {
+                      "Entity": "FileD_Archive"
                     }
                   },
-                  "Level": "Year"
+                  "Property": "first_name"
                 }
               },
-              "queryRef": "FileD_Archive.last_known_appointment.Variation.Date Hierarchy.Year",
-              "nativeQueryRef": "last_known_appointment Year",
+              "queryRef": "FileD_Archive.first_name",
+              "nativeQueryRef": "first_name",
               "active": true
             }
           ]
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "PropertyVariationSource": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "FileD_Archive"
-                          }
-                        },
-                        "Name": "Variation",
-                        "Property": "last_known_appointment"
-                      }
-                    },
-                    "Hierarchy": "Date Hierarchy"
-                  }
-                },
-                "Level": "Year"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ],
         "isDefaultSort": true
       }
     },
@@ -220,5 +183,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "2590618aba22046e65c4"
+  "parentGroupName": "6b6949ea87019820ed7b"
 }
