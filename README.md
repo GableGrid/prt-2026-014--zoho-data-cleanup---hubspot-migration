@@ -6,7 +6,6 @@
 ![Dashboard Preview](screenshots/preview.png)
 
 ## Overview
-## Overview
 This project is a full contact database migration and data hygiene initiative involving 21,000 records from Zoho CRM and DaySmart. It includes cross-system deduplication, email validation using ZeroBounce, and data governance rules to ensure clean and consistent data.
 
 The final output includes HubSpot and Scheduler-ready CSV files along with a 5-page Power BI dashboard built with 20+ DAX measures for reporting and analysis.
