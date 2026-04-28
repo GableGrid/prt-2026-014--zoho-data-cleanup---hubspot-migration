@@ -1,9 +1,9 @@
-## PRT-YYYY-NNN — [Project Title]
+# PRT-2026-014 — Zoho CRM ↔ DaySmart Migration
 ### GableGrid Portfolio Project
 
 
 
-![Dashboard Preview](screenshots/preview.png)
+![Dashboard Preview](screenshots/Contact_Overview.PNG)
 
 ## Overview
 [What business problem this solves — 2-3 sentences]
@@ -26,8 +26,11 @@
 3. [Step 3]
 
 ## Screenshots
-![Screen 1](screenshots/screen1.png)
-![Screen 2](screenshots/screen2.png)
+![Contact Overview](screenshots/Contact_Overview.PNG)
+![Revenue & Appointments](screenshots/Revenue_%26_Appointments.PNG)
+![Email Health & ZeroBounce](screenshots/Email_Health_%26_ZeroBounce.PNG)
+![Top 1K Marketing](screenshots/Top_1k_Marketing.PNG)
+![Archive & Data Quality](screenshots/Archive_%26_Data_Quality.PNG)
 
 ## Live Demo
 [Link if available — or "Available on request"]
