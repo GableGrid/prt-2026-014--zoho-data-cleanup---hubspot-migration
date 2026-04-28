@@ -44,11 +44,20 @@ The final output includes HubSpot and Scheduler-ready CSV files along with a 5-p
 | FileD_Archive.csv | 4,578 | Pre-2019 archive |
 
 ## Screenshots
-![Contact Overview](screenshots/Contact_Overview.PNG)
-![Revenue & Appointments](screenshots/Revenue_%26_Appointments.PNG)
-![Email Health & ZeroBounce](screenshots/Email_Health_%26_ZeroBounce.PNG)
-![Top 1K Marketing](screenshots/Top_1k_Marketing.PNG)
-![Archive & Data Quality](screenshots/Archive_%26_Data_Quality.PNG)
+### Contact Overview
+[![Contact Overview](screenshots/Contact%20Overview.PNG)](screenshots/Contact%20Overview.PNG)
+
+### Revenue & Appointments
+[![Revenue & Appointments](screenshots/Revenue%20%26%20Appointments.PNG)](screenshots/Revenue%20%26%20Appointments.PNG)
+
+### Email Health & ZeroBounce
+[![Email Health & ZeroBounce](screenshots/Email%20Health%20%26%20ZeroBounce.PNG)](screenshots/Email%20Health%20%26%20ZeroBounce.PNG)
+
+### Top 1k Marketing
+[![Top 1k Marketing](screenshots/Top%201k%20Marketing.PNG)](screenshots/Top%201k%20Marketing.PNG)
+
+### Archive & Data Quality
+[![Archive & Data Quality](screenshots/Archive%20%26%20Data%20Quality.PNG)](screenshots/Archive%20%26%20Data%20Quality.PNG)
 
 ## Live Demo
 [Available on request](https://app.powerbi.com/links/0-fVsisZfr?ctid=ad235308-5c52-4c9e-af62-bb621c52a11b&pbi_source=linkShare&bookmarkGuid=ab2a6004-1e99-4c9c-a25f-4e8e019b3ec7)
