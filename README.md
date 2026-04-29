@@ -14,17 +14,29 @@ The final output includes HubSpot and Scheduler-ready CSV files along with a 5-p
 ## Features
 
 ✅ 21,000 contact records generated with realistic data (Python + Faker)
+
 ✅ SQL JOIN + MAX(Appointment_Date) per contact via SQLite
+
 ✅ 7-Year Rule: LIVE (2019–2026) vs ARCHIVE (≤2018) classification
+
 ✅ Email cross-reference Zoho ↔ DaySmart — 1,193 matched
+
 ✅ Rescue Logic: 373 bounced Zoho emails updated from DaySmart
+
 ✅ Deduplication — 21,000 → 18,866 unique (DaySmart = Source of Truth)
+
 ✅ ZeroBounce simulation — 75.1% valid rate across 18,866 records
+
 ✅ Clinical Exception Rule — invalid email + active client → email nulled, name+phone kept
+
 ✅ Prospect Rule — invalid email + no DaySmart booking → 1,792 deleted
+
 ✅ Unsubscribe Rule — opt-out flag → 3,983 suppressed
+
 ✅ Top 1,000 marketing contacts scored (Opens + Clicks + Recency + Revenue + Visits)
+
 ✅ 4 import-ready CSV files with field mapping (Zoho Last_Open_Date → HubSpot custom property)
+
 ✅ Power BI 5-page dashboard with 20+ DAX measures
 
 
