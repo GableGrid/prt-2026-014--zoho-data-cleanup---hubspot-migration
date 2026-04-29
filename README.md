@@ -12,7 +12,6 @@ This project is a full contact database migration and data hygiene initiative in
 The final output includes HubSpot and Scheduler-ready CSV files along with a 5-page Power BI dashboard built with 20+ DAX measures for reporting and analysis.
 
 ## Features
-## Features
 
 ✅ 21,000 contact records generated with realistic data (Python + Faker)
 ✅ SQL JOIN + MAX(Appointment_Date) per contact via SQLite
